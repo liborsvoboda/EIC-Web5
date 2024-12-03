@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+  <script type="text/typescript">
+  import {
+    Component,
+    OnsenModule,
+    NgModule,
+    CUSTOM_ELEMENTS_SCHEMA
+  } from 'ngx-onsenui';
+  import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
+  @Component({
+    selector: 'app',
+    template: `
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">Search Input</div>
+      </ons-toolbar>
+      <div class="background"></div>
+      <div class="content">
+        <div style="padding: 10px">
+          <p>
+            <ons-search-input id="text" placeholder="Type here" [(value)]="target"></ons-search-input>
+          </p>
+          <p id="target">
+            {{target}}
+          </p>
+        </div>
+      </div>
+    </ons-page>
+    `
+  })
+  export class AppComponent{
+    target: string = '';
+  }
+
+  @NgModule({
+    imports: [OnsenModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  })
+  class AppModule { }
+
+  platformBrowserDynamic().bootstrapModule(AppModule);
+  </script>
+
+</head>
+<body>
+  <app></app>
+</body>
+</html>
+
+<!-- info
+
+## Search input
+
+Even though `ons-input` supports `type="search"`, Onsen UI provides an extra element `ons-search-input` that styles the input as a real search bar:
+
+```html
+<ons-search-input placeholder="Search something"></ons-search-input>
+```
+
+As usual, any attribute for `<input>` element works for the search input (except `type` which is fixed to `search`).
+
+## Inner input element
+
+For normal input elements is possible to define a `<label>` tab with the `for` attribute to link it to an input element.
+
+Unfortunately this does not work with custom elements like `<ons-label>` so in order to do it we need to set the `id` attribute of the inner input element. This is done using the `input-id` attribute.
+
+```
+<label for="username">Username</label>
+<ons-input input-id="username"></ons-input>
+```
+
+This work with any input in Onsen UI such as checkboxes, radios, etc.
+
+-->
+

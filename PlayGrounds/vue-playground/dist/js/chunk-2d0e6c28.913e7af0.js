@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e6c28"],{"99b4":function(e,n){e.exports='<h1 id="rawhtml">RawHTML</h1>\n<p>Raw HTML คือ การนำ Plain text ที่เป็น HTML ออกมาแสดง เหมือนเขียน HTML ในเว็บโดยตรง</p>\n<p>จากตัวอย่าง จะแสดงค่า <code>This should be red.</code> ให้ตัวอักษรเป็นสีแดง\nโดยการใช้ <code>v-html</code> directive ตามตัวอย่างนี้</p>\n'}}]);
+//# sourceMappingURL=chunk-2d0e6c28.913e7af0.js.map

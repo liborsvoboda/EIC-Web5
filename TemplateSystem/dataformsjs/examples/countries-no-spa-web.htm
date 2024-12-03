@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Countries Demo | No SPA | Web Components</title>
+    <link rel="stylesheet" href="css/countries.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-flag@2.4.0/flag.min.css">
+    <link rel="canonical" href="https://www.dataformsjs.com/examples/countries-no-spa-hbs.htm">
+    <style>
+        /* Prevent custom web components from appearing during rendering include the following CSS */
+        json-data:not(:defined),
+        is-loading:not(:defined),
+        has-error:not(:defined),
+        is-loaded:not(:defined) { display:none; }
+    </style>
+</head>
+<body>
+    <div id="view">
+        <export-to-excel-service></export-to-excel-service>
+        <export-to-csv-service></export-to-csv-service>
+
+        <h1>Countries</h1>
+
+        <json-data url="https://www.dataformsjs.com/data/geonames/countries" load-only-once>
+            <is-loading>
+                <span class="loading">Loading...</span>
+            </is-loading>
+            <has-error>
+                <span class="error" data-bind="errorMessage"></span>
+            </has-error>
+            <is-loaded class="flex-col">
+                <input
+                    is="input-filter"
+                    filter-selector="table"
+                    filter-results-selector="h1"
+                    filter-results-text-all="{totalCount} Countries"
+                    filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                    placeholder="Enter filter, example 'North America'">
+
+                <div>
+                    <nav style="display: inline-flex;">
+                        <span>Download</span>
+                        <img class="download"
+                            src="img/Excel.svg"
+                            height="16"
+                            width="16"
+                            alt="Download to Excel"
+                            title="Download to Excel"
+                            data-export-excel-selector="table"
+                            data-export-file-name="Countries.xlsx">
+                        <img class="download"
+                            src="img/CSV.svg"
+                            height="16"
+                            width="16"
+                            alt="Download to CSV"
+                            title="Download to CSV"
+                            data-export-csv-selector="table"
+                            data-export-file-name="Countries.csv">
+                    </nav>
+                </div>
+
+                <p>Click on a column to sort rows based on column values.</p>
+
+                <!--
+                    Either <template> or <script type="text/x-template"> can be used.
+                        <template> will work with all modern browsers
+                        <script type="text/x-template"> is required if supporting IE with [polyfill.js]
+                -->
+                <data-table
+                    data-bind="countries"
+                    highlight-class="highlight"
+                    labels="Code, Name, Size (KM), Population, Continent"
+                    col-class="Size (KM)=align-right, Population=align-right"
+                    table-attr="is=sortable-table,
+                                data-sort-class-odd=row-odd,
+                                data-sort-class-even=row-even">
+                    <script type="text/x-template">
+                        <tr>
+                            <td>
+                                <i class="${iso.toLowerCase()} flag"></i>
+                                ${iso}
+                            </td>
+                            <td>${country}</td>
+                            <td class="align-right" data-value="${area_km}">${format.number(area_km)}</td>
+                            <td class="align-right" data-value="${population}">${format.number(population)}</td>
+                            <td>${continent}</td>
+                        </tr>
+                    </script>
+                </data-table>
+
+                <!--
+                    For a basic table a <template> is not required. This version shows
+                    the data but does not include flag icons or number formatting.
+                -->
+                <!--
+                <data-table
+                    data-bind="countries"
+                    highlight-class="highlight"
+                    labels="Code, Name, Size (KM), Population, Continent"
+                    table-attr="is=sortable-table,
+                                data-sort-class-odd=row-odd,
+                                data-sort-class-even=row-even">
+                </data-table>
+                -->
+            </is-loaded>
+        </json-data>
+    </div>
+
+    <!-- DataFormsJS Web Components -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/json-data.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-table.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/input-filter.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/sortable-table.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/export-to-excel-service.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/export-to-csv-service.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+</body>
+</html>

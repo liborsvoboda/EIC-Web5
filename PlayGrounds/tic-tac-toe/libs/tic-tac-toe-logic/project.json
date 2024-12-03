@@ -1,0 +1,31 @@
+{
+  "name": "tic-tac-toe-logic",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/tic-tac-toe-logic/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/tic-tac-toe-logic",
+        "main": "libs/tic-tac-toe-logic/src/index.ts",
+        "tsConfig": "libs/tic-tac-toe-logic/tsconfig.lib.json",
+        "assets": ["libs/tic-tac-toe-logic/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/tic-tac-toe-logic/**/*.ts",
+          "libs/tic-tac-toe-logic/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

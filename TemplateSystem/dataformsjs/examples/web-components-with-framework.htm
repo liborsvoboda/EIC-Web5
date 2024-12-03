@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Web Component with Framework</title>
+        <link rel="stylesheet" href="https://d2xbd92kui7v97.cloudfront.net/site/css/getting-started.css">
+        <link rel="stylesheet" href="css/web-components-mixed.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#/">Home</a>
+                <a href="#/data">Data Example</a>
+                <a href="#/images">Image Gallery</a>
+                <a href="#/map">Map and Services</a>
+                <a href="#/markdown">Markdown Content</a>
+            </nav>
+        </header>
+        <html-import-service></html-import-service>
+        <main id="view"></main>
+
+        <template id="loading-screen">
+            <h3 class="loading" data-i18n="Loading..."></h3>
+        </template>
+
+        <template id="error-screen">
+            <h3 class="error">Error - <span data-bind="errorMessage"></span></h3>
+        </template>
+
+        <template data-route="/">
+            <section class="home-page">
+                <h1>Hello World</h1>
+                <p>This page is used to show how DataFormsJS Web Components (and Web Components in general) can be used with the DataFormsJS Framework.</p>
+                <p>All Web Component and all page features are expected to work in virtually all browsers.</p>
+                <p>This works but it is not generally recommended because the intended use is to use either Web Components or the Framework. The Web Components will use the Framework as a polyfill for legacy browsers. The DataFormsJS Framework allows for easy setup of routing definitions in HTML and less HTML than the &lt;url-router&gt; component however it requires a slightly larger JavaScript size than when using &lt;url-router&gt; and the Web Components.</p>
+            </section>
+        </template>
+
+        <template data-route="/data">
+            <json-data url="https://www.dataformsjs.com/data/geonames/countries" load-only-once>
+                <is-loading template-selector="#loading-screen"></is-loading>
+                <has-error template-selector="#error-screen"></has-error>
+                <is-loaded class="flex-col">
+                    <h1>Countries</h1>
+
+                    <input
+                        is="input-filter"
+                        filter-selector="table"
+                        filter-results-selector="h1"
+                        filter-results-text-all="{totalCount} Countries"
+                        filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                        placeholder="Enter filter, example 'North America'" />
+
+                    <data-table
+                        data-bind="countries"
+                        highlight-class="highlight"
+                        labels="Code, Name, Size (KM), Population, Continent"
+                        table-attr="is=sortable-table,
+                                    data-sort-class-odd=row-odd,
+                                    data-sort-class-even=row-even">
+                    </data-table>
+                </is-loaded>
+            </json-data>
+        </template>
+
+        <template data-route="/images">
+            <json-data url="https://dataformsjs.s3-us-west-1.amazonaws.com/img/example-images/index.json" load-only-once>
+                <is-loading>
+                    <span class="loading">Loading Photos...</span>
+                </is-loading>
+                <has-error>
+                    <h2 class="error">Error loading photos - <span data-bind="errorMessage"></span></h2>
+                </has-error>
+                <is-loaded>
+                    <h1>Image Gallery</h1>
+                    <data-list
+                        data-bind="images"
+                        template-selector="#image-template"
+                        root-element="div"
+                        root-class="image-gallery">
+                    </data-list>
+                    <template id="image-template">
+                        <image-gallery image="${image}" image-avif="${image_avif}" image-webp="${image_webp}">
+                            <img src="${thumbnail}" alt="${title}" />
+                        </image-gallery>
+                    </template>
+                </is-loaded>
+            </json-data>
+        </template>
+
+        <template data-route="/map">
+            <json-data url="https://www.dataformsjs.com/data/geonames/place/5368361" load-only-once>
+                <is-loading>
+                    <span class="loading">Loading Photos...</span>
+                </is-loading>
+                <has-error>
+                    <h2 class="error">Error loading photos - <span data-bind="errorMessage"></span></h2>
+                </has-error>
+                <is-loaded>
+                    <section>
+                        <data-view data-bind template-selector="#city-info"></data-view>
+                        <template id="city-info">
+                            <h2>${place.name}</h2>
+                            <div class="population"><strong>Population:</strong> ${format.number(place.population)}</div>
+                        </template>
+                        <div
+                            is="leaflet-map"
+                            latitude="[place.latitude]"
+                            longitude="[place.longitude]"
+                            zoom="11"
+                            marker="[place.name]"
+                            data-bind-attr="latitude, longitude, marker"
+                            style="height:400px">
+                        </div>
+                    </section>
+                    <section data-template-url="html/web-component-html-import.htm"></section>
+                </is-loaded>
+            </json-data>
+        </template>
+
+        <template data-route="/markdown">
+            <section class="fit-content">
+                <markdown-content url="https://raw.githubusercontent.com/dataformsjs/dataformsjs/master/README.md"></markdown-content>
+            </section>
+        </template>
+
+        <!--
+            DataFormsJS Framework and [navLinks] Plugin.
+            The framework will create SPA routes based on
+            <template data-route="/{path}"> elements.
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/DataFormsJS.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/navLinks.min.js"></script>
+
+        <!--
+            DataFormsJS Web Components
+
+            <url-router>, <i18n-service>, and <nav is="spa-links"> are excluded from
+            this page because the framework already handles routing.
+        -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/json-data.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-list.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-table.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-view.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/input-filter.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/sortable-table.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/image-gallery.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/html-import-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/leaflet-map.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/spa-links.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/markdown-content.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+
+        <!-- https://leafletjs.com/ -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css">
+        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+
+        <!--
+            https://marked.js.org/
+            https://highlightjs.org/
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/marked@3.0.8/lib/marked.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/atom-one-dark.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+    </body>
+</html>

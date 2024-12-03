@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DataFormsJS - {{title}}</title>
+        <link rel="stylesheet" href="hello-world.css">
+        <style>
+            p { text-align:center; }
+            a { 
+                padding-bottom: .5em;
+                display: inline-block;
+            }
+        </style>
+        <link rel="canonical" href="https://www.dataformsjs.com/examples/hello-world/{{lang}}/web.htm">
+        <script nomodule>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'hello-world-ie.css';
+            document.head.appendChild(link);
+        </script>
+    </head>
+    <body>
+        <div id="root" dir="auto"></div>
+
+        <script type="text/babel">
+            // @jsx hyperapp.h
+            function App() {
+                return (
+                    <div>
+                        <h1>{{hello_world}}</h1>
+
+                        <p>
+                            <a href="https://hyperapp.dev" target="_blank">Hyperapp</a><br />
+                            {jsxLoader.isSupportedBrowser ? '{{jsx_loader}}'
+                            : '{{babel_loader}}'}
+                        </p>
+
+                        <div className="home-page-animation">
+                            <img src="sun.svg" className="sun" />
+                            <div className="orbit">
+                                <img src="planet.svg" className="planet" />
+                                <img src="moon.svg" className="moon" />
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+
+            hyperapp.app({
+                init: null,
+                view: state => <App />,
+                node: document.getElementById('root')
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/hyperapp@2.0.4/dist/hyperapp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/react/jsxLoader.min.js"></script>
+    </body>
+</html>

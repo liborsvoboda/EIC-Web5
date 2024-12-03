@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fabulist = "*"
+nutree = "*"
+mkdocs = "*"
+mkdocs-material = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.12"
+
+[pipenv]
+# allow_prereleases = true

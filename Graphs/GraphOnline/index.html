@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div id="example"></div>
+<script type="module">
+  import { Graphviz } from "https://cdn.jsdelivr.net/npm/@hpcc-js/wasm@2.13.0/graphviz/+esm";
+
+  const graphviz = await Graphviz.load();
+
+  const dot = "digraph G { Hello -> World }";
+  const svg = graphviz.dot(dot);
+  document.getElementById("example").innerHTML = svg;
+  console.log(svg);
+  console.log(graphviz.version());
+</script>
+
+</body>
+</html>

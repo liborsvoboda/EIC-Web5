@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script type="text/babel">
+    class MyPage extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          username: '',
+          password: ''
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+      }
+
+      renderToolbar() {
+        return (
+          <Ons.Toolbar>
+          <div className='center'>Form input</div>
+          </Ons.Toolbar>
+        );
+      }
+
+      handleClick() {
+        if (this.state.username === 'bob' && this.state.password === 'secret') {
+          ons.notification.alert('You are now signed in!');
+        }
+        else {
+          ons.notification.alert('Username or password incorrect!');
+        }
+      }
+
+      handleUsernameChange(e) {
+        this.setState({username: e.target.value});
+      }
+
+      handlePasswordChange(e) {
+        this.setState({password: e.target.value});
+      }
+
+      render() {
+        return (
+          <Ons.Page renderToolbar={this.renderToolbar}>
+          <section style={{textAlign: 'center'}}>
+            <p>
+              <Ons.Input
+                value={this.state.username}
+                onChange={this.handleUsernameChange}
+                modifier='underbar'
+                float
+                placeholder='Username' />
+                </p>
+                <p>
+                <Ons.Input
+                value={this.state.password}
+                onChange={this.handlePasswordChange}
+                modifier='underbar'
+                type='password'
+                float
+                placeholder='Password' />
+                </p>
+                <p>
+                <Ons.Button onClick={this.handleClick}>Sign in</Ons.Button>
+                </p>
+                </section>
+                </Ons.Page>
+              );
+            }
+       }
+
+       ons.ready(function() {
+         const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<MyPage />);
+       });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<!-- info
+
+## Form input
+
+Text inputs are created using the `Input` component. It works almost exactly the same as a normal `<input>` tag.
+
+```
+<Input
+  value={this.state.username}
+  onChange={this.handleChange.bind(this)}
+/>
+```
+
+In Material Design the placeholder can be made to float using the `float` prop.
+
+```
+<Input
+  placeholder='Username'
+  float
+/>
+```
+
+-->

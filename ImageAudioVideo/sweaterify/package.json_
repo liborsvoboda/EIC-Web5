@@ -1,0 +1,27 @@
+{
+  "name": "sweaterify",
+  "version": "2.0.0",
+  "description": "Turn an image into a sweater!",
+  "scripts": {
+    "test": "standard",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kosamari/sweaterify.git"
+  },
+  "author": "Mariko Kosaka (http://kosamari.com/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kosamari/sweaterify/issues"
+  },
+  "homepage": "https://kosamari.github.io/sweaterify/",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-webserver": "^0.9.1",
+    "http-server": "^0.9.0",
+    "standard": "^8.6.0"
+  }
+}

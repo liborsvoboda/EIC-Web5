@@ -1,0 +1,47 @@
+div.localized-date {
+  width: 5.2em;
+}
+
+.date-format-separator-dot div.localized-date > span:after {
+  content: ".";
+}
+
+.date-format-separator-slash div.localized-date > span:after {
+  content: "/";
+}
+
+.date-format-separator-dash div.localized-date > span:after {
+  content: "-";
+}
+
+/* Year */
+.date-format-DMY div.localized-date > span.localized-date-year,
+.date-format-MDY div.localized-date > span.localized-date-year {
+  float: right;
+}
+.date-format-DMY div.localized-date > span.localized-date-year:after,
+.date-format-MDY div.localized-date > span.localized-date-year:after {
+  content: "" !important;
+}
+
+.date-format-YMD div.localized-date > span.localized-date-year {
+  float: left;
+}
+
+/* Day */
+.date-format-YMD div.localized-date > span.localized-date-day {
+  float: right;
+}
+.date-format-YMD div.localized-date > span.localized-date-day:after {
+  content: "" !important;
+}
+
+.date-format-DMY div.localized-date > span.localized-date-day {
+  float: left;
+}
+
+/* Month */
+.date-format-MDY div.localized-date > span.localized-date-month {
+  float: left;
+}
+

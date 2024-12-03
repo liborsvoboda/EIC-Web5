@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns:og="http://ogp.me/ns#" ng-app="ChromeMusicPlayer" ng-csp>
+  <head>
+    <meta charset="utf-8">
+    <title>Chrome Music Player</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/PlayListManager.js"></script>
+    <script src="./js/InfoManager.js"></script>
+    <script src="./js/controllers.js"></script>
+  </head>
+  <body>
+    <div class="app-container" ng-controller="MediaControlCtrl">
+      <div class="app-control">
+        <div class="left">
+          <button class="backward btn" ng-click="backward()"></button>
+          <button class="play btn" ng-class="{playing:playing}" ng-click="play()"></button>
+          <button class="forward btn" ng-click="forward()"></button>
+          <input type="range" min="0" step="0.01" max="1" style="width:100px" ng-model="volume">
+        </div>
+        <div class="center" ng-controller="InfoManagerCtrl">
+          <div>{{info.title}}</div>
+          <div>{{info.artist}} - {{info.album}}</div>
+          <div class="progress">
+            <span>{{info.current|date:'mm:ss'}}</span>&nbsp;
+            <progress max="100" value="{{info.progress}}"></progress>&nbsp;
+            <span>{{info.duration|date:'mm:ss'}}</span>
+          </div>
+        </div>
+        <div class="right">
+          <img src="./img/search.png" alt="">
+          <input type="search" ng-model="query" placeholder="Search Music">
+        </div>
+      </div>
+      <div class="app-main">
+        <div class="app-sidebar">
+          Data usage:
+          <meter value="{{quota.usage}}" min="0" high="{{quota.quota/10*9}}" max="{{quota.quota}}" ng-controller="QuotaManagerCtrl"></meter></br>
+          <div class="artwork">
+            <img src="{{artwork || 'img/artwork.png'}}" alt="">
+          </div>
+          <div class="controls">
+            <input type="button" class="btn" value="Reload" placeholder="" ng-click="reload()"><br/>
+            <input type="button" class="btn" value="Load music" placeholder="" ng-click="load_local_music()"><br/>
+            <input type="button" class="btn" value="Dismiss music" placeholder="" ng-click="dismiss_music()"><br/>
+          </div>
+        </div>
+        <div class="app-musiclist">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Track</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in list | filter:query" ng-class="{selected:$index==selected}" ng-click="select($index)" ng-dblclick="index_and_play()" ng-controller="MediaCtrl">
+                <td ng-class="{playing:$index==cursor}"></td>
+                <td>{{item.title}}</td>
+                <td>{{item.artist}}</td>
+                <td>{{item.album}}</td>
+                <td>{{item.track}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

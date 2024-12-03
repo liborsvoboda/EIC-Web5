@@ -1,0 +1,106 @@
+/*
+This file is part of DataFormsJS and is intended as a working demo and starting
+template for the <animation-service> Web Component and [animation] plugin.
+
+<animation-service> and the [animation] plugin use a small amount of JavaScript
+code while the animations are defined in CSS.
+
+This file can be linked directly if you want to use the existing animations
+without change and it provides a good starting point if you would like to
+copy and modify the animations for your site.
+
+How the CSS in this file is defined:
+
+# Animations are defined using keyframes
+    @keyframes scale { from, to }
+
+# The initial value is matched to the [data-attribute] rule
+    [data-animate="{name}"] { ...initial state... }
+
+# JavaScript will set the class name to the rule. Once set the CSS
+# will be triggered running the animation. In this file `forwards`
+# is used so the animation only runs once.
+    [data-animate="{name}"].{name} {
+         animation: {name} var(--duration) ease-in-out forwards;
+     }
+
+# Examples:
+    https://dataformsjs.com/examples/animation-web.htm
+    https://dataformsjs.com/examples/animation-js.htm
+*/
+
+:root {
+    --duration: .5s;
+    --duration-slow: 1.5s;
+    --delay: .5s;
+    --move-right: translateX(100px);
+    --move-left: translateX(-100px);
+    --move-bottom: translateY(200px);
+}
+
+[data-animate="show"] { opacity: 0; }
+[data-animate="show"].show {
+    animation: show var(--duration) ease-in-out forwards;
+}
+
+[data-animate^="show-with-delay"] { opacity: 0; }
+[data-animate="show-with-delay"].show-with-delay {
+    animation: show var(--duration) ease-in-out var(--delay) 1 forwards;
+}
+[data-animate="show-with-delay-2"].show-with-delay-2 {
+    animation: show var(--duration) ease-in-out 1s 1 forwards; /* This line is for IE */
+    animation: show var(--duration) ease-in-out calc(var(--delay) * 2) 1 forwards;
+}
+[data-animate="show-with-delay-3"].show-with-delay-3 {
+    animation: show var(--duration) ease-in-out 1.5s 1 forwards;
+    animation: show var(--duration) ease-in-out calc(var(--delay) * 3) 1 forwards;
+}
+[data-animate="show-with-delay-4"].show-with-delay-4 {
+    animation: show var(--duration) ease-in-out 2.5s 1 forwards;
+    animation: show var(--duration) ease-in-out calc(var(--delay) * 4) 1 forwards;
+}
+
+@keyframes show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+[data-animate="scale"] { transform: scale(.5); }
+[data-animate="scale"].scale {
+    animation: scale var(--duration-slow) ease-in-out forwards;
+}
+
+@keyframes scale {
+    from { transform: scale(.2); }
+    to { transform: scale(1); }
+}
+
+[data-animate="move-from-right"] { transform: var(--move-right); }
+[data-animate="move-from-right"].move-from-right {
+    animation: move-from-right var(--duration) ease-in-out forwards;
+}
+
+@keyframes move-from-right {
+    from { transform: var(--move-right); }
+    to { transform: translateX(0); }
+}
+
+[data-animate="move-from-left"] { transform: var(--move-left); }
+[data-animate="move-from-left"].move-from-left {
+    animation: move-from-left var(--duration) ease-in-out forwards;
+}
+
+@keyframes move-from-left {
+    from { transform: var(--move-left); }
+    to { transform: translateX(0); }
+}
+
+[data-animate="move-from-bottom"] { transform: var(--move-bottom); }
+[data-animate="move-from-bottom"].move-from-bottom {
+    animation: move-from-bottom var(--duration) ease-in-out forwards;
+}
+
+@keyframes move-from-bottom {
+    from { transform: var(--move-bottom); }
+    to { transform: translateX(0); }
+}

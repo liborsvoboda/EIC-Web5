@@ -1,0 +1,59 @@
+.w-100px {
+    min-width: 100px !important;
+    width: 100px !important;
+    max-width: 100px !important;
+}
+
+.w-150px {
+    min-width: 150px !important;
+    width: 150px !important;
+    max-width: 150px !important;
+}
+
+.w-200px {
+    min-width: 200px !important;
+    width: 200px !important;
+    max-width: 200px !important;
+}
+
+.w-300px {
+    min-width: 300px !important;
+    width: 300px !important;
+    max-width: 300px !important;
+}
+
+
+.w-20 {
+    width: 20% !important;
+    min-width: 20% !important;
+    max-width: 20% !important;
+}
+
+.unstyled-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.linktext {
+    text-decoration: none;
+    color: inherit;
+}
+
+    .linktext:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+.skiptranslate { 
+	/* display:none !important; */
+    /*  zoom: 1.2; */
+}
+
+.audio-player {
+    zoom: 0.7;
+    background-color: transparent !important;
+}
+
+#\:1\.container {
+    visibility: hidden !important;
+}

@@ -1,0 +1,52 @@
+{{#if isLoading}}<div data-template-id="loading-template"></div>{{/if}}
+{{#if hasError}}<div data-template-id="error-template"></div>{{/if}}
+{{#if isLoaded}}
+    <div class="row mb-4">
+        <div class="col">
+            <input class="form-control" data-filter-selector="table" placeholder="Enter filter">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{#if records.length}}
+                <div class="table-responsive">
+                    <table class="table table-striped click-to-highlight" data-sort>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Label</th>
+                                <th>Number</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Active</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each records}}
+                            <tr>
+                                <td><a href="#/record/{{id}}">{{id}}</a></td>
+                                <td class="text-nowrap">{{label}}</td>
+                                <td>{{num_value}}</td>
+                                <td>{{category}}</td>
+                                <td class="text-nowrap">{{date_value}}</td>
+                                <td>{{yesNo active}}</td>
+                                <td>{{nl2br comment}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            {{else}}
+                <button
+                    class="btn btn-primary"
+                    data-click-url="https://www.dataformsjs.com/data/example/entry-form/generate-sample-data"
+                    data-action="update-view"
+                    data-request-method="POST">
+                    Generate Sample Records
+                </button>
+            {{/if}}
+        </div>
+    </div>
+{{/if}}

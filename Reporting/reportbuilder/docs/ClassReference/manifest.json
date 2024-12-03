@@ -1,0 +1,4603 @@
+{
+  "homepages": [],
+  "source_base_path": "E:/FR/FastReport/Tools/FastReport.OpenSource.Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.AfterDatabaseLoginEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.AfterDatabaseLoginEventArgs.html",
+          "hash": "w370AJOwgN1jrfcEHC5sVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.AfterDatabaseLoginEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.AfterDatabaseLoginEventHandler.html",
+          "hash": "+ryvWY+zAji8KRO+HYuZXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.AssemblyInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.AssemblyInitializer.html",
+          "hash": "Vd8oUzwj1ZNIuyOZDF6CYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.AutoShrinkMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.AutoShrinkMode.html",
+          "hash": "Kl2iirJ9Aj/YwrFTQjYo9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.BandBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.BandBase.html",
+          "hash": "ThZczF6bbwTYImhyudDTrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.BandCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.BandCollection.html",
+          "hash": "7A57MI696meCDgp8JadUlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.BandColumns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.BandColumns.html",
+          "hash": "z3MqcLjhzWj3ya5Bcy4T0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode128.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode128.html",
+          "hash": "n7AewsDHbNLrZgAt+ejXnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode2DBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode2DBase.html",
+          "hash": "X26OGsdyJiWZkIloQLjqaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode2of5Industrial.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode2of5Industrial.html",
+          "hash": "Pce2PafBUaUdcfh0VlyLag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode2of5Interleaved.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode2of5Interleaved.html",
+          "hash": "PY8NGyj0KQ5UndaFlM8CjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode2of5Matrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode2of5Matrix.html",
+          "hash": "/2rxCoqqBzRXf1VIn9B7xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode39.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode39.html",
+          "hash": "65KBtP7xBWet28JzAUR+AQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode39Extended.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode39Extended.html",
+          "hash": "tWQ+/JvLA9KxxisVlyolyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode93.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode93.html",
+          "hash": "Wjn99lhbYEYu/kUsEfrqsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.Barcode93Extended.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.Barcode93Extended.html",
+          "hash": "ZOOeHuJNBI3Rah0nm9sXgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeAztec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeAztec.html",
+          "hash": "hRj/sFDQmgxoM+Zljpnm5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeBase.html",
+          "hash": "kZt5yE8vYLU3zlywLKRTmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeCodabar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeCodabar.html",
+          "hash": "r60RVqcA070BBHBX1SBgPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeDatamatrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeDatamatrix.html",
+          "hash": "jP8kifRnLqzxYQp4sJE0FQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeEAN.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeEAN.html",
+          "hash": "kISD1Mb3dg3L+6kyPTtPMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeEAN128.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeEAN128.html",
+          "hash": "a7/ggtazl5wRPiD9ZoGGCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeEAN13.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeEAN13.html",
+          "hash": "1DwidkBW96i/jLuPQJmWgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeEAN8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeEAN8.html",
+          "hash": "PvhdMUoDbJigm1VdvQOM2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeIntelligentMail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeIntelligentMail.html",
+          "hash": "jfHDYqavM6AUrM0RyXoMqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeMSI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeMSI.html",
+          "hash": "Y3HTrNlD88qZULK3o8YrWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeMaxiCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeMaxiCode.html",
+          "hash": "+5bUJ67L7cSCPRBEz56KOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeObject.html",
+          "hash": "iGE5jvhDWdat1kLFRbLkIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodePDF417.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodePDF417.html",
+          "hash": "I9BD/pe2Qui5oNLIc+EK0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodePharmacode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodePharmacode.html",
+          "hash": "92RCy+h87eRpT6a3yfQyUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodePlessey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodePlessey.html",
+          "hash": "go/ks00VkgKdx3S4Rho+DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodePostNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodePostNet.html",
+          "hash": "8G1tFofJ4I5fhMzvUNf/aQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeQR.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeQR.html",
+          "hash": "wO1NtICyX8m5gCHoVU5cmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeSupplement2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeSupplement2.html",
+          "hash": "g98zgszdp/wZFx7XPM4tLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeUPC_A.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeUPC_A.html",
+          "hash": "3CRhyUDlXSfIlk6LCwBHVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeUPC_E0.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeUPC_E0.html",
+          "hash": "ODGSRXFp3i8L3mA6vdW8Vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.BarcodeUPC_E1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.BarcodeUPC_E1.html",
+          "hash": "ldi+q6pxSm1RhF8TNUjJEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.DatamatrixEncoding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.DatamatrixEncoding.html",
+          "hash": "8oygZdzs6NVxqWl9SPe1ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.DatamatrixSymbolSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.DatamatrixSymbolSize.html",
+          "hash": "ZGOpXUSamqWCyAOBoqqRPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.LinearBarcodeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.LinearBarcodeBase.html",
+          "hash": "QrC/Mqyvwz/9/a26aiDZWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.PDF417CompactionMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.PDF417CompactionMode.html",
+          "hash": "OcWr9P49rY5zFBxmLyQHQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.PDF417ErrorCorrection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.PDF417ErrorCorrection.html",
+          "hash": "8DtmH9nLj/BhGwznfzO8rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.QRCodeEncoding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.QRCodeEncoding.html",
+          "hash": "jp6/zm23wSmq3gFkE6oYXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.QRCodeErrorCorrection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.QRCodeErrorCorrection.html",
+          "hash": "eCCjh6YWtmbDV0GuckUnWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Barcode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Barcode.html",
+          "hash": "yfib6H/Ys8TKn5C+ZRD3XA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Base.html",
+          "hash": "zyFqpgf4gpIIy8tGRedtZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Border.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Border.html",
+          "hash": "I6sojrkkVu2WY+FBnVz2Ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.BorderLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.BorderLine.html",
+          "hash": "eEjJ902SLht2FvggrIM6Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.BorderLines.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.BorderLines.html",
+          "hash": "ikkmQZTEmC1OjhtXKgiYew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.BreakableComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.BreakableComponent.html",
+          "hash": "/NFIITymtn8Z9wnIGVOC6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CapSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CapSettings.html",
+          "hash": "U8kZRTxVe4tkR1JpIk7unQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CapStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CapStyle.html",
+          "hash": "IhmyHUczHOkPGUvMhcR6Og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CellularTextObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CellularTextObject.html",
+          "hash": "K0GK0qHKQmA4bmK6B4fHvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CheckBoxObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CheckBoxObject.html",
+          "hash": "ZFGxGl3JJ2SThjmhZhx+yQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CheckedSymbol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CheckedSymbol.html",
+          "hash": "c95am2fP6z9mE/28zrNh3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ChildBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ChildBand.html",
+          "hash": "lZfBqjo190ON9d4xt4h8wA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Code.CodeUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Code.CodeUtils.html",
+          "hash": "7IL927HW7ygF/PnVZPMZUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Code.FindTextArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Code.FindTextArgs.html",
+          "hash": "MIqYG65s/FAa8TNvTEgIUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Code.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Code.html",
+          "hash": "3ByY48EkyMfsHadLVNmWXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ColumnFooterBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ColumnFooterBand.html",
+          "hash": "nxOOIOm2UmUNuARliV5pIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ColumnHeaderBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ColumnHeaderBand.html",
+          "hash": "5P4NplE8VlJnWHO5u2UttA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ColumnLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ColumnLayout.html",
+          "hash": "7EOH6LDVliJMWnS/rENZTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ComponentBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ComponentBase.html",
+          "hash": "KZbxe5Y1BYxbD4SisbCD1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ConditionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ConditionCollection.html",
+          "hash": "N8KfxP49pIcLWhp0T+2Xdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewAxisDrawCell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewAxisDrawCell.html",
+          "hash": "a3Sla5qqsIcBO7rtiPVxyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewAxisDrawCellHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewAxisDrawCellHandler.html",
+          "hash": "l2JbR/v20yQV69mRUwXASg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewCellDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewCellDescriptor.html",
+          "hash": "uW5DYSl1b+6Kv71loupjyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewCells.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewCells.html",
+          "hash": "HXmo9F6SXbzJkMAhtkYAdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewData.html",
+          "hash": "lr6ybompvyySeC13YFFTWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewDescriptor.html",
+          "hash": "lYnajZM9sNEac7KpvNv6HA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewHeader.html",
+          "hash": "McUOYRCGRbwgMJhyBmdFfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewHeaderDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewHeaderDescriptor.html",
+          "hash": "0U1/m1ZKvaR7hDOmjKOhfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewMeasureCell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewMeasureCell.html",
+          "hash": "3V0om3L9EWDif7WyVJv1wg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.CrossViewObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.CrossViewObject.html",
+          "hash": "eUD90O4QNutjb8lZRBz2yw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.IBaseCubeLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.IBaseCubeLink.html",
+          "hash": "Yc9Cwp8GPKsBbKIcpVDYwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CrossView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CrossView.html",
+          "hash": "y1aaofuCo1t9MNLSxcqb2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CustomCalcEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CustomCalcEventArgs.html",
+          "hash": "ZnTQRX3uygW2DnBu/kQUUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CustomCalcEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CustomCalcEventHandler.html",
+          "hash": "lZqPAdpFzlRzduJQaHSg8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CustomLoadEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CustomLoadEventArgs.html",
+          "hash": "8Yce6ouYrNzTvH8bwzPSLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.CustomLoadEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.CustomLoadEventHandler.html",
+          "hash": "oOW6KstdK4pd1tRFiwGFvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.AbsRowVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.AbsRowVariable.html",
+          "hash": "vpXeqTyOG+7Qlhq4WzEISA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.BOConverterFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.BOConverterFlags.html",
+          "hash": "UU5+VsCqybIHwy8iswEgoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.BusinessObjectDataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.BusinessObjectDataSource.html",
+          "hash": "7fnGrkpHI6XaAQwGXsi4Pw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.Column.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.Column.html",
+          "hash": "8Om6UVoJQpI9ZJYITiu1KA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ColumnBindableControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ColumnBindableControl.html",
+          "hash": "1p1rSl2eFo9XKlWqGXD2+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ColumnCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ColumnCollection.html",
+          "hash": "XNvrgY1RzrG3AFk6xIPfrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ColumnComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ColumnComparer.html",
+          "hash": "vyQW3NuUtvvJS1RTKpr41A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ColumnFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ColumnFormat.html",
+          "hash": "ba7v/wVlsamBiVOALTRcoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CommandParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CommandParameter.html",
+          "hash": "IK626/so0YUEF3XoPi3a9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CommandParameterCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CommandParameterCollection.html",
+          "hash": "BAsHmmqLXdQ++KbzMtt0/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ConnectionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ConnectionCollection.html",
+          "hash": "JbhiItCjmLiVY3+NCADvpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CopyNameMacroVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CopyNameMacroVariable.html",
+          "hash": "mD+3d0b14FNWrlWatTPfmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CsvConnectionStringBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CsvConnectionStringBuilder.html",
+          "hash": "NKm4LwGv1VlMsQc1fiKZeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CsvDataConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CsvDataConnection.html",
+          "hash": "TMg2Ze9wXChk8AWjV2QA2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CubeSourceBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CubeSourceBase.html",
+          "hash": "8VFWrMuOPwg/CayqcyBI4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.CubeSourceCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.CubeSourceCollection.html",
+          "hash": "M5YuwE3LfeGbArnJVFrurw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.DataComponentBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.DataComponentBase.html",
+          "hash": "eQUI4SMXZNLmZkwtacziTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.DataConnectionBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.DataConnectionBase.html",
+          "hash": "kLu2uebuuruYeKYTj8yNYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.DataSourceBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.DataSourceBase.html",
+          "hash": "QHPuiEhZvSKJ5OLx8TqBjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.DataSourceCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.DataSourceCollection.html",
+          "hash": "cLW+l46HXSktuQhfUsp8sQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.DataSourceComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.DataSourceComparer.html",
+          "hash": "rBC6ow6vzojh7W9quJ7JJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.DateVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.DateVariable.html",
+          "hash": "Sx1MXKrPsE9ZJSGialEZqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.Dictionary.RegDataItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.Dictionary.RegDataItem.html",
+          "hash": "YaxzQEz7lDU9MH03GnJgSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.Dictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.Dictionary.html",
+          "hash": "iF10AtgxLGdI5yIRG9H8ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.FilterOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.FilterOperation.html",
+          "hash": "fd8pUSVyjmyZUpfncjHCmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.HierarchyLevelVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.HierarchyLevelVariable.html",
+          "hash": "x94jPHPQR/Z/uH/5iyh0uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.HierarchyRowNoVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.HierarchyRowNoVariable.html",
+          "hash": "yzCMAdpOcWLixMZ1RCu5Zw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.JsonConnection.JsonDataSourceConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.JsonConnection.JsonDataSourceConnection.html",
+          "hash": "YgRZzkgCxjoTiNE1PGE58A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.JsonConnection.JsonDataSourceConnectionStringBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.JsonConnection.JsonDataSourceConnectionStringBuilder.html",
+          "hash": "ygdKbIxXvnawDT7upYTitw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.JsonConnection.JsonTableDataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.JsonConnection.JsonTableDataSource.html",
+          "hash": "d7BK6l6g4fKjZWshJQd0jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.JsonConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.JsonConnection.html",
+          "hash": "seXszbWOT8BkBMyTK9ZqKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.LoadBusinessObjectEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.LoadBusinessObjectEventArgs.html",
+          "hash": "/Tv5T0JxuK0a+8WZ3//ADQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.LoadBusinessObjectEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.LoadBusinessObjectEventHandler.html",
+          "hash": "fb06eHjIDBB9DW7oBwKWag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.PageMacroVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.PageMacroVariable.html",
+          "hash": "bkKEzR1fBJ52Lb7lZfReYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.PageNVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.PageNVariable.html",
+          "hash": "S7pDe7R1wavMDt/Q/zGhlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.PageNofMVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.PageNofMVariable.html",
+          "hash": "wknH7VVVJ8hj3bzE4qbDmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.PageVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.PageVariable.html",
+          "hash": "feWYthPQ11CaAZUf0vlPHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.Parameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.Parameter.html",
+          "hash": "ybp2UvC/3K0EHOIEdEX3gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ParameterCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ParameterCollection.html",
+          "hash": "Lnj7xgV4QMr3mN7q3rq/gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.PropertyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.PropertyKind.html",
+          "hash": "MRjTv2KBab20jzk91FQlbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.Relation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.Relation.html",
+          "hash": "qXlgkMidHp4ljxU1XZfkog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.RelationCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.RelationCollection.html",
+          "hash": "qDBK1scYrrsNzNd+ZJxBhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.RowVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.RowVariable.html",
+          "hash": "dnEcqDQTpSmHMZko1g/J0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.SliceCubeSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.SliceCubeSource.html",
+          "hash": "VMTmcqvQnpPpUUT/3HyQQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.SystemVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.SystemVariable.html",
+          "hash": "5CodzDOoA+TGcWtxPdeHxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.SystemVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.SystemVariables.html",
+          "hash": "4eajQjt0zq3eO+BnwyAq0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.TableCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.TableCollection.html",
+          "hash": "r1RVdiaCZiI7x7e2vf+OhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.TableDataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.TableDataSource.html",
+          "hash": "uqvqURF3oe2dNq66lPc3+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.Total.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.Total.html",
+          "hash": "lJBW84KJLg0lp4hCSuWcgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.TotalCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.TotalCollection.html",
+          "hash": "gyHRABSLvLvZxzFcDFMg2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.TotalPagesMacroVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.TotalPagesMacroVariable.html",
+          "hash": "lqTpJxHO9p5Rr/d8XPbOMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.TotalPagesVariable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.TotalPagesVariable.html",
+          "hash": "PFWl85M/JJtmgCImjaq+qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.TotalType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.TotalType.html",
+          "hash": "6nIzTLQkSsNaRXXKbSvKxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.ViewDataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.ViewDataSource.html",
+          "hash": "Sk9kCYCrGNIhywee3Z2Q+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.XmlConnectionStringBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.XmlConnectionStringBuilder.html",
+          "hash": "rlmuRN4pyAwgwF5E0Y8BqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.XmlDataConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.XmlDataConnection.html",
+          "hash": "O7xq9u1A4au/M3KC6JzchQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Data.html",
+          "hash": "NJnLtF7C+GYokOGf4a1tvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.DataBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.DataBand.html",
+          "hash": "yminEtO3u8BMg8rZV7TQ2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.DataFooterBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.DataFooterBand.html",
+          "hash": "wIT3VbyzYZz5JxAFoufgVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.DataHeaderBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.DataHeaderBand.html",
+          "hash": "VavOKrlL9cp7/P8eBs74kQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.DatabaseLoginEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.DatabaseLoginEventArgs.html",
+          "hash": "yza5eDXxyt3MdbyWR8hJ/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.DatabaseLoginEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.DatabaseLoginEventHandler.html",
+          "hash": "466kCQhI18269dB6EAaJZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.DefaultPaperSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.DefaultPaperSize.html",
+          "hash": "dKjzjdnTV26nUivsUjm5AA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Duplicates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Duplicates.html",
+          "hash": "Ke2/QBByGfW4lgQVHLSmvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Engine.ReportEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Engine.ReportEngine.html",
+          "hash": "VRidAZfooV5v/ZgB88KETA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Engine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Engine.html",
+          "hash": "bMH35PNdokCGkO8rR0Q7zQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.ExportBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.ExportBase.html",
+          "hash": "kkQiCT3+0TJUPW8HySdMJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.ExportUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.ExportUtils.html",
+          "hash": "uli/N5y3M42bgxgIIvXq2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.CustomDrawEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.CustomDrawEventArgs.html",
+          "hash": "KGsUEMp8Cls8Y6g+BGNjow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.HTMLExport.ExportType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.HTMLExport.ExportType.html",
+          "hash": "/M+i0E3RdTLVotMHQRTN7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.HTMLExport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.HTMLExport.html",
+          "hash": "FDUepXuOt3QYooFSwv5r0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.HTMLExportFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.HTMLExportFormat.html",
+          "hash": "+9y/g7WaMvNVDSSJYoluNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.HTMLPageData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.HTMLPageData.html",
+          "hash": "g3XiMm9QYZmH6wDoA8p1ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.HtmlSizeUnits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.HtmlSizeUnits.html",
+          "hash": "IN+RahaR9Tb+nxIhjgJtpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.HtmlTemplates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.HtmlTemplates.html",
+          "hash": "PUGZB2BrHg0HS5s4Qm4u6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.ImageFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.ImageFormat.html",
+          "hash": "Ep5KlaDqV00smtnQjiS7rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Html.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Html.html",
+          "hash": "yVtH+EL1xqdZzf1VjhT7xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Image.ImageExport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Image.ImageExport.html",
+          "hash": "3drOjOrE7Xd5b1VmRVuSKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Image.ImageExportFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Image.ImageExportFormat.html",
+          "hash": "P15hu0W4APxx3ydk0ICw8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.Image.html",
+          "hash": "fPKz7tx9ySF7frZ2+L0w7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Export.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Export.html",
+          "hash": "z0yK7Q0ih9ASPsGYK0jGCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.FillBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.FillBase.html",
+          "hash": "tpnUgeqD8A2ZJUhfpo9EHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.FilterPropertiesEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.FilterPropertiesEventArgs.html",
+          "hash": "tORdLs30AkmldYNHfSGTPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.FilterPropertiesEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.FilterPropertiesEventHandler.html",
+          "hash": "JgCx66R6lPACjOWNTBrJmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Flags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Flags.html",
+          "hash": "hNx6EeyWSn0Iw3JGICeaTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.BooleanFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.BooleanFormat.html",
+          "hash": "i51LekZCMpR7sGQhfGkuuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.CurrencyFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.CurrencyFormat.html",
+          "hash": "0WrdEUyejmlijtgwu0gKBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.CustomFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.CustomFormat.html",
+          "hash": "rFF7PJSJ2bZEvDb4UeaBCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.DateFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.DateFormat.html",
+          "hash": "YM0+SRubamJMBDapTgMUIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.FormatBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.FormatBase.html",
+          "hash": "s9+zz8IF+wJPFI/Tobua+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.FormatCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.FormatCollection.html",
+          "hash": "hD++McUebOKHFJeqh/SNrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.GeneralFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.GeneralFormat.html",
+          "hash": "hQ7olW0JOARD1iX7E86seQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.NumberFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.NumberFormat.html",
+          "hash": "tVT2lsbnCDd5nCMz1tBLCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.PercentFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.PercentFormat.html",
+          "hash": "13aft2teMCcLUezb2rjufA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.TimeFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.TimeFormat.html",
+          "hash": "Os/ONA8vvD/3yqhvrRv5tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Format.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Format.html",
+          "hash": "3CkW/IXX7ALGzkzCiARSMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Functions.StdFunctions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Functions.StdFunctions.html",
+          "hash": "yDwnhjiZcr8W1WOI9z0b/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Functions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Functions.html",
+          "hash": "f9OtMToBc5ZYu2zY+L0aMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.GaugeLabel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.GaugeLabel.html",
+          "hash": "TTDz0+Cx9LuX+QXWaEmqEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.GaugeObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.GaugeObject.html",
+          "hash": "daqoFDorrg8xLRx1njgSIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.GaugePointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.GaugePointer.html",
+          "hash": "qU1EoxHU2//4zHRnDpcb6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.GaugeScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.GaugeScale.html",
+          "hash": "pLGR+MhFVOwhUW/x+7N1BA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Linear.LinearGauge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Linear.LinearGauge.html",
+          "hash": "GoZE44PkHeWWFC2vTrdNkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Linear.LinearPointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Linear.LinearPointer.html",
+          "hash": "YlwQEFXdFiQOONvcU+mEfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Linear.LinearScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Linear.LinearScale.html",
+          "hash": "NlnmWLyO5SW+AMYLraXdLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Linear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Linear.html",
+          "hash": "E6Pw4lGduLgMzN7+b0m1gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Radial.RadialGauge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Radial.RadialGauge.html",
+          "hash": "oGLzK04ncy6R5834nqD5SA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Radial.RadialGaugePosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Radial.RadialGaugePosition.html",
+          "hash": "cXTOUGHYxZBslSrBNZIOpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Radial.RadialGaugeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Radial.RadialGaugeType.html",
+          "hash": "QAUXVg90z+zmxG0K+m+SMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Radial.RadialPointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Radial.RadialPointer.html",
+          "hash": "MahO26dnTTuIwugXKDG2JA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Radial.RadialScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Radial.RadialScale.html",
+          "hash": "C9W7WwW0hxzRQ6CmhyNqmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Radial.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Radial.html",
+          "hash": "v0kwGrl6TaM9GKUwNJv2xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.ScaleTicks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.ScaleTicks.html",
+          "hash": "kcZNYmnXkrigJ+8vcoPb/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressGauge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressGauge.html",
+          "hash": "LjqSV/JxjfVrSOMuh/5RBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressLabel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressLabel.html",
+          "hash": "6rL/rTTVGA5iQUj+lzoSKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressPointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressPointer.html",
+          "hash": "YoGpdLorGHL9sNayrNxNDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressPointerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.Progress.SimpleProgressPointerType.html",
+          "hash": "HF+HPB6T2pMzAZZbxo3a6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.Progress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.Progress.html",
+          "hash": "hgpZAxY25pOya/OSwIJttQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.SimpleGauge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.SimpleGauge.html",
+          "hash": "l0Om8Vb6KIVJ5gwnWbyYFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.SimplePointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.SimplePointer.html",
+          "hash": "vR3JTYzqNpGqO4ii3W3D0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.SimpleScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.SimpleScale.html",
+          "hash": "3gNGnrXpSp/gbguAouLFdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.SimpleSubScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.SimpleSubScale.html",
+          "hash": "AwAXhOU0PoJ9iEPPQIKQpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.Simple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.Simple.html",
+          "hash": "8m2s2MJYhfAARnuEjAJkxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Gauge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Gauge.html",
+          "hash": "ti+hmvAGlYodAAa4e2AXlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GetPropertyKindEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GetPropertyKindEventArgs.html",
+          "hash": "wCg3lHfi4Gtp+H6eVJmc7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GetPropertyKindEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GetPropertyKindEventHandler.html",
+          "hash": "Loo4alPgZmaNcnq3v+HaIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GetTypeInstanceEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GetTypeInstanceEventArgs.html",
+          "hash": "orUXARIr/3PpV/arRFnfgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GetTypeInstanceEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GetTypeInstanceEventHandler.html",
+          "hash": "fjy9XqUdJkq8345dJl8DfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GlassFill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GlassFill.html",
+          "hash": "IFr0Asf8BF0cvKdC4nzfAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GraphicCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GraphicCache.html",
+          "hash": "Bh13x0J3bt6hRs6sS9NyNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GroupFooterBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GroupFooterBand.html",
+          "hash": "/3tOK7NtgIQs4E2jA/8P2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.GroupHeaderBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.GroupHeaderBand.html",
+          "hash": "drAeuwezBkXS7V6axaYYlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.HatchFill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.HatchFill.html",
+          "hash": "BafX7y8C0UnlJJchv0n/iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.HeaderFooterBandBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.HeaderFooterBandBase.html",
+          "hash": "jdAKh9zPLehl/Vpg0U5w0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.HighlightCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.HighlightCondition.html",
+          "hash": "AYvUNZvpCQ4BtSjVyN+2+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.HorzAlign.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.HorzAlign.html",
+          "hash": "XcKj5v7l8lxjHqrAexniCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.HtmlObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.HtmlObject.html",
+          "hash": "jQSpCRJ3U4e29pgO/NLrEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Hyperlink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Hyperlink.html",
+          "hash": "cIyoT8+YN4yeCi3fx5Zkog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.HyperlinkKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.HyperlinkKind.html",
+          "hash": "dJPVPNU65/9VO8h7Q0spgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.IFRSerializable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.IFRSerializable.html",
+          "hash": "li0HdTqrLtv+kvNYJxEPKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.IParent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.IParent.html",
+          "hash": "DBkLYekHS/nLliy2T6rLuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ImageAlign.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ImageAlign.html",
+          "hash": "VFV78BtNQKfvi/RpdlfOAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.JsonBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.JsonBase.html",
+          "hash": "CQQKN2US+GLPn88hMZpKqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Language.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Language.html",
+          "hash": "upHolJztjFgF0Q6DAUdq7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.LineObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.LineObject.html",
+          "hash": "rq9ui0zMV+0mOQ7X9DvkqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.LineSpacingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.LineSpacingType.html",
+          "hash": "YsNcrwSTPmkrUtjg/kCpkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.LineStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.LineStyle.html",
+          "hash": "O52XtcDSnP3/bWeNH9sQwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.LinearGradientFill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.LinearGradientFill.html",
+          "hash": "V5B2TTyfVl767xgRahrSaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixAggregateFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixAggregateFunction.html",
+          "hash": "k2DniYYkKN+OGCLGWE12Yw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixCellDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixCellDescriptor.html",
+          "hash": "Q4ZUSTNjlO+FRP2Axy/OBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixCells.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixCells.html",
+          "hash": "BEQ6dOC5cGcaCOHxgurh5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixData.html",
+          "hash": "MEIgucpSYMAW44yGepQobA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixDescriptor.html",
+          "hash": "Ld4jynDvD6HMklp+Rt4s2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixEvenStylePriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixEvenStylePriority.html",
+          "hash": "r5kn8v+IeVq14+ID+8Vfsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixHeader.html",
+          "hash": "gKFeoRIKr+fzhs5HQCYB3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixHeaderDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixHeaderDescriptor.html",
+          "hash": "NCOK17//9fE+Pr4Cq/MwDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixObject.html",
+          "hash": "icGDBHRrD+n+YX9o7KE0Gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.MatrixPercent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.MatrixPercent.html",
+          "hash": "yJYfeRRks6gN02RezPIVaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Matrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Matrix.html",
+          "hash": "9zSEvKS/HXdZQQ7tZ9r9ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ObjectCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ObjectCollection.html",
+          "hash": "2Nk1EERxjpu07EJat9Fl0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.OverlayBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.OverlayBand.html",
+          "hash": "M+X+M48ZfkCxAkTRYhlM1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PageBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PageBase.html",
+          "hash": "NeaI2XvzzjZGsRYJqEhwiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PageCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PageCollection.html",
+          "hash": "KVZ7cg6nwdzhHvuolu/5hA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PageColumns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PageColumns.html",
+          "hash": "YtpxqyCdOYVSKuI/VFvG3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PageFooterBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PageFooterBand.html",
+          "hash": "M/gi3yFZQaywpvIcfzG8jA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PageHeaderBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PageHeaderBand.html",
+          "hash": "i80SyC3KQQEeM+/9YlD8aw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PageRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PageRange.html",
+          "hash": "tQNBjml+L9tVVkSF6zNPzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ParagraphFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ParagraphFormat.html",
+          "hash": "IOEFCvc7wN6YGsGjHi0JeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PathGradientFill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PathGradientFill.html",
+          "hash": "/eC5jvdfIEAdRvd2BwZpBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PathGradientStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PathGradientStyle.html",
+          "hash": "P4a3nNY871kvYcfOxfsG7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PictureObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PictureObject.html",
+          "hash": "HTXv8jubdb/TVNvfc+/PhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PictureObjectBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PictureObjectBase.html",
+          "hash": "a/8juCzhhnRIlucXEyOjhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PolyLineObject.PolyPoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PolyLineObject.PolyPoint.html",
+          "hash": "V27lm4qNtjs8Np/eLrcv9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PolyLineObject.PolyPointCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PolyLineObject.PolyPointCollection.html",
+          "hash": "0ma19O5FOHNQQv9Op3b1jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PolyLineObject.PolygonSelectionMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PolyLineObject.PolygonSelectionMode.html",
+          "hash": "j1hGkIbm+sn9wKYTFerQig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PolyLineObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PolyLineObject.html",
+          "hash": "tghb7R23RdWiwgDyHZ5SYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PolygonObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PolygonObject.html",
+          "hash": "vX70eSg+wp+CAF3uE4sryA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Preview.AddPageAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Preview.AddPageAction.html",
+          "hash": "e9wfUv8sTOx7CU//e0sZYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Preview.PreparedPages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Preview.PreparedPages.html",
+          "hash": "tZMOvHIjLtBVJ6SDSncXSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Preview.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Preview.html",
+          "hash": "miWUOCJDuWQUfVP97yo0PA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.PrintOn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.PrintOn.html",
+          "hash": "/y6yvdIrCWmwXiF15Vq2Ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ProcessAt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ProcessAt.html",
+          "hash": "LP3f1u1j0SrGKHKJ5kn3Bg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ProgressEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ProgressEventArgs.html",
+          "hash": "dJSXumhcHQew2w+l5oUFQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ProgressEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ProgressEventHandler.html",
+          "hash": "/9+n/LuOjINUebLCHMy+0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Report.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Report.html",
+          "hash": "5XU85yuiTMLoMrfN5zrLbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportComponentBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportComponentBase.html",
+          "hash": "WXjukaJapDAXJCHX5Qv3lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportComponentCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportComponentCollection.html",
+          "hash": "9rUlWWGRFvC+qVDh2vQFkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportInfo.html",
+          "hash": "VEFoqsvttNlimL8bvcPPpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportOperation.html",
+          "hash": "V7i8Dph0wvU/paNrC/oMNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportPage.html",
+          "hash": "DsearEWvZ2tFvcQQSoe59Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportSettings.html",
+          "hash": "+zo7g/yUEkNqUIOrHs0JcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportSummaryBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportSummaryBand.html",
+          "hash": "N4TzL8z64tP+jULTBBtk9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ReportTitleBand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ReportTitleBand.html",
+          "hash": "7ISRFiTIjHJnpAGk1I1f7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Restrictions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Restrictions.html",
+          "hash": "qoVC2e7RS1RdBJdZB1nSyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.SaveMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.SaveMode.html",
+          "hash": "D2x2KX/0tlVNvjgqmC1Ysw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ShapeKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ShapeKind.html",
+          "hash": "TIy3bADtFeOy66tj9kBVHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ShapeObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ShapeObject.html",
+          "hash": "2Ukd2KKkUxhkjwPR4iZeYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ShiftMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ShiftMode.html",
+          "hash": "7gSV8/ecJvA9/iadqtN8lA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.SolidFill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.SolidFill.html",
+          "hash": "hDGfWRLts94PmrCyYI8DHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Sort.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Sort.html",
+          "hash": "I45zT1G6ht0xqGcjeebkww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.SortCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.SortCollection.html",
+          "hash": "yfBgaFRjxyfMvk2qudHnow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.SortOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.SortOrder.html",
+          "hash": "zgPYXa7UTRO7AwDyjbZBCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Style.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Style.html",
+          "hash": "6RTvJfJ4lul0ZDAL4bPhGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.StyleBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.StyleBase.html",
+          "hash": "I9+VgB0h3ymQiI2SlOY74Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.StyleCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.StyleCollection.html",
+          "hash": "cIW5CsUlIU4OAu6f/8nF9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.StylePriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.StylePriority.html",
+          "hash": "x5/kWubN67ceZGy+EfvqDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.StyleSheet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.StyleSheet.html",
+          "hash": "zoZAgK7vGwHRr2Ynn5XuRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.SubreportObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.SubreportObject.html",
+          "hash": "Qp4l/3YO41MbaDM1SdllbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableBase.html",
+          "hash": "6iobh6s18wSqAn3q6zfqsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableCell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableCell.html",
+          "hash": "mlhEhFbF5jKz4AX6udB1/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableCellData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableCellData.html",
+          "hash": "uq/TxRu/Ciil+NSEAeM2DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableColumn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableColumn.html",
+          "hash": "15x+LLiYsW3/0CKbHXrzKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableColumnCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableColumnCollection.html",
+          "hash": "r0IPgGmp2ulLHg28lrWQcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableLayout.html",
+          "hash": "U999DHUHlIR/dYNjoiniiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableObject.html",
+          "hash": "9jB0U+K4dxSiYr1vX6H64A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableResult.html",
+          "hash": "rT/fU0hta+7cErSW/vVsAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableRow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableRow.html",
+          "hash": "hrsfHEzszQ2NT0Bmsdrr2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.TableRowCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.TableRowCollection.html",
+          "hash": "Lmdhg5E0H1AuVhOKpUJgJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Table.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Table.html",
+          "hash": "be9LYpVlhDVZYooi+Hs+Yw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TextObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TextObject.html",
+          "hash": "mNr2ANVAIT6ZFrL5bZsZiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TextObjectBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TextObjectBase.html",
+          "hash": "/YBEoSts1i+CBVFpUX6e5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TextOutline.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TextOutline.html",
+          "hash": "6hIffhx7tt0PYNTeB/P4xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TextQuality.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TextQuality.html",
+          "hash": "akzves6Ug+uCscDiYB1Q8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TextRenderType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TextRenderType.html",
+          "hash": "m7ZwceO8Z/NI1bpZ9fdDUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TextureFill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TextureFill.html",
+          "hash": "lPpwkr6t3EgUOtEypV925w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TypeConverters.ComponentRefConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TypeConverters.ComponentRefConverter.html",
+          "hash": "0j9wYYZg9Gi8HM0Vl9pdSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TypeConverters.DataTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TypeConverters.DataTypeConverter.html",
+          "hash": "Mx27LjyVL4RCPkckKwCU1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TypeConverters.FRExpandableObjectConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TypeConverters.FRExpandableObjectConverter.html",
+          "hash": "4n7caLgT8YKYyOpqZWAB3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.TypeConverters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.TypeConverters.html",
+          "hash": "ORWqka0dC3XDpzpFjVhx3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.UncheckedSymbol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.UncheckedSymbol.html",
+          "hash": "DrmNibdhmCyD0gdRP6wUtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.BaseLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.BaseLine.html",
+          "hash": "jO8fQmIaOeBES6jOhQKLVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Line.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Line.html",
+          "hash": "y+2Vy9dv5Zv/UsMxfCJjUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Paragraph.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Paragraph.html",
+          "hash": "94e5dah38eogtvPfJn/d3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Run.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Run.html",
+          "hash": "jCQmjmF8VfOJy0WkwIx2/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.StyleDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.StyleDescriptor.html",
+          "hash": "pFT6afuGKaIYApk86g+1kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Word.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.Word.html",
+          "hash": "dMqge15fSB2XuAL2jg57QQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AdvancedTextRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AdvancedTextRenderer.html",
+          "hash": "xbQHkQJCEfkXfg5J6ej24A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AncestorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AncestorException.html",
+          "hash": "yYZd5S/bEdlHBTvox7Dziw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.AssemblyInitializerBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.AssemblyInitializerBase.html",
+          "hash": "BY/ZqDn6iaFevblTo5OEFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.ClassException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.ClassException.html",
+          "hash": "7nSsmIK7cEvN+LPoV2tz4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.CloudStorageException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.CloudStorageException.html",
+          "hash": "WkXZaHR7/E2CWOalllth/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.CompileHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.CompileHelper.html",
+          "hash": "L7GbV7ROJIhgzmCsaDPeOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.CompilerException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.CompilerException.html",
+          "hash": "G6fsNZYtMZZS8Zx5jzlAIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.Config.html",
+          "hash": "5GD9RPWilIqH7I1PiwUXEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.Converter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.Converter.html",
+          "hash": "b3dQr69pRBMuelyr1bTnpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.Crypter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.Crypter.html",
+          "hash": "eRyGkdfaB0KkzWDV0leJ1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.DataNotInitializedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.DataNotInitializedException.html",
+          "hash": "G9xJ8+yn3o2oIKttTCkgdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.DataTableException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.DataTableException.html",
+          "hash": "7Y3Z2D8DnHL8kc6IPbwdqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.DecryptException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.DecryptException.html",
+          "hash": "k+6x+hrJTAxjoM2+T97IGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.DrawUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.DrawUtils.html",
+          "hash": "Mtt5UPi1W+zgDkS4FH73Eg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.DuplicateNameException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.DuplicateNameException.html",
+          "hash": "rzZEXbr4Xy9hvhU3nLFMSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FRCollectionBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FRCollectionBase.html",
+          "hash": "3NfS8CHSUFEF31hXylaOjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FRPaintEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FRPaintEventArgs.html",
+          "hash": "VoE6QWXqYpzmT9+Y/nnUQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FRReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FRReader.html",
+          "hash": "YBI9qw6aG4RC8+BjkXuNWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FRWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FRWriter.html",
+          "hash": "X2ukdICU6Gqw4w7eMpsKSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FastNameCreator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FastNameCreator.html",
+          "hash": "/48Qt4TA0MYapjKET/ni9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FastString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FastString.html",
+          "hash": "zCGn7u414tjMyCWoqXfxcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FastStringWithPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FastStringWithPool.html",
+          "hash": "rKBCSxxqS69nqfE144+OmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FileFormatException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FileFormatException.html",
+          "hash": "FLP/CobY17O9yaXOK5DgJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.FloatCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.FloatCollection.html",
+          "hash": "1WZ9RuQ2juZ7FvpcwxSgjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.GroupHeaderHasNoGroupCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.GroupHeaderHasNoGroupCondition.html",
+          "hash": "6gE9uKIxmInbZVMxvTwyKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.IGraphicsRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.IGraphicsRenderer.html",
+          "hash": "GzYZUBnl6Q4FECt+SgsNAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.IGraphicsRendererState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.IGraphicsRendererState.html",
+          "hash": "5h+GUuhhFDl0RTsfIZOBXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.InlineImageCache.CacheItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.InlineImageCache.CacheItem.html",
+          "hash": "IL6jMm4Yd4KVexR5TImdLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.InlineImageCache.LoadEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.InlineImageCache.LoadEventArgs.html",
+          "hash": "q8EDvDgGkYD7v9IV5TTTmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.InlineImageCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.InlineImageCache.html",
+          "hash": "vpaGoio9S9hj7PZqJQbvZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.MatrixValueException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.MatrixValueException.html",
+          "hash": "xgLMRrny5uSsKnMVRWCreQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.Murmur3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.Murmur3.html",
+          "hash": "fIPRnP/cGcYhuysTrvcPLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.MyRes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.MyRes.html",
+          "hash": "fa29nhPTjxXaprG3EBbGuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.NotValidIdentifierException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.NotValidIdentifierException.html",
+          "hash": "05yydG9/uS6+r15AxMdN1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.ObjectInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.ObjectInfo.html",
+          "hash": "+w0tmIAwfdciniEgT3Mijw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.PageUnits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.PageUnits.html",
+          "hash": "lTjpK2Hcqx5YMX3lGonLHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.ParentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.ParentException.html",
+          "hash": "LWvm2VfrZNTzDoIMjPMaCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.RegisteredObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.RegisteredObjects.html",
+          "hash": "//K6Bws0TA17bXcatU70Ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.Res.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.Res.html",
+          "hash": "nwpZsjSnRe/uh6cKppB29g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.ResourceLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.ResourceLoader.html",
+          "hash": "7LZtfrm/6wBbIN5+hjevKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.SRCategory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.SRCategory.html",
+          "hash": "gxJ4dSC9/xsJ3UwgwgW74Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.SerializeTo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.SerializeTo.html",
+          "hash": "QAimRzsgfoB3EB4MfdSSaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.TableManualBuildException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.TableManualBuildException.html",
+          "hash": "5eiya9FxSIZHIszGs5h9Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.Units.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.Units.html",
+          "hash": "HlaxIllo4ajncs/ZEPx41w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.UnknownNameException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.UnknownNameException.html",
+          "hash": "TMmfW4GEtfwxt2iIWiFy0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.XmlDocument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.XmlDocument.html",
+          "hash": "tp1wtsAic2NxfAmshwoFSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.XmlItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.XmlItem.html",
+          "hash": "dX5wCWBQMZXxK5H9OhyHBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.XmlProperty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.XmlProperty.html",
+          "hash": "ImV8O45M0EZAOkqkNipHXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.ZipArchive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.ZipArchive.html",
+          "hash": "QUntulIx49yU5QEfx5NEPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Utils.html",
+          "hash": "LYPm8ZGbM87Dw/oarYuIzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Variant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Variant.html",
+          "hash": "CHwWbE0OnLxtJkxgxVvfjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.VertAlign.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.VertAlign.html",
+          "hash": "4GepR0EKLHnUOpMVfSYaSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.Watermark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.Watermark.html",
+          "hash": "touxpA2ihnkiZnjg/ng0ZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.WatermarkImageSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.WatermarkImageSize.html",
+          "hash": "W3kCbBZXA97gLVrcwJ8xlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.WatermarkTextRotation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.WatermarkTextRotation.html",
+          "hash": "Xyzmhh3tuKE6BIt3uB+utQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.ZipCodeObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.ZipCodeObject.html",
+          "hash": "5IiVpyGkJqs1MSlzuMOVXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastReport.html",
+          "hash": "AI60NasTrCqp5hGQoESolA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "R1C/HXP78oJzXpBl42haWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "JZfAo5fyafbmFtx9eKBgpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "jSMMZaUJiyc4bP4NlQI/Yg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 373,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

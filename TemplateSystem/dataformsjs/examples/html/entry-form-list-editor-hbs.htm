@@ -1,0 +1,53 @@
+{{#if isLoading}}<div data-template-id="loading-template"></div>{{/if}}
+{{#if hasError}}<div data-template-id="error-template"></div>{{/if}}
+{{#if isLoaded}}
+    <div id="pickadate-root"></div>
+
+    <div class="row mb-4">
+        <div class="col">
+            <input class="form-control" data-filter-selector="table.edit-all" placeholder="Enter filter">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <form>
+                <input type="hidden" name="field-most_recent_id" data-type="int">
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped edit-all" data-sort>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Label</th>
+                                <th>Number</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Active</th>
+                                <th>Comment</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <!--
+                            List Item Tables related to a main record (or in this case a screen that allows editing of multiple)
+                            records can use the [data-edit-list="{name}"] attribute to define the property where the array
+                            of records are submitted with when the save button is clicked.
+
+                            When using a templating engine (Handlebars, Nunjucks, Underscore) the item source must
+                            live in a seperate "HTML Control" - [data-template-url] or [data-template-id].
+
+                            The rule for [data-template-url] or [data-template-id] does not apply when using Vue.
+                        -->
+                        <tbody data-edit-list="records" data-template-url="html/entry-form-list-editor-items-hbs.htm">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group alert alert-info info-message"></div>
+                <div class="form-group alert alert-danger error-message"></div>
+                <ul class="form-group alert alert-danger error-list"></ul>
+                <div class="form-group mt-4 text-center">
+                    <button type="button" class="btn btn-primary btn-save">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{{/if}}

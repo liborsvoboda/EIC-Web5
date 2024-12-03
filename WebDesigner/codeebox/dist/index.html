@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = './*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "./monacoeditorwork/editor.worker.bundle.js",
+  "css": "./monacoeditorwork/css.worker.bundle.js",
+  "html": "./monacoeditorwork/html.worker.bundle.js",
+  "json": "./monacoeditorwork/json.worker.bundle.js",
+  "typescript": "./monacoeditorwork/ts.worker.bundle.js",
+  "javascript": "./monacoeditorwork/ts.worker.bundle.js",
+  "less": "./monacoeditorwork/css.worker.bundle.js",
+  "scss": "./monacoeditorwork/css.worker.bundle.js",
+  "handlebars": "./monacoeditorwork/html.worker.bundle.js",
+  "razor": "./monacoeditorwork/html.worker.bundle.js"
+});</script>
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.415b9c73.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeeBox</title>
+  <meta name="robots" content="index, follow"/>
+  <meta name="description" content="A super cool code playground! With 50 themes and super customizable interface!">
+  
+  <script type="module" crossorigin src="./assets/index.304d1ec2.js"></script>
+  <link rel="stylesheet" href="./assets/index.c08ee024.css">
+</head>
+
+<body>
+  <!-- . Sidebar -->
+  <div class="sidebar">
+    <div id="up">
+      <div class="bx bxl-nodejs" data-tooltip="Skypack" id="skypack">
+      </div>
+      <div class="bx bx-down-arrow-circle" data-tooltip="Download project" id="download">
+      </div>
+      <div class="bx bx-search-alt" data-tooltip="Preview" id="preview">
+      </div>
+      <div class="bx bx-upload" data-tooltip="Import" id="import">
+      </div>
+    </div>
+    <div id="down">
+      <div class="bx bx-file" data-tooltip="Export" id="export">
+      </div>
+      <div class="bx bx-play-circle" data-tooltip="Run" id="run">
+      </div>
+      <div class="bx bx-copy" data-tooltip="Copy" id="copy" onclick="navigator.clipboard.writeText(window.location.href)">
+      </div>
+      <div class="bx bx-cog" data-tooltip="Settings" id="settings">
+      </div>
+    </div>
+  </div>
+  <!-- ! Settings -->
+  <div class="settingspanel" style="display: none;">
+    <!-- . Theme -->
+    <div id="themecon">
+      <label for="themeinp">Theme</label>
+      <select id="themeinp" class="form-control">
+        <option value="1">Active4D</option>
+        <option value="2">All Hallows Eve</option>
+        <option value="3">Amy</option>
+        <option value="4">Birds of Paradise</option>
+        <option value="bl">Blackboard</option>
+        <option value="5">Brilliance Black</option>
+        <option value="6">Brilliance Dull</option>
+        <option value="7">Chrome DevTools</option>
+        <option value="8">Clouds Midnight</option>
+        <option value="9">Clouds</option>
+        <option value="10">Cobalt</option>
+        <option value="11">Dawn</option>
+        <option value="12">Dracula</option>
+        <option value="13">Dreamweaver</option>
+        <option value="14">Eiffel</option>
+        <option value="15">Espresso Libre</option>
+        <option value="16">GitHub</option>
+        <option value="17">IDLE</option>
+        <option value="18">Katzenmilch</option>
+        <option value="19">Kuroir Theme</option>
+        <option value="20">LAZY</option>
+        <option value="21">MagicWB (Amiga)</option>
+        <option value="22">Merbivore Soft</option>
+        <option value="23">Merbivore</option>
+        <option value="24">Monokai Bright</option>
+        <option value="25">Monokai</option>
+        <option value="26">Night Owl</option>
+        <option value="27">Oceanic Next</option>
+        <option value="28">Pastels on Dark</option>
+        <option value="29">Slush and Poppies</option>
+        <option value="30">Solarized-dark</option>
+        <option value="31">Solarized-light</option>
+        <option value="32">SpaceCadet</option>
+        <option value="33">Sunburst</option>
+        <option value="34">Textmate (Mac Classic)</option>
+        <option value="35">Tomorrow-Night-Blue</option>
+        <option value="36">Tomorrow-Night-Bright</option>
+        <option value="37">Tomorrow-Night-Eighties</option>
+        <option value="38">Tomorrow-Night</option>
+        <option value="39">Tomorrow</option>
+        <option value="40">Twilight</option>
+        <option value="41">Upstream Sunburst</option>
+        <option value="43">Upstream Sunburst</option>
+        <option value="42">Vibrant Ink</option>
+        <option value="44">Xcode_default</option>
+        <option value="45">Zenburnesque</option>
+        <option value="46">iPlastic</option>
+        <option value="47">idleFingers</option>
+        <option value="48">krTheme</option>
+        <option value="49">monoindustrial</option>
+      </select>
+    </div>
+    <!-- . Fonts -->
+    <div id="fontcon">
+      <label for="fonts">Fonts</label>
+      <select id="fonts">
+        <option value="1">CascadiaCodePL</option>
+        <option value="2">FiraCode</option>
+        <option value="3">Arial</option>
+        <option value="4">Agave</option>
+        <option value="5">Ellograph</option>
+        <option value="6">Hasklig</option>
+        <option value="7">JuliaMono</option>
+      </select>
+    </div>
+    <!-- . Font size -->
+    <div id="fontsizecon">
+      <label for="fontsize">Font Size</label>
+      <input type="number" min="7" id="fontsize" placeholder="Font size (press enter)">
+    </div>
+    <!-- . Realtime -->
+    <div id="realtimecon">
+      <label for="realtime">Realtime Preview</label>
+      <input type="checkbox" id="realtime" checked="true">
+    </div>
+    <!-- . Show line numbers -->
+    <div id="linenumscon">
+      <label for="linenums">Show line numbers</label>
+      <input type="checkbox" id="linenums" checked="true">
+    </div>
+    <!-- . Wrap -->
+    <div id="wrapcon">
+      <label for="wrapenabled">Word Wrap</label>
+      <input type="checkbox" id="wrapenabled" checked="true">
+    </div>
+    <!-- . Autosave -->
+    <div id="autocon">
+      <label for="autosave">Autosave</label>
+      <input type="checkbox" id="autosave" checked="true">
+    </div>
+    <!-- . Minimap -->
+    <div id="minicon">
+      <label for="minimap">Minimap</label>
+      <input type="checkbox" id="minimap" checked="false">
+    </div>
+    <div id="urlcon">
+      <label for="urlsave">Save code on URL</label>
+      <input type="checkbox" id="urlsave" checked="false">
+    </div>
+  </div>
+  <!-- . Skypack -->
+  <div class="skypackbar" style="display: none;">
+    <label for="skyinp">SkyPack module</label>
+    <input type="text" id="skyinp"><button id="importmodule">Import</button>
+    <a onclick="window.open('https://www.skypack.dev/', 'Skypack', 'width=`400 height=`800`')">Modules</a>
+  </div>
+  <!-- ! Main grid -->
+  <div id="a" class="split split-horizontal">
+    <div id="c" class="split content">
+      <div id="html" class="editor"></div>
+    </div>
+    <div id="d" class="split content">
+      <div id="css" class="editor"></div>
+    </div>
+  </div>
+  <div id="b" class="split split-horizontal">
+    <div id="e" class="split content">
+      <div id="js" class="editor"></div>
+    </div>
+    <div id="f" class="split content">
+      <iframe id="prev" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"  srcdoc="" frameborder="0"></iframe>
+    </div>
+  </div>
+  <!-- ! Scripts -->
+  
+  
+  
+  
+</body>
+
+</html>

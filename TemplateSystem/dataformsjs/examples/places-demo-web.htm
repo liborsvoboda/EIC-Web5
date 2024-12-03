@@ -1,0 +1,411 @@
+<!doctype html>
+<!--
+    View this Demo Online at:
+    https://www.dataformsjs.com/examples/places-demo-web.htm
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title data-i18n="Countries Demo | Web Components"></title>
+        <link rel="stylesheet" href="css/countries.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-flag@2.4.0/flag.min.css">
+        <link rel="canonical" href="https://www.dataformsjs.com/examples/places-demo-hbs.htm">
+        <style>
+            /* Prevent custom web components from appearing during rendering include the following CSS */
+            json-data:not(:defined),
+            is-loading:not(:defined),
+            has-error:not(:defined),
+            is-loaded:not(:defined) { display:none; }
+        </style>
+    </head>
+    <body>
+        <div id="view" dir="auto"></div>
+
+        <!--
+            Define Service Web Components which do not render content but rather provide
+            a "service" for elements on the page that contain related HTML attributes:
+                <i18n-service> = [data-i18n], [data-i18n-*]
+                <keydown-action-service> = [data-enter-key-click-selector]
+                <html-import-service> = [data-template-url], [data-template-id]
+                <show-errors-service> = Displays unhandled script errors in an alert
+        -->
+        <i18n-service file="countries" default-locale="en" locales="en,ja,es,pt-BR,ar,fr,zh-CN"></i18n-service>
+        <keydown-action-service></keydown-action-service>
+        <html-import-service></html-import-service>
+        <show-errors-service></show-errors-service>
+        <export-to-excel-service></export-to-excel-service>
+        <export-to-csv-service></export-to-csv-service>
+
+        <!--
+            <json-data> Web Components will use these templates for loading or errors
+            based on the [template-selector] attribute. [data-i18n] will be populated
+            with translations from the <i18n-service> and [data-bind] for the {errorMessage}
+            will be populated from <json-data> if there is an error.
+        -->
+        <template id="loading-screen">
+            <h3 class="loading" data-i18n="Loading..."></h3>
+        </template>
+
+        <template id="error-screen">
+            <h3 class="error"><span data-i18n="Error"></span> - <span data-bind="errorMessage"></span></h3>
+        </template>
+
+        <!--
+            Data screens use the 'Loading...' with translations while the lazy load scripts
+            and HTML downloads will use a spinner. Typically an app would have only one
+            shared loading screen but this is a demo page and designed to show different options.
+
+            This screen is linked from <url-router> attribute: [loading-template-selector].
+            When using [loading-template-selector] attributes such as [data-bind] or [data-i18n]
+            will not be populated because this only runs during SPA route changes to quickly
+            download HTML and JS or CSS scripts before the data is available.
+        -->
+        <template id="loading-spinner-screen">
+            <div class="loading">
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </template>
+
+        <!--
+            Define SPA (Single Page App) Routes
+        -->
+        <url-router view-selector="#view" loading-template-selector="#loading-spinner-screen">
+            <!--
+                Routes can be embedded directly on the page as a <template> under <url-route>.
+                [default-route] is optional and can be used if the default path is something other than "/".
+
+                [onload] and [onunload] allows for custom JavaScript to be executed or functions
+                to be called whenever the matching route is loaded or unloaded.
+            -->
+            <url-route
+                path="/:lang/"
+                default-route
+                onload="showMessage('Viewing Countries Page')"
+                onunload="showMessage('Unloading Countries Page')">
+                <template>
+                    <h1 data-i18n="Countries"></h1>
+
+                    <nav>
+                        <a href="#/en/search" data-i18n="Search" data-i18n-href></a>
+                        <a href="#/en/info" data-i18n="Info" data-i18n-href></a>
+                        <!--
+                            <download-links> is a custom Web Component defined
+                                for this app near the bottom of this file.
+                        -->
+                        <download-links file-name="Countries"></download-links>
+                    </nav>
+
+                    <json-data url="{rootApiUrl}/countries" load-only-once onready="showMessage('Countries List is ready')">
+                        <is-loading template-selector="#loading-screen"></is-loading>
+                        <has-error template-selector="#error-screen"></has-error>
+                        <is-loaded class="flex-col">
+                            <input
+                                is="input-filter"
+                                filter-selector="table"
+                                filter-results-selector="h1"
+                                filter-results-text-all="{totalCount} Countries"
+                                filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                                placeholder="Enter filter, example 'North America'"
+                                data-i18n-attr="filter-results-text-all, filter-results-text-filtered, placeholder">
+
+                            <!--
+                                This version of the <data-table> uses a custom <template> to
+                                define how each table row item will be defined. This is used
+                                here to allow for display of the flag icon and number formatting.
+
+                                The template format is HTML using JavaScript template literals
+                                (template strings). All values in `${value}` are safely escaped for HTML.
+
+                                See another commented option for <data-table> below this version.
+
+                                Either <template> or <script type="text/x-template"> can be used.
+                                    - <template> will work with all modern browsers
+                                    - <script type="text/x-template"> is required if supporting IE with [polyfill.js]
+                                        because IE will automatically parse <tr> and replace it as HTML if using <template>
+                            -->
+                            <data-table
+                                data-bind="countries"
+                                highlight-class="highlight"
+                                labels="Code, Name, Size (KM), Population, Continent"
+                                data-i18n-attr="labels"
+                                col-class="2=align-right, 3=align-right"
+                                table-attr="is=sortable-table,
+                                            data-sort-class-odd=row-odd,
+                                            data-sort-class-even=row-even">
+                                <script type="text/x-template">
+                                    <tr>
+                                        <td>
+                                            <i class="${iso.toLowerCase()} flag"></i>
+                                            <a href="#/${i18n_Locale}/regions/${iso}">${iso}</a>
+                                        </td>
+                                        <td>${country}</td>
+                                        <td class="align-right" data-value="${area_km}">${format.number(area_km)}</td>
+                                        <td class="align-right" data-value="${population}">${format.number(population)}</td>
+                                        <td>${continent}</td>
+                                    </tr>
+                                </script>
+                            </data-table>
+
+                            <!--
+                                For a basic table a <template> is not required. This version still
+                                contains links by using the [col-link-template] attribute however
+                                it will not show the flag icons or format numbers or use the selected
+                                i18n Locale.
+
+                                When using [col-link-template] multiple fields can be linked using
+                                [col-link-fields] as shown below. By default links will be added to
+                                the first column. The values for [col-link-fields] need to be the
+                                field/property name and not the label.
+                            -->
+                            <!--
+                            <data-table
+                                data-bind="countries"
+                                highlight-class="highlight"
+                                col-link-template="#/en/regions/:iso"
+                                col-link-fields="iso, country"
+                                labels="Code, Name, Size (KM), Population, Continent"
+                                table-attr="is=sortable-table,
+                                            data-sort-class-odd=row-odd,
+                                            data-sort-class-even=row-even">
+                            </data-table>
+                            -->
+                        </is-loaded>
+                    </json-data>
+                </template>
+            </url-route>
+
+            <!--
+                The <template> source can also be downloaded dynamically when using [src].
+                Routes with [lazy-load] will dynamically download needed scripts from
+                `window.lazyLoad` near the bottom of this file only when first used.
+            -->
+            <url-route path="/:lang/regions/:country" src="html/regions-web.htm" onload="showMessage('Viewing Regions Page')"></url-route>
+            <url-route path="/:lang/cities/:country/:region" src="html/cities-web.htm"></url-route>
+            <url-route path="/:lang/city/:id" src="html/place-web.htm" lazy-load="leafletCss, leafletJs, leaflet, data_list"></url-route>
+            <url-route path="/:lang/info" src="html/places-info-web.htm" lazy-load="html_import_service"></url-route>
+            <url-route path="/:lang/search" src="html/search-places-web.htm" lazy-load="data_list, keydownAction"></url-route>
+        </url-router>
+
+        <!-- DataFormsJS Web Components -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/i18n-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/url-router.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/json-data.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-table.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/input-filter.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/sortable-table.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/show-errors-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/export-to-csv-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/export-to-excel-service.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+
+        <!--
+            Many different HTML files use <json-data> with the same Root URL
+            for JSON API Services. Rather than updating each file the global
+            variable below is used to build the path for fetching data.
+            Example:
+                <json-data url="{rootApiUrl}/countries">
+
+            Any variable name can be used as long as it is defined. This allows for
+            rapid testing or changes to point to a different server when using <json-data>.
+        -->
+        <script>
+            window.rootApiUrl = 'https://www.dataformsjs.com/data/geonames';
+        </script>
+
+        <script>
+            /**
+             * Display Elevation in both Meters and Feet
+             *
+             * This function ends up being used by <templates> under <data-table> elements
+             * and also in [data-bind] elements using formatting: [data-format="formatElevation"].
+             */
+            function formatElevation(text) {
+                var meters = parseInt(text, 10);
+                if (!isNaN(meters)) {
+                    var feet = parseInt(meters * 3.28084, 10)
+                    return Number(meters).toLocaleString() + ' m / ' + Number(feet).toLocaleString() + "'";
+                }
+                return text;
+            }
+        </script>
+
+        <script>
+            // Lazy Load the following scripts only if needed based on attribute [lazy-load].
+            // Scripts with `module` will only be loaded for modern browsers and scripts with
+            // `nomodule` will only be loaded when using [polyfill.js]. All other scripts are
+            // always loaded on first use.
+            //
+            // When scripts need to be downloaded in a specific order then use an array otherwise
+            // one script per key is recommended. When a route uses multiple lazy load items
+            // they are downloaded asynchronous however items in the array are download only after
+            // the previous item is loaded. However, this example currently does not include
+            // an array. See [places-demo-vue.htm] for a similar version with an array.
+            //
+            // [leaflet.nomodule] listed below is not required as [polyfill.js] would dynamically
+            // download the script on first use, however it is included here to show how
+            // the `nomodule` option can be used.
+            //
+            window.lazyLoad = {
+                leafletCss: 'https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css',
+                leafletJs: 'https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js',
+                leaflet: {
+                    module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/leaflet-map.min.js',
+                    nomodule: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/leaflet.min.js'
+                },
+                data_list: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-list.min.js' },
+                keydownAction: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/keydown-action-service.min.js' },
+                html_import_service: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/html-import-service.min.js' },
+            };
+        </script>
+
+        <!--
+            API Event Demo
+            The 3 events ['app:routeChanged', 'app:contentReady', 'app:error'] are available from both
+            the Web Components and [polyfill.js]. The events happen the specific Web Components and
+            bubble up to the the `document` so they can be easily handled from JavaScript on the page.
+        -->
+        <script>
+            (function() {
+                'use strict';
+                var isIE = (navigator.userAgent.indexOf('Trident/') !== -1);
+
+                function log(text, color) {
+                    if (isIE) {
+                        console.log(text);
+                    } else {
+                        console.log('%c' + text, 'color:' + color + '; font-weight:bold;');
+                    }
+                }
+
+                // Show a message in the console. This function gets called from event
+                // attributes <url-route>[onload] and <json-data>[onready].
+                // This shows how the attributes can be used to call custom JavaScript functions.
+                window.showMessage = function(text) {
+                    log(text, 'orange');
+                };
+
+                // To exclude event log during development comment out the next line:
+                // return;
+
+                // Handle routing changes from <url-router>
+                document.addEventListener('app:routeChanged', function(event) {
+                    log('app:routeChanged', 'blue');
+                    console.log(event);
+
+                    // When using Web Components `event.target` will be <url-router>
+                    // and when using [polyfill.js] the root `document` will be passed.
+                    console.log(event.target);
+
+                    // Event Detail contains URL Path and Params:
+                    //   { url, urlParams }
+                    console.log(event.detail);
+                });
+
+                // Handle content ready from <json-data> and <html-import-service>
+                document.addEventListener('app:contentReady', function(event) {
+                    log('app:contentReady', 'green');
+                    console.log(event);
+                    console.log(event.target); // <json-data>, <div data-control="json-data"> or `document`
+                });
+
+                // Handle errors from <json-data> or <url-router>
+                document.addEventListener('app:error', function(event) {
+                    log('app:error', 'red');
+                    console.warn(event);
+                    console.log(event.target);
+                    console.error(event.detail); // Error Message or Error Object
+                });
+            })();
+        </script>
+
+        <!--
+            Define Custom Web Component <download-links>
+
+            This uses the DataFormsJS Class `Component` which was created so that
+            custom Web Components can be quickly defined for an app.
+        -->
+        <script type="module">
+            import { Component, html } from 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/Component.min.js';
+
+            // Define class for the <download-links> element
+            class DownloadLinks extends Component {
+                // Props end up being assigned to both HTML observable attributes
+                // and JavaScript properties. Example usage:
+                //    document.querySelector('download-links').fileName = 'Report';
+                //    document.querySelector('download-links').setAttribute('file-name', 'Report');
+                static get props() {
+                    return {
+                        fileName: null,
+                        marginLeft: true,
+                    }
+                }
+
+                render() {
+                    return html`
+                        <div class="download-links ${this.marginLeft ? 'ml-20' : ''}">
+                            <span class="download">${window.i18nText('Download')}</span>
+                            <img class="download"
+                                src="img/Excel.svg"
+                                height="16"
+                                width="16"
+                                alt="${window.i18nText('Download to Excel')}"
+                                title="${window.i18nText('Download to Excel')}"
+                                data-export-excel-selector="table"
+                                data-export-file-name="${window.i18nText(this.fileName)}.xlsx">
+                            <img class="download"
+                                src="img/CSV.svg"
+                                height="16"
+                                width="16"
+                                alt="${window.i18nText('Download to CSV')}"
+                                title="${window.i18nText('Download to CSV')}"
+                                data-export-csv-selector="table"
+                                data-export-file-name="${window.i18nText(this.fileName)}.csv">
+                        </div>
+                    `;
+                }
+            }
+
+            // Add <download-links> element to the page
+            window.customElements.define('download-links', DownloadLinks);
+        </script>
+        <script nomodule>
+            // Only modern browsers support Web Components so for IE and older browsers
+            // handle the document event 'app:routeChanged' which gets triggered from
+            // [polyfill.js] and then manually render HTML for the Web Component.
+            (function() {
+                function displayDownloadLinks() {
+                    var element = document.querySelector('download-links');
+                    if (element === null) {
+                        return;
+                    }
+
+                    var fileName = element.getAttribute('file-name');
+                    var marginLeft = !(element.getAttribute('margin-left') === 'false');
+                    var html = '<div class="download-links ' + (marginLeft ? 'ml-20' : '') + '">';
+                    html += '<span class="download">' + window.i18nText('Download') + '</span>';
+                    html += '<img class="download"';
+                    html += '    src="img/Excel.svg"';
+                    html += '    height="16"';
+                    html += '    width="16"';
+                    html += '    alt="' + window.i18nText('Download to Excel') + '"';
+                    html += '    title="' + window.i18nText('Download to Excel') + '"';
+                    html += '    data-export-excel-selector="table"';
+                    html += '    data-export-file-name="' + window.i18nText(fileName) + '.xlsx">';
+                    html += '<img class="download"';
+                    html += '    src="img/CSV.svg"';
+                    html += '    height="16"';
+                    html += '    width="16"';
+                    html += '    alt="' + window.i18nText('Download to CSV') + '"';
+                    html += '    title="' + window.i18nText('Download to CSV') + '"';
+                    html += '    data-export-csv-selector="table"';
+                    html += '    data-export-file-name="' + window.i18nText(fileName) + '.csv">';
+                    html += '</div>';
+                    element.innerHTML = html;
+                }
+
+                document.addEventListener('app:routeChanged', displayDownloadLinks);
+            })();
+        </script>
+    </body>
+</html>

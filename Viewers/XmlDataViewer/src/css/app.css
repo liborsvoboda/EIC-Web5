@@ -1,0 +1,68 @@
+/*
+
+Copyright 2014 Roland Bouman (roland.bouman@gmail.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+*/
+
+html, head, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  font-size: 10pt;
+}
+
+div.toolbar > div.open {
+  background-image: url("../images/folder_open_16.png");
+}
+
+div.toolbar > div.ganttchart {
+  background-image: url("../images/1407718371_application_side_tree.png");
+}
+
+div.toolbar > div.resources {
+  background-image: url("../images/1407718490_kdb_table.png");
+}
+
+div.toolbar > div.project {
+  background-image: url("../images/Actions-view-calendar-timeline-icon.png");
+}
+
+div.toolbar > div.year {
+  background-image: url("../images/Actions-view-calendar-list-icon.png");
+}
+
+div.toolbar > div.month {
+  background-image: url("../images/Actions-view-calendar-month-icon.png");
+}
+
+div.toolbar > div.week {
+  background-image: url("../images/Actions-view-calendar-week-icon.png");
+}
+
+div.toolbar > div.day {
+  background-image: url("../images/Actions-view-calendar-day-icon.png");
+}
+
+div.toolbar > div.show-none {
+  background-image: url("../images/1408645937_519617-116_List2.png");
+}
+
+div.toolbar > div.show-wbs {
+  background-image: url("../images/1408645695_text_list_bullets.png");
+}
+
+div.toolbar > div.show-outlinenumber {
+  background-image: url("../images/1408645657_text_list_numbers.png");
+}

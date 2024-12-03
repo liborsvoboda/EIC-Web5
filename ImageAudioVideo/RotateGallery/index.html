@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="./css/contentflow.css">
+		<script type="text/javascript" src="./js/contentflow.js"></script>
+    </head>
+    <body>
+	<div id="contentFlow" class="ContentFlow">
+  <div class="loadIndicator">
+    <div class="indicator"></div>
+  </div>
+  
+  <div class="flow">
+    <div class="item">
+      <img class="content" src="./images/bg-1.jpg"/>
+      <div class="caption">test 1</div>
+    </div>
+    
+    <div class="item">
+      <img class="content" src="./images/bg-2.jpg"/>
+      <div class="caption">2</div>
+    </div>
+    
+    <div class="item">
+      <img class="content" src="./images/bg-3.jpg"/>
+      <div class="caption">3</div>
+    </div>
+    
+    <div class="item">
+      <img class="content" src="./images/bg-4.jpg"/>
+      <div class="caption">4</div>
+    </div>
+  <div class="globalCaption"></div>
+  <div class="scrollbar">
+    <div class="slider">
+      <div class="position"></div>
+    </div>
+  </div>
+</div>
+<script>
+var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
+</script>
+    </body>
+</html>

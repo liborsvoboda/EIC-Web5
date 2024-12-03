@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DataFormsJS Web Components Template</title>
+        <link rel="stylesheet" href="https://d2xbd92kui7v97.cloudfront.net/site/css/getting-started.css">
+        <style>
+            /* Prevent custom web components from appearing during rendering include the following CSS */
+            json-data:not(:defined),
+            is-loading:not(:defined),
+            has-error:not(:defined),
+            is-loaded:not(:defined) { display:none; }
+
+            /* Update content on this page */
+            p {
+                max-width: 800px;
+                padding: 2em 1em;
+                text-align: left;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav is="spa-links">
+                <a class="active" href="#/">Home</a>
+                <a href="#/data">Data Example</a>
+                <a href="#/custom">Custom Component</a>
+            </nav>
+        </header>
+
+        <main id="view" class="container"></main>
+
+        <url-router view-selector="#view">
+            <url-route path="/">
+                <template>
+                    <h1>DataFormsJS Web Components Template</h1>
+                </template>
+            </url-route>
+
+            <url-route path="/data" lazy-load="json_data, input_filter, data_table, sortable_table">
+                <template>
+                    <h1>Countries</h1>
+
+                    <json-data
+                        url="https://www.dataformsjs.com/data/geonames/countries"
+                        load-only-once>
+                        <is-loading>
+                            <span class="loading">Loading...</span>
+                        </is-loading>
+                        <has-error>
+                            <span class="error" data-bind="errorMessage"></span>
+                        </has-error>
+                        <is-loaded>
+                            <input
+                                is="input-filter"
+                                filter-selector="table"
+                                filter-results-selector="h1"
+                                filter-results-text-all="{totalCount} Countries"
+                                filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                                placeholder="Enter filter, example 'North America'">
+
+                            <data-table
+                                data-bind="countries"
+                                labels="Code, Name, Size (KM), Population, Continent"
+                                col-class="2=text-right, 3=text-right"
+                                highlight-class="highlight"
+                                table-attr="is=sortable-table,
+                                            data-sort-class-odd=row-odd,
+                                            data-sort-class-even=row-even">
+                                <script type="text/x-template">
+                                    <tr>
+                                        <td>${iso}</td>
+                                        <td>${country}</td>
+                                        <td class="text-right" data-value="${area_km}">${format.number(area_km)}</td>
+                                        <td class="text-right" data-value="${population}">${format.number(population)}</td>
+                                        <td>${continent}</td>
+                                    </tr>
+                                </script>
+                            </data-table>
+                        </is-loaded>
+                    </json-data>
+                </template>
+            </url-route>
+
+            <url-route path="/custom">
+                <template>
+                    <style>
+                        p {
+                            max-width: 800px;
+                            padding: 2em 1em;
+                            text-align: left;
+                            margin: auto;
+                        }
+                        hello-world { padding:0.5em; }
+                    </style>
+                    <h1>Custom Web Component defined on this Page</h1>
+                    <p>This page defines a custom &lt;hello-world&gt; Web Component. Because it’s a Web Component it will only work with modern browsers so IE and older mobile devices will see a warning on the root element because it uses the class “old-browser-warning”. The warning is handled by [polyfill.js].</p>
+                    <div class="old-browser-warning">
+                        <hello-world></hello-world>
+                        <hello-world name="Mars" color="blue"></hello-world>
+                    </div>
+                    <div class="old-browser-warning" data-old-browser-warning="Old Browser Warning using a Custom Error Message">
+                        <hello-world name="Moon" color="gray"></hello-world>
+                    </div>
+                </template>
+            </url-route>
+        </url-router>
+
+        <!--
+            DataFormsJS Web Components
+            https://www.dataformsjs.com
+        -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/url-router.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/spa-links.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+        <script>
+            window.lazyLoad = {
+                json_data: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/json-data.min.js' },
+                input_filter: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/input-filter.min.js' },
+                data_table: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-table.min.js' },
+                sortable_table: { module: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/sortable-table.min.js' },
+            };
+        </script>
+
+        <!--
+            Additional Components:
+        -->
+        <!--
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-list.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-view.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/leaflet-map.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/image-gallery.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/keydown-action-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/i18n-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/html-import-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/show-errors-service.min.js"></script>
+        -->
+
+        <!-- Older browsers (IE, Older Mobile Devices, etc) will see a warning -->
+        <!-- <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/old-browser-warning.min.js"></script> -->
+
+        <!--
+            Create a custom <hello-world> Web Component for this page
+        -->
+        <script type="module">
+            import { Component, html } from 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/Component.min.js';
+
+            /**
+             * Define class for the <hello-world> element
+             */
+             class HelloWorld extends Component {
+                static get css() {
+                    return ':host { padding:.5em; }';
+                }
+
+                // Props end up being assigned to both HTML observable attributes
+                // and JavaScript properties. Example usage:
+                //    document.querySelector('hello-world').name = 'Name';
+                //    document.querySelector('hello-world').setAttribute('color', '#888');
+                static get props() {
+                    return {
+                        name: 'World',
+                        color: 'red',
+                    }
+                }
+
+                render() {
+                    return html`
+                        <div style="color:${this.color};">
+                            Hello ${this.name}!
+                        </div>
+                    `;
+                }
+            }
+
+            /**
+             * Add <hello-world> element to the page
+             */
+            window.customElements.define('hello-world', HelloWorld);
+        </script>
+    </body>
+</html>

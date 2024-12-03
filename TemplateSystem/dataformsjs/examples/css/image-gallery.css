@@ -1,0 +1,231 @@
+/* Reset */
+* { margin:0; padding:0; }
+
+/* Prevent custom web components from appearing during initial page rendering */
+json-data:not(:defined),
+is-loading:not(:defined),
+has-error:not(:defined),
+is-loaded:not(:defined) { display:none; }
+
+/*
+    Since this file is shared with the Standard Framework make sure the
+    <json-data> "JavaScript Control" shows. If this is not included modern browsers
+    would use the above code block for display.
+*/
+json-data[data-control] { display:block; }
+
+/* Using 'Native font stack' - See Bootstrap 4 Docs for info on 'Native font stack' */
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Main element layout */
+html, body, #root { height:100%; margin:0; }
+
+/* CSS Variables */
+:root {
+    --shadow-1: 0 1px 5px 0 rgba(0,0,0,.5);
+    --bg-color: hsl(210, 90%, 97%);
+    --font-color: hsla(210, 90%, 25%, 1);
+}
+
+/* Page Elements */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    text-align: center;
+    padding: 20px;
+    /*
+        For Mobile Safari otherwise it may adjust the [ul.emoji-list li]
+        text sizes in different sizes per list item on an iPhone
+    */
+    -webkit-text-size-adjust: none;
+}
+
+a,
+a:visited { color: var(--font-color); }
+
+h1 {
+    padding: 1em;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,.2);
+}
+h1 span { white-space: nowrap; }
+
+.about {
+    margin:20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about h2 { margin-top: 1em; }
+.about ul {
+    display: inline-block;
+    text-align: left;
+    padding: 1em;
+    width: calc(100% - 30px);
+    max-width: 1000px;
+    line-height: 1.4em;
+}
+.about ul li { padding:.2em; }
+.about ul.emoji-list {
+    list-style-type: none;
+    padding-bottom: 30px;
+}
+.about ul.emoji-list li {
+    display: flex;
+    margin-bottom: 10px;
+}
+.about ul.emoji-list li::before {
+    content: attr(data-emoji);
+    padding-right: 20px;
+    padding-top: .1em;
+}
+.about ul.source-code {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+@media (min-width: 580px) {
+    .about ul.source-code {
+        flex-direction: row;
+    }
+}
+.about ul.source-code li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+.about ul.source-code li a img {
+    padding-bottom: 10px;
+}
+.about .github { display:flex; justify-content: center; }
+.about .github img { padding-right:20px; }
+
+section {
+    background-color: white;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.7);
+    margin: 20px 0;
+    padding: 0 20px;
+    max-width: calc(100vw - 60px);
+}
+section.page-title {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-title img {
+    border: 2px solid var(--font-color);
+    margin-bottom: 2em;
+    max-width: 100%;
+}
+
+pre[class*="language-"] { background: none; margin: 0; padding: 0 .5em; }
+code[class*="language-"] { background-color: white; }
+pre { text-align: center; }
+code {
+    display: block;
+    text-align: left;
+    padding: 20px;
+}
+
+.error { background-color: red; border: 2px solid darkred; color: white; padding: 1em; margin: 1em; display: block; }
+
+.images {
+    list-style-type: none;
+    margin-bottom: 60px;
+}
+
+/* 
+Web Components Demo
+----
+.images li
+.images image-gallery
+
+
+React and Handlebars Demos, also used by Web Components Demo
+----
+.image-gallery
+.image-gallery img
+*/
+
+.image-gallery { text-align: center; }
+.images li { display: block; }
+
+.images li,
+.image-gallery img {
+    margin: 40px;
+    box-shadow: var(--shadow-1);
+    background-color: white;
+    border-radius: 10px;
+    /*
+        If un-commented outline will hide the outline when clicking.
+        Because [tabindex] is used an outline shows briefly when
+        clicking on images.
+    */
+    /* outline: none; */
+}
+
+.images image-gallery,
+.image-gallery img {
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+.image-gallery img {
+    height: auto;
+    max-height: 400px;
+    width: calc(100% - 80px);
+}
+
+@media (min-width: 600px) {
+    .images,
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        justify-content: center;    
+    }
+
+    /* Web Components Version */
+    .images image-gallery {
+        width: 550px;
+        height: 350px;
+    }
+
+    /* React Version */
+    .image-gallery img {
+        max-width: 550px;
+        max-height: 350px;
+        width: auto;
+    }
+}
+
+/* Show the loading screen only if it appears for longer than a second */
+.loading {
+    /* Layout and Style */
+    background-color: blue;
+    border: 2px solid darkblue;
+    color: white;
+    padding: 1em;
+    margin: 1em;
+    display: block;
+    /* Animation */
+    opacity: 0;
+    animation-name: show-after-delay;
+    animation-delay: 1s;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes show-after-delay {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  svg:focus {
+    outline: 0;
+  }
+
+  .flex-one {
+    flex: 1 1 0;
+  }
+}

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-show-errors>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DataFormsJS Entry Form Demo | Handlebars</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/entry-form.css">
+        <link rel="canonical" href="https://www.dataformsjs.com/examples/entry-form-demo-hbs.htm">
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container">
+                <a class="navbar-brand" href="#/">Entry Form Demo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                        <a class="nav-link mx-2" href="#/view-records">View Records</a>
+                        <a class="nav-link mx-2" href="#/list-editor">Edit All</a>
+                        <a class="nav-link mx-2" href="#/record/new">New Record</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="view" class="container p-4 my-5"></div>
+
+        <template id="loading-template">
+            <div class="alert alert-info">Loading...</div>
+        </template>
+
+        <script type="text/x-template" data-engine="handlebars" id="error-template">
+            <div class="alert alert-danger">Error: {{errorMessage}}</div>
+            <button type="button" class="btn btn-primary reset-data">Reset all Data</button>
+        </script>
+
+        <template
+            data-src="html/entry-form-info.htm"
+            data-default-route
+            data-route="/">
+        </template>
+
+        <script
+            type="text/x-template"
+            data-engine="handlebars"
+            src="html/entry-form-record-list-hbs.htm"
+            data-route="/view-records"
+            data-page="jsonData"
+            data-url="https://www.dataformsjs.com/data/example/entry-form/list"
+            data-lazy-load="clickUrlAction, sort, filter, clickToHighlight">
+        </script>
+
+        <script
+            type="text/x-template"
+            data-engine="handlebars"
+            src="html/entry-form-list-editor-hbs.htm"
+            data-route="/list-editor"
+            data-page="entryForm"
+            data-url="https://www.dataformsjs.com/data/example/entry-form/list"
+            data-save-url="https://www.dataformsjs.com/data/example/entry-form/save-all"
+            data-result-success-display-interval="3000"
+            data-saving-record-text="Saving Records..."
+            data-lazy-load="entryForm, listEditor, validation, sort, filter, pickadate, pickadatePlugin">
+        </script>
+
+        <!--
+            When using [data-page="entryForm"]
+            with [data-new-record="true"] the attribute [data-url]
+            is optional. It it used here to populate the drop-down list.
+
+            When using [data-save-url] the default value of [data-use-save-api="true"] is used.
+            By default a response of {success:true} and optionally {fields} are expected.
+            When [data-use-save-api="false"] any 200 response with JSON will be considered a valid
+            and the model will be updated with any returned data from the JSON response.
+
+            For a detailed comparison of the differences search the examples for "data-use-save-api"
+            and then use DevTools to view the how Web Services are submitted on Save. Another demo
+            [binary-classification-vue.htm] shows how [data-use-save-api="false"] is used.
+        -->
+        <script
+            type="text/x-template"
+            data-engine="handlebars"
+            src="html/entry-form-hbs.htm"
+            data-route="/record/new"
+            data-page="entryForm"
+            data-new-record="true"
+            data-url="https://www.dataformsjs.com/data/example/entry-form/categories"
+            data-save-url="https://www.dataformsjs.com/data/example/entry-form/save"
+            data-new-record-redirect-url="#/record/:id"
+            data-result-success-display-interval="1000"
+            data-lazy-load="entryForm, validation, pickadate, pickadatePlugin">
+        </script>
+
+        <script
+            type="text/x-template"
+            data-engine="handlebars"
+            src="html/entry-form-hbs.htm"
+            data-route="/record/:id"
+            data-page="entryForm"
+            data-url="https://www.dataformsjs.com/data/example/entry-form/record/:id"
+            data-save-url="https://www.dataformsjs.com/data/example/entry-form/save"
+            data-delete-url="https://www.dataformsjs.com/data/example/entry-form/delete/:id"
+            data-delete-record-redirect-url="#/view-records"
+            data-lazy-load="entryForm, validation, pickadate, pickadatePlugin">
+        </script>
+
+        <!-- Handlebars -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.6/dist/handlebars.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <!-- DataFormsJS -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/DataFormsJS.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/pages/jsonData.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/handlebars-helpers.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/navLinks.min.js"></script>
+        <script>
+            // Optimize - lazy load scripts are downloaded asynchronously at the same time.
+            // Additionally File 'entryForm.js' uses [Object.assign] which isn't available from IE by default.
+            // It gets loaded as a polyfill from [DataFormsJS.js] once the page is ready.
+            // In addition to only loading what is needed using [app.lazyLoad] allows for the polyfill
+            // to run first.
+            app.lazyLoad = {
+                entryForm: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/pages/entryForm.min.js',
+                listEditor: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/listEditor.min.js',
+                validation: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/validation.min.js',
+                clickUrlAction: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/clickUrlAction.min.js',
+                sort: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/sort.min.js',
+                filter: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/filter.min.js',
+                clickToHighlight: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/clickToHighlight.min.js',
+                pickadate: [
+                    // This demo uses the date calendar for pickadate.js. If your project
+                    // uses a time picker then uncomment the time scripts and update options
+                    // in the [js/plugins/pickadate.js] as needed. jQuery is required but
+                    // commented out as it's already loaded for bootstrap.
+                    //
+                    // 'https://code.jquery.com/jquery-3.5.1.slim.min.js',
+                    'https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/compressed/themes/default.css',
+                    'https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/compressed/themes/default.date.css',
+                    // 'https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/compressed/themes/default.time.css',
+                    'https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/compressed/picker.js',
+                    'https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/compressed/picker.date.js',
+                    // 'https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/compressed/picker.time.js',
+                ],
+                pickadatePlugin: [
+                    'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/events.min.js',
+                    'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/pickadate.min.js',
+                ],
+            };
+            app.settings.lazyTemplateSelector = '#loading-template';
+        </script>
+
+        <!--
+            Custom Authenticaton Code for this App.
+            This is the only custom JS code. All form features are handled by
+            standard framework scripts and HTML in the Handlebars Templates.
+        -->
+        <script src="entry-form-auth.js"></script>
+
+        <!--
+            To see how to create custom entry form based on [pages/entryForm.js]
+            include the following script:
+                <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-from-entryForm.js"></script>
+
+            Then on this page replace:
+                data-page="entryForm"
+            With:
+                data-page="customEntryForm"
+        -->
+
+        <!--
+            Controllers/Views on this page are define through the above <script> elements.
+            An alternative method of adding controllers and views would be to comment out the
+            related <script> elements and use JavaScript as shown below.
+        -->
+        <!--
+        <script>
+            app
+            .addController({
+                path: '/',
+                defaultRoute: true,
+                viewUrl: 'html/entry-form-record-list-hbs.htm',
+                viewEngine: 'Handlebars',
+                pageType: 'jsonData',
+                settings: {
+                    url: 'https://www.dataformsjs.com/data/example/entry-form/list'
+                },
+            })
+            .addController({
+                path: '/list-editor',
+                viewUrl: 'html/entry-form-list-editor-hbs.htm',
+                viewEngine: 'Handlebars',
+                pageType: 'entryForm',
+                settings: {
+                    url: 'https://www.dataformsjs.com/data/example/entry-form/list',
+                    saveUrl: 'https://www.dataformsjs.com/data/example/entry-form/save-all',
+                    resultSuccessDisplayInterval: 3000,
+                },
+            })
+            .addController({
+                path: '/record/new',
+                viewUrl: 'html/entry-form-hbs.htm',
+                viewEngine: 'Handlebars',
+                pageType: 'entryForm',
+                settings: {
+                    url: 'https://www.dataformsjs.com/data/example/entry-form/categories',
+                    saveUrl: 'https://www.dataformsjs.com/data/example/entry-form/save',
+                    newRecord: true,
+                    newRecordRedirectUrl: '#/record/:id',
+                },
+            })
+            .addController({
+                path: '/record/:id',
+                viewUrl: 'html/entry-form-hbs.htm',
+                viewEngine: 'Handlebars',
+                pageType: 'entryForm',
+                settings: {
+                    url: 'https://www.dataformsjs.com/data/example/entry-form/record/:id',
+                    saveUrl: 'https://www.dataformsjs.com/data/example/entry-form/save',
+                    deleteUrl: 'https://www.dataformsjs.com/data/example/entry-form/delete/:id',
+                    deleteRecordRedirectUrl: '#/',
+                },
+            });
+        </script>
+        -->
+    </body>
+</html>

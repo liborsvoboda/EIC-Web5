@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script>
+    ons.bootstrap()
+      .controller('PageController', function() {
+        this.title = 'My app';
+        this.showAlert = function(message) {
+          ons.notification.alert(message);
+        };
+      });
+  </script>
+</head>
+<body>
+  <ons-page ng-controller="PageController as page">
+    <ons-toolbar>
+      <div class="center">{{page.title}}</div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <p style="text-align: center">
+      <ons-button ng-click="page.showAlert('Hello world!')">Click me!</ons-button>
+    </p>
+  </ons-page>
+</body>
+</html>
+
+<!-- info
+
+## The `<ons-page>` element
+
+The root of a page in Onsen UI is created using the `<ons-page>` element. It covers the whole screen and is used as a container for the other elements. When managing multiple views, all of them must be contained in `<ons-page>` element.
+
+```
+<ons-page>
+  Content goes here
+</ons-page>
+```
+
+This element automatically spawns a `background` and a `content` elements. These can also be manually provided for higher customizability:
+
+```
+<ons-page>
+  Toolbar here
+
+  <div class="background"></div>
+
+  <div class="content">
+    Scrollable content here
+  </div>
+
+  Fixed content here
+</ons-page>
+```
+
+Since `content` element is transparent by default, we can add custom colors to the `background` element. Notice that, if `content` element is provided, scrollable and fixed content must be manually separated as well.
+
+-->

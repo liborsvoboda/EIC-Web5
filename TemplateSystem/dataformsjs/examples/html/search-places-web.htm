@@ -1,0 +1,110 @@
+<json-data url="{rootApiUrl}/countries?order_by=country" load-only-once>
+    <is-loading template-selector="#loading-screen"></is-loading>
+    <has-error template-selector="#error-screen"></has-error>
+    <is-loaded class="flex-col">
+        <h1 data-i18n="Search"></h1>
+
+        <nav>
+            <a href="#/en/" data-i18n="Countries" data-i18n-href></a>
+        </nav>
+
+        <form class="search">
+            <input
+                data-bind="country"
+                list="country-list"
+                data-enter-key-click-selector=".btn-search"
+                placeholder="-- Select a Country (Optional) --"
+                data-i18n-attr="placeholder">
+            <data-list
+                data-bind="countries"
+                root-element="datalist"
+                root-attr="id=country-list"
+                template-selector="#country-item">
+            </data-list>
+            <template id="country-item">
+                <option value="${iso}">${country}</option>
+            </template>
+
+            <input
+                data-bind="city"
+                data-enter-key-click-selector=".btn-search"
+                placeholder="Search for a City, example 'Paris' or 'London'"
+                data-i18n-attr="placeholder">
+
+            <!--
+                When the search button is clicked on the <json-data> element will be triggered
+                based on [click-selector] and form elements that use [data-bind]
+            -->
+            <button class="btn-search" type="button" data-i18n="Search"></button>
+        </form>
+
+        <!--
+            Data for the below <json-data> Web Component populate when the search button
+            is clicked based on the [click-selector] attribute. Once clicked Form fields
+            with [data-bind] will be used for the URL parameters.
+        -->
+        <json-data url="{rootApiUrl}/search?country=:country&city=:city" click-selector=".btn-search">
+            <is-loading template-selector="#loading-screen"></is-loading>
+            <has-error template-selector="#error-screen"></has-error>
+            <!--
+                The `cities` data will not exist on initial page load from the root
+                <json-data> element but only once the search button is clicked from
+                the nested <json-data> so elements are shown or hidden based on
+                whether the value exists or not.
+            -->
+            <is-loaded class="flex-col" data-show="typeof cities === 'object'">
+                <h2><span data-bind="cities.length"></span> <span data-i18n="Cities Found"></span></h2>
+
+                <!--
+                    [data-bind-refresh="function"] allows for <json-data> to refresh the
+                    control multiple times after each search. In the code below it results
+                    in the `filter()` function being called from the `input-filter` Web Component.
+
+                    When using the Polyfill with the Standard Framework Plugin [dataBind.js]
+                    (or any other code) doesn't perform any action based on the attribute.
+                -->
+                <div data-show="typeof cities === 'object' && cities.length > 0" class="flex-col">
+                    <input
+                        is="input-filter"
+                        filter-selector="table"
+                        filter-results-selector="h2"
+                        filter-results-text-all="{totalCount} Cities Found"
+                        filter-results-text-filtered="Showing {displayCount} of {totalCount} Cities"
+                        data-bind-refresh="filter"
+                        placeholder="Enter filter"
+                        data-i18n-attr="filter-results-text-all, filter-results-text-filtered, placeholder">
+                </div>
+
+                <div data-show="typeof cities === 'object' && cities.length > 0">
+                    <nav style="display: inline-flex;">
+                        <download-links file-name="Search" margin-left="false"></download-links>
+                    </nav>
+                </div>
+
+                <data-table
+                    data-bind="cities"
+                    highlight-class="highlight"
+                    labels="Country, Name, Population, Elevation, Timezone, Date Last Modified"
+                    data-i18n-attr="labels"
+                    table-attr="
+                        is=sortable-table,
+                        data-sort-class-odd=row-odd,
+                        data-sort-class-even=row-even">
+                    <script type="text/x-template">
+                        <tr>
+                            <td>
+                                <i class="${country_code.toLowerCase()} flag"></i>
+                                <span>${country_code}</span>
+                            </td>
+                            <td><a href="#/${i18n_Locale}/city/${geonames_id}">${name}</a></a></td>
+                            <td class="align-right" data-value="${population}">${format.number(population)}</td>
+                            <td class="align-right" data-value="${elevation}">${formatElevation(elevation)}</td>
+                            <td>${timezone}</td>
+                            <td class="align-right">${format.date(modification_date)}</td>
+                        </tr>
+                    </script>
+                </data-table>
+            </is-loaded>
+        </json-data>
+    </is-loaded>
+</json-data>

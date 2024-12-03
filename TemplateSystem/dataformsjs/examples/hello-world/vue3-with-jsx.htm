@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DataFormsJS - {{title}}</title>
+        <link rel="stylesheet" href="hello-world.css">
+        <style>
+            p { text-align: center; }
+            a {
+                padding-bottom: .5em;
+                display: inline-block;
+            }
+        </style>
+        <link rel="canonical" href="https://www.dataformsjs.com/examples/hello-world/{{lang}}/web.htm">
+        <script nomodule>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'hello-world-ie.css';
+            document.head.appendChild(link);
+        </script>
+    </head>
+    <body>
+        <div id="root" dir="auto"></div>
+
+        <script type="text/babel">
+            // @jsx Vue.h
+            function App() {
+                return (
+                    <Vue.Fragment>
+                        <h1>{{hello_world}}</h1>
+
+                        <p>
+                            <a href="https://v3.vuejs.org/guide/introduction.html" target="_blank">Vue 3 with JSX</a><br />
+                            {window.jsxLoader && jsxLoader.isSupportedBrowser ? '{{jsx_loader}}'
+                            : '{{babel_loader}}'}
+                        </p>
+
+                        <div className="home-page-animation">
+                            <img src="sun.svg" className="sun" />
+                            <div className="orbit">
+                                <img src="planet.svg" className="planet" />
+                                <img src="moon.svg" className="moon" />
+                            </div>
+                        </div>
+                    </Vue.Fragment>
+                )
+            }
+
+            Vue.render(
+                <App />,
+                document.getElementById('root')
+            );
+        </script>
+
+        <!-- Vue 3 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.30/dist/vue.global.prod.js"></script>
+
+        <!--
+            This demo work with either Babel Standalone or the DataFormsJS jsxLoader.
+            To try Babel uncomment it then comment out the [jsxLoader.min.js] script.
+
+            In the JSX Code `window.jsxLoader && ` was added for testing with Babel, this
+            demo is based on the React Version which always has `jsxLoader` defined.
+        -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/react/jsxLoader.min.js"></script>
+
+        <!--
+            Warning for IE 11 and Old Mobile Devices because the tested build of Vue 3.0.0
+            does not support them, this may or may not change in the future.
+        -->
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/old-browser-warning.min.js"></script>
+    </body>
+</html>

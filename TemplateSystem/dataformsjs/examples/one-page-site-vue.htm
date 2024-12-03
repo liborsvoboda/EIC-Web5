@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>One Page Demo | Vue</title>
+        <style>
+            body { padding:20px 40px; }
+            nav { padding:1em; }
+            nav a { padding:10px; }
+            nav a.active { color:white; background-color:darkblue; }
+            .align-right { text-align:right; }
+            p { padding: 1em; }
+            table { border-collapse:collapse; margin-top:40px; }
+            thead { background-color:darkgreen; color:white; }
+            th, td { padding:0.5em 1em; border:1px solid darkgreen; }
+            tr:nth-child(even) { background-color: lightgreen; }
+            .error { padding:1em; color:white; background-color:red; }
+
+            .top-nav {
+                position: fixed;
+                background-color: white;
+            }
+
+            section { width:100%; min-height: 600px; padding:20px; }
+            #test1 { background-color: red; }
+            #test2 { background-color: lightblue; }
+            #test3 { background-color: green; }
+
+            .modal-overlay .modal-content {
+                background-color: black;
+                padding: 40px 80px;
+                color: white;
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="top-nav">
+            <a href="#test1" data-one-page>Test 1</a>
+            <a href="#test2" data-one-page>Test 2</a>
+            <a href="#test3" data-one-page>Test 3</a>
+        </nav>
+
+        <div id="view">
+            <section id="test1"></section>
+            <section id="test2">
+                <json-data
+                    data-url="https://www.dataformsjs.com/data/geonames/countries"
+                    data-template-id="countries-list">
+                </json-data>
+            </section>
+            <section id="test3"></section>
+
+            <div class="modal-content"
+                hidden
+                data-show-every="10 minutes">
+                Modal Test from [modalAlert] Plugin.<br>
+                This message will show once every 10 minutes
+            </div>
+        </div>
+
+        <nav>
+            <a href="#test1" data-one-page>Test 1</a>
+            <a href="#test2" data-one-page>Test 2</a>
+            <a href="#test3" data-one-page>Test 3</a>
+        </nav>
+
+        <script type="text/x-template" data-engine="vue" id="countries-list">
+            <div v-if="isLoading">Loading...</div>
+            <div v-if="hasError" class="error">{{ errorMessage }}</div>
+            <div v-if="isLoaded" class="flex-col">
+                <input
+                    data-filter-selector="table"
+                    data-filter-results-text-selector="h1"
+                    data-filter-results-text-all="{totalCount} Countries"
+                    data-filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                    placeholder="Enter filter, example 'North America'">
+    
+                <p>Click on a column to sort rows based on column values.</p>
+    
+                <table data-sort data-sort-class-odd="row-odd" data-sort-class-even="row-even">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Size (KM)</th>
+                            <th>Population</th>
+                            <th>Continent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="country in countries">
+                            <td>{{ country.iso }}</td>
+                            <td>
+                                <i v-bind:class="country.iso.toLowerCase() + ' flag'"></i>
+                                <span>{{ country.country }}<span>
+                            </td>
+                            <td class="align-right" v-bind:data-value="country.area_km" v-format-number="country.area_km"></td>
+                            <td class="align-right" v-bind:data-value="country.population" v-format-number="country.population"></td>
+                            <td>{{ country.continent }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </script>    
+
+        <!--
+            https://vuejs.org
+            DataFormsJS works with both Vue 2 and Vue 3
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vue@3.2.30/dist/vue.global.prod.js"></script>
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+        <!-- DataFormsJS Standard Files -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/DataFormsJS.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/vue-directives.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/onePageSite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/modalAlert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/controls/json-data.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/filter.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/sort.min.js"></script>
+    </body>
+</html>

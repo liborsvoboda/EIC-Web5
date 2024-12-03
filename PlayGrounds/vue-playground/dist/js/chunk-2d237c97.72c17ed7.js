@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d237c97"],{fd36:function(n,t,e){"use strict";e.r(t),t["default"]='<template>\n  <span v-html="rawHtml"></span>\n</template>\n<script>\nexport default {\n  data () {\n    return {\n      rawHtml: \'<span style="color: red">This should be red.</span>\'\n    }\n  }\n}\n<\/script>\n'}}]);
+//# sourceMappingURL=chunk-2d237c97.72c17ed7.js.map

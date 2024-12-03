@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script>
+    var showTemplateDialog = function() {
+      var dialog = document.getElementById('my-dialog');
+
+      if (dialog) {
+        dialog.show();
+      } else {
+        ons.createElement('dialog.html', { append: true })
+          .then(function(dialog) {
+            dialog.show();
+          });
+      }
+    };
+
+    var hideDialog = function(id) {
+      document
+        .getElementById(id)
+        .hide();
+    };
+  </script>
+</head>
+
+<body>
+  <ons-page>
+    <ons-button onclick="showTemplateDialog()">Show Dialog</ons-button>
+  </ons-page>
+
+  <template id="dialog.html">
+    <ons-dialog id="my-dialog">
+      <div style="text-align: center; padding: 10px;">
+        <p>
+          This is a simple dialog!
+        </p>
+
+        <p>
+          <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+        </p>
+      </div>
+    </ons-dialog>
+  </template>
+</body>
+
+</html>
+
+<!-- info
+
+## Dialogs
+
+Normal dialogs are defined using the `<ons-dialog>` tag.
+
+```
+<ons-dialog id="dialog-1">
+  This is a dialog!
+</ons-dialog>
+```
+
+Dialogs are hidden by default and usually attached as direct children of the `<body>` tag.
+
+## Displaying a dialog
+
+To display a dialog you need to get a reference to the element and execute the `show(options)` method.
+
+```
+document
+  .getElementById('dialog-1')
+  .show();
+```
+
+It is hidden with the `hide(options)` method.
+
+## Loading from a template
+
+Another way to use dialogs is with the `ons.createElement(template)` utility function. The dialog needs to be defined as a template and the function returns a `Promise` that resolves to the dialog element.
+
+```
+<template id="dialog.html">
+  <ons-dialog>
+    This dialog is defined as a template.
+  </ons-dialog>
+</template>
+```
+
+```
+ons
+  .createElement('dialog.html', { append: true })
+  .then(function(dialog) {
+    dialog.show();
+  });
+```
+
+Do not forget attaching the created dialog to the DOM. This can be done by passing `append` options to `ons.createElement`.
+
+## The "cancelable" attribute
+
+`<ons-dialog>` supports the `cancelable` attribute. This enables hiding the dialog by tapping outside of it or by pressing the back button on Android devices.
+
+```
+<ons-dialog cancelable>
+  This dialog can be cancelled!
+</ons-dialog>
+```
+
+Try adding the `cancelable` attribute to the dialog to see how it works.
+
+## Complex dialogs
+
+The `<ons-dialog>` element can get as complex as we need. It can contain pages or even navigators:
+
+```
+<ons-dialog>
+  <ons-page>
+    <ons-toolbar>...</ons-toolbar>
+
+    ...
+  </ons-page>
+</ons-dialog>
+```
+
+-->

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Zoom and Pan Wrapper</title>
+  <style>
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform-origin: center center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .video-container .controls {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .video-container .controls button {
+      margin: 0 5px;
+      background-color: transparent;
+      border: none;
+      color: #333;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video id="video" controls>
+      <source src="your-video-source.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button onclick="zoomIn()">+</button>
+      <button onclick="zoomOut()">-</button>
+      <button onmousedown="startPan(event)" onmouseup="stopPan(event)">&#8597;</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    let currentScale = 1;
+    const maxScale = 3;
+    const minScale = 1;
+    let isDragging = false;
+    let lastClientX, lastClientY;
+
+    function zoomIn() {
+      if (currentScale < maxScale) {
+        currentScale += 0.1;
+        video.style.transform = `scale(${currentScale})`;
+      }
+    }
+
+    function zoomOut() {
+      if (currentScale > minScale) {
+        currentScale -= 0.1;
+        video.style.transform = `scale(${currentScale})`;
+      }
+    }
+
+    function startPan(event) {
+      isDragging = true;
+      lastClientX = event.clientX;
+      lastClientY = event.clientY;
+    }
+
+    function stopPan(event) {
+      isDragging = false;
+    }
+
+    video.addEventListener('mousemove', (event) => {
+      if (isDragging) {
+        const deltaMove = {
+          x: event.clientX - lastClientX,
+          y: event.clientY - lastClientY
+        };
+
+        lastClientX = event.clientX;
+        lastClientY = event.clientY;
+
+        video.style.transform = `scale(${currentScale}) translate(${deltaMove.x}px, ${deltaMove.y}px)`;
+      }
+    });
+  </script>
+</body>
+</html>

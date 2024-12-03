@@ -1,0 +1,27 @@
+.editor {
+  height: 100%;
+}
+.preview {
+  height: 100%;
+}
+
+html, body, .container, .row {
+  height: 100%;
+}
+
+iframe {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.CodeMirror {
+  height: 100%;
+}
+
+.lock-url {
+  margin: 15px 5%;
+  padding: 5px;
+  width: 90%;
+  font-family: monospace;
+}

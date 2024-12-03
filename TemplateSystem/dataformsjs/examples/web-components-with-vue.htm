@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Web Component with Vue</title>
+        <link rel="stylesheet" href="https://d2xbd92kui7v97.cloudfront.net/site/css/getting-started.css">
+        <link rel="stylesheet" href="css/web-components-mixed.css">
+    </head>
+    <body>
+        <div id="root">
+            <header>
+                <nav>
+                    <router-link to="/" exact-active-class="active">Home</router-link>
+                    <router-link to="/data" exact-active-class="active">Data Example</router-link>
+                    <router-link to="/images" exact-active-class="active">Image Gallery</router-link>
+                    <router-link to="/map" exact-active-class="active">Map and Services</router-link>
+                    <router-link to="/markdown" exact-active-class="active">Markdown Content</router-link>
+                </nav>
+            </header>
+            <html-import-service></html-import-service>
+            <main id="view">
+                <router-view></router-view>
+            </main>
+        </div>
+
+        <template id="loading-screen">
+            <h3 class="loading" data-i18n="Loading..."></h3>
+        </template>
+
+        <template id="error-screen">
+            <h3 class="error">Error - <span data-bind="errorMessage"></span></h3>
+        </template>
+
+        <template id="home-page">
+            <section class="home-page">
+                <h1>Hello World</h1>
+                <p>This page is used to manually test DataFormsJS Web Components with Vue and Vue Router.</p>
+                <p>Both Vue 2 and Vue 3 are supported for Modern Browsers. To try different versions uncomment and uncomment the desired version near the bottom of this file.</p>
+                <p>When using Vue 2 built-in Custom Elements such as &lt;input is="input-filter"&gt; are not supported so the needed elements are swapped after Vue is mounted using a work around that is shown in the source of this page.</p>
+                <p>For more details on using Vue with Custom Elements see the link below.</p>
+                <p>For older browsers (IE 11, Old Safari) this page only partially works because the custom JavaScript on this page is not designed to currently handle old browsers.</p>
+                <p><a href="https://v3.vuejs.org/guide/migration/custom-elements-interop.html" target="_blank">https://v3.vuejs.org/guide/migration/custom-elements-interop.html</a></p>
+            </section>
+        </template>
+
+        <template id="data-page">
+            <json-data v-bind:url="url" load-only-once>
+                <is-loading template-selector="#loading-screen"></is-loading>
+                <has-error template-selector="#error-screen"></has-error>
+                <is-loaded class="flex-col">
+                    <h1>Countries</h1>
+
+                    <input
+                        is="input-filter"
+                        filter-selector="table"
+                        filter-results-selector="h1"
+                        filter-results-text-all="{totalCount} Countries"
+                        filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                        placeholder="Enter filter, example 'North America'" />
+
+                    <data-table
+                        data-bind="countries"
+                        highlight-class="highlight"
+                        labels="Code, Name, Size (KM), Population, Continent"
+                        table-attr="is=sortable-table,
+                                    data-sort-class-odd=row-odd,
+                                    data-sort-class-even=row-even">
+                    </data-table>
+                </is-loaded>
+            </json-data>
+        </template>
+
+        <template id="images-page">
+            <json-data v-bind:url="url" load-only-once>
+                <is-loading>
+                    <span class="loading">Loading Photos...</span>
+                </is-loading>
+                <has-error>
+                    <h2 class="error">Error loading photos - <span data-bind="errorMessage"></span></h2>
+                </has-error>
+                <is-loaded>
+                    <h1>Image Gallery</h1>
+                    <data-list
+                        data-bind="images"
+                        template-selector="#image-template"
+                        root-element="div"
+                        root-class="image-gallery">
+                    </data-list>
+                </is-loaded>
+            </json-data>
+        </template>
+
+        <template id="map-page">
+            <json-data v-bind:url="url" load-only-once>
+                <is-loading>
+                    <span class="loading">Loading Photos...</span>
+                </is-loading>
+                <has-error>
+                    <h2 class="error">Error loading photos - <span data-bind="errorMessage"></span></h2>
+                </has-error>
+                <is-loaded>
+                    <section>
+                        <data-view data-bind template-selector="#city-info"></data-view>
+                        <div
+                            is="leaflet-map"
+                            latitude="[place.latitude]"
+                            longitude="[place.longitude]"
+                            zoom="11"
+                            marker="[place.name]"
+                            data-bind-attr="latitude, longitude, marker"
+                            style="height:400px">
+                        </div>
+                    </section>
+                    <section data-template-url="html/web-component-html-import.htm"></section>
+                </is-loaded>
+            </json-data>
+        </template>
+
+        <template id="markdown-page">
+            <section class="fit-content">
+                <markdown-content url="https://raw.githubusercontent.com/dataformsjs/dataformsjs/master/README.md"></markdown-content>
+            </section>
+        </template>
+
+        <!--
+            Templates for <image-gallery> and <data-view>
+            These cannot be included within Vue markup.
+        -->
+        <template id="image-template">
+            <image-gallery image="${image}" image-avif="${image_avif}" image-webp="${image_webp}">
+                <img src="${thumbnail}" alt="${title}" />
+            </image-gallery>
+        </template>
+        <template id="city-info">
+            <h2>${place.name}</h2>
+            <div class="population"><strong>Population:</strong> ${format.number(place.population)}</div>
+        </template>
+
+        <!--
+            DataFormsJS works with both Vue 2 and Vue 3
+            https://vuejs.org
+            https://router.vuejs.org/
+            https://github.com/vuejs/vue-router-next/
+        -->
+
+        <!-- Vue 2 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.9/dist/vue-router.min.js"></script> -->
+
+        <!-- Vue 3 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.1/dist/vue-router.global.prod.js"></script>
+
+        <!--
+            DataFormsJS Web Components
+
+            <url-router>, <i18n-service>, and <nav is="spa-links"> are excluded from
+            this page because they are not expected to work well with Vue.
+
+            <url-router> may work however it would overwrite large portions of the DOM
+            and <i18n-service> and <nav is="spa-links"> are dependant on <url-router>.
+        -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/json-data.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-list.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-table.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-view.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/input-filter.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/sortable-table.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/image-gallery.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/html-import-service.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/leaflet-map.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/markdown-content.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/old-browser-warning.min.js"></script>
+
+        <!-- https://leafletjs.com/ -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css">
+        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+
+        <!--
+            https://marked.js.org/
+            https://highlightjs.org/
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/marked@3.0.8/lib/marked.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/marked@4.0.1/marked.min.js"></script> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/atom-one-dark.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+
+        <!-- App Code -->
+        <script>
+            (function() {
+                'use strict'
+
+                function createPage(templateId, url) {
+                    return {
+                        template: document.getElementById(templateId).innerHTML,
+                        data: function() {
+                            return {
+                                url: url,
+                            }
+                        },
+                        mounted: function () {
+                            // Work around for Vue 2
+                            // Custom built-in elements are not supported with Vue 2 so swap out known custom
+                            // elements with the built-in version otherwise the elements will not render.
+                            if (Vue.createApp === undefined) {
+                                var swapElements = document.querySelectorAll('input-filter, leaflet-map');
+                                Array.prototype.forEach.call(swapElements, function(element) {
+                                    var customElement = element.tagName.toLowerCase();
+                                    var type = (customElement === 'input-filter' ? 'input' : 'div');
+                                    var newEl = document.createElement(type, { is: customElement });
+                                    for (var n = 0, m = element.attributes.length; n < m; n++) {
+                                        newEl.setAttribute(element.attributes[n].name, element.attributes[n].value);
+                                    }
+                                    element.parentNode.replaceChild(newEl, element);
+                                });
+                            }
+
+                            // If [polyfill.js] is being used then update the view on all page views.
+                            // This works when using Vue 3 with Chrome (partially when using Vue 2 with Chrome)
+                            // but does not work when using IE 11.
+                            if (window.usingWebComponentsPolyfill) {
+                                DataFormsJS.updateView();
+                            }
+                        },
+                    };
+                }
+
+                const homePage = createPage('home-page');
+                const dataPage = createPage('data-page', 'https://www.dataformsjs.com/data/geonames/countries');
+                const imagesPage = createPage('images-page', 'https://dataformsjs.s3-us-west-1.amazonaws.com/img/example-images/index.json');
+                const mapPage = createPage('map-page', 'https://www.dataformsjs.com/data/geonames/place/5368361');
+                const markdownPage = createPage('markdown-page');
+
+                const routes = [
+                    { path: '/', component: homePage },
+                    { path: '/data', component: dataPage },
+                    { path: '/images', component: imagesPage },
+                    { path: '/map', component: mapPage },
+                    { path: '/markdown', component: markdownPage },
+                    // The following line can be included if using Vue 2
+                    // { path: '*', redirect: '/' },
+                ];
+
+                var router, app;
+                if (Vue.createApp === undefined) {
+                    // Vue 2
+                    router = new VueRouter({
+                        routes: routes,
+                    });
+
+                    app = new Vue({
+                        router: router
+                    }).$mount('#root')
+                } else {
+                    // Vue 3
+                    router = VueRouter.createRouter({
+                        history: VueRouter.createWebHashHistory(),
+                        routes: routes,
+                    });
+
+                    app = Vue.createApp({});
+                    app.use(router).mount('#root');
+                }
+            })();
+        </script>
+    </body>
+</html>

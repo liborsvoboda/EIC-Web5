@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script type="text/babel">
+    const MyPage = () => {
+      const renderToolbar = () => (
+        <Ons.Toolbar>
+          <div className='center'>Infinite scroll</div>
+        </Ons.Toolbar>
+      );
+
+      const renderRow = index => (
+        <Ons.ListItem key={index}>
+          {`Item ${index + 1}`}
+        </Ons.ListItem>
+      );
+
+      return (
+        <Ons.Page renderToolbar={renderToolbar}>
+          <Ons.LazyList
+            length={10000}
+            renderRow={renderRow}
+            calculateItemHeight={() => ons.platform.isAndroid() ? 48 : 44}
+          />
+        </Ons.Page>
+      );
+    };
+
+    ons.ready(function() {
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<MyPage />);
+    });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<!-- info
+
+## Infinite scroll
+
+The `LazyList` component can be used to create infinite scrolling list. The component improves performance by dynamically adding and remove elements so only the items that are currently in view are rendered.
+
+
+-->

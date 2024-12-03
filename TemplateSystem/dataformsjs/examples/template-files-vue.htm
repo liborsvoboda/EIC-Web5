@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            body { padding:20px 40px; }
+            nav { padding:1em; }
+            nav a { padding:10px; }
+            nav a.active { color:white; background-color:darkblue; }
+            .align-right { text-align:right; }
+            p { padding: 1em; }
+            table { border-collapse:collapse; margin-top:40px; }
+            thead { background-color:darkgreen; color:white; }
+            th, td { padding:0.5em 1em; border:1px solid darkgreen; }
+            tr:nth-child(even) { background-color: lightgreen; }
+            .error { padding:1em; color:white; background-color:red; }
+            .computed-demo div,
+            .computed-demo button { padding: 10px; }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#/">Home</a>
+            <a href="#/page1">Page 1</a>
+            <a href="#/page2">Page 2</a>
+            <a href="#/page3">Page 3</a>
+            <a href="#/json-data/US">Json Data</a>
+        </nav>
+
+        <div id="view"></div>
+
+        <script type="text/x-template" data-engine="vue" id="counter-page">
+            <p data-change-border><strong>Page Loaded Counter:</strong> {{ counter }}</p>
+            <p class="change-border"><strong>Page Last Refreshed:</strong> <span v-format-time="new Date()"></span> </p>
+            <p class="change-border"><strong>Page Name:</strong> {{ pageName }}</p>
+        </script>
+
+        <template data-route="/">
+            <p data-change-border>This page shows how the template files work. Use DevTools to see info on this console.</p>
+            <p class="change-border">Type [app.activeVueModel] in dev tools to see the Vue model for the active page, and type [app] to see the full API.</p>
+        </template>
+
+        <!-- templates/page-object.js -->
+        <!--
+            Model properties can be optionally defined from HTML as shown
+            with the custom attribute [data-page-name] which becomes [pageName].
+        -->
+        <script type="text/x-template" data-engine="vue" data-route="/page1" data-page="pageName" data-page-name="Page1">
+            <div data-template-id="counter-page"></div>
+        </script>
+        <script type="text/x-template" data-engine="vue" data-route="/page2" data-page="pageName" data-page-name="Page2">
+            <div data-template-id="counter-page"></div>
+        </script>
+
+        <!--
+            Custom Page object defined on this page
+        -->
+        <script type="text/x-template" data-engine="vue" data-route="/page3" data-page="demoPage">
+            <div class="computed-demo">
+                <p>This page shows how to defined custom [computed] properties and [methods] on a page object</p>
+                <button v-on:click="setRandomValue">Set Random Value</button>
+                <div><b>Value:</b> {{ value }}</div>
+                <div><b>Value * 2:</b> {{ timesTwo }}</div>
+                <div><b>Value * 3:</b> {{ timesThree }}</div>
+            </div>
+        </script>
+
+        <!-- templates/page-from-jsonData.js -->
+        <!--
+            Adding the attribute [data-load-only-once]
+            will cause the data to only load the first time the view is loaded
+            (or when the parameters change).
+
+            For Vue including the attribute [data-regions] creates a Vue
+            Watcher for the model regions property which is only set after
+            data has been downloaded. It is not required to allow rendering
+            with this specific page however if not used and calling:
+                app.activeVueModel.regions = []
+            Then the Vue will not render the update. As long as the property
+            is set before then Vue will render the update.
+        -->
+        <script
+            type="text/x-template"
+            data-engine="vue"
+            data-route="/json-data/:country"
+            data-page="customPage"
+            data-regions
+            data-url="https://www.dataformsjs.com/data/geonames/regions/:country">
+
+            <h3 v-if="isLoading">Loading...</h3>
+            <h3 v-if="hasError" class="error">{{ errorMessage }}</h3>
+            <div v-if="isLoaded">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Population</th>
+                            <th>Timezone</th>
+                            <th>Date Last Modified</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="region in regions">
+                            <td>{{ region.admin1_code }}</td>
+                            <td>{{ region.name }}</td>
+                            <td class="align-right" v-format-number="region.population"></td>
+                            <td>{{ region.timezone }}</td>
+                            <td class="align-right" v-format-date="region.modification_date"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </script>
+
+        <!--
+            https://vuejs.org
+            DataFormsJS works with both Vue 2 and Vue 3
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.30/dist/vue.global.prod.js"></script> -->
+
+        <!-- DataFormsJS Standard Files -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/DataFormsJS.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/navLinks.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/pages/jsonData.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/pages/classes/JsonData.js"></script>
+
+        <!-- DataFormsJS Vue Directives -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/vue-directives.min.js"></script>
+
+        <!-- DataFormsJS Template Files -->
+
+        <!-- Plugin Function -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/plugin-function.js"></script>
+
+        <!-- Pick one - ES5 or ES6 -->
+
+        <!-- ES5 Style Objects -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-object.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-from-jsonData.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/plugin-object.js"></script> -->
+
+        <!-- ES6 Class Templates -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-class.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-from-JsonData-class.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/plugin-class.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/old-browser-warning.min.js"></script>
+
+        <script>
+            (function () {
+                'use strict';
+
+                // Custom Demo page with computed functions.
+                // Find more templates at:
+                //    https://www.dataformsjs.com/en/quick-reference
+                //    https://github.com/dataformsjs/dataformsjs/tree/master/js/templates
+
+                // Create a new page object.
+                // Tip: This file is intended as a starting point,
+                // delete all functions and code that you do not use.
+                var demoPage = {
+                    // ----------------------------------------------------------
+                    // Define a model for the page object. Each route
+                    // that is used will create a new model for it's page.
+                    // ----------------------------------------------------------
+                    model: {
+                        // Define Custom Properties
+                        // This will be assigned watchers in Vue
+                        value: 123,
+
+                        // Define Functions/Methods
+                        // These will be assigned to `app.activeController.methods` and `app.activeVueModel`
+
+                        setupView: function() {
+                            console.log('demoPage.setupView()');
+                            console.log(this);
+                        },
+
+                        setRandomValue: function() {
+                            this.value = Math.floor(Math.random() * 10000);
+                        },
+                    },
+
+                    // ----------------------------------------------------------
+                    // For custom [computed] properties add them to a property
+                    // on the page object. When the page is viewed they will be
+                    // assigned to `app.activeController.computed` and also
+                    // available from `app.pages[app.activeController.pageType].computed`
+                    // ----------------------------------------------------------
+                    computed: {
+                        timesTwo: function() {
+                            return (this.value * 2);
+                        },
+                        timesThree: function() {
+                            return (this.value * 3);
+                        },
+                    },
+
+                    // ----------------------------------------------------------
+                    // Controller Functions. At least 1 function must be defined
+                    // for the page and all controller functions can use [this]
+                    // to access the page's model.
+                    // ----------------------------------------------------------
+
+                    // Controller function that is called once before the route
+                    // will be loaded. This is useful for calling web services
+                    // before any rendering happens. For example, see usage on the
+                    // core [pages/jsonData.js] file.
+                    onRouteLoad: function() {
+                        console.log('demoPage.onRouteLoad()');
+                        console.log(this);
+                    },
+
+                    // Define the Controller [onRendered()] function.
+                    // This gets called each time the view is redrawn.
+                    onRendered: function() {
+                        this.setupView();
+                    },
+
+                    // Define the Controller [onRouteUnload()] function.
+                    // This event gets called only once per hash change when
+                    // the current route is unloaded. Use to clean up any page
+                    // specific resources such as [window.clearInterval()].
+                    onRouteUnload: function() {
+                        console.log('demoPage.onRouteUnload()');
+                        console.log(this);
+                    },
+                };
+
+                // Add page to app
+                app.addPage('demoPage', demoPage);
+            })();
+        </script>
+    </body>
+</html>

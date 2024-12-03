@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DataFormsJS - {{title}} - {{webc}}</title>
+        <link rel="stylesheet" href="hello-world.css">
+        <link rel="canonical" href="https://www.dataformsjs.com/examples/hello-world/{{lang}}/web.htm">
+        <script nomodule>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'hello-world-ie.css';
+            document.head.appendChild(link);
+        </script>
+    </head>
+    <body>
+        <div id="view" dir="auto"></div>
+
+        <url-router view-selector="#view">
+
+            <url-route path="/">
+                <template>
+                    <h1>{{hello_world}}</h1>
+                    <p>{{modify_this}} <a href="#/{{param_your_name}}">{{URL}}</a> {{with_your_name}}</p>
+                    <div class="home-page-animation">
+                        <img src="sun.svg" class="sun">
+                        <div class="orbit">
+                            <img src="planet.svg" class="planet">
+                            <img src="moon.svg" class="moon">
+                        </div>
+                    </div>
+                </template>
+            </url-route>
+
+            <url-route path="/:{{param_name}}">
+                <template>
+                    <h1>{{hello}} <span url-param="{{param_name}}"></span></h1>
+                    <p><a href="#">{{back_home}}</a></p>
+                    <p><a href="#/redirect/test">Redirect Test</a></p>
+                </template>
+            </url-route>
+
+            <url-route path="/redirect/test" redirect="/Redirected"></url-route>
+        </url-router>
+
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/url-router.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+
+        <!-- <script src="/js/web-components/polyfill.min.js"></script> -->
+    </body>
+</html>

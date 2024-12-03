@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>YouTube sort</title>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="youtube, playlist, sort" />
+
+  <style>
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+
+    body {
+      padding: 1em 0em 5em;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+    }
+
+    main {
+      margin: auto;
+    }
+
+    #textarea {
+      width: 500px;
+      height: 100px;
+
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    #bookmarklet {
+      font-size: 200%;
+    }
+
+    img {
+      max-width: 450px;
+    }
+
+    .mac-hint {
+      margin: 0;
+      padding: 0;
+      font-size: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <main style="display: flex; flex-direction: column; align-items: center;">
+    <h1>YouTube sort</h1>
+    <p style="max-width: 600px;">Sort youtube videos by view count or average rating. Perfect for youtube playlists. Runs in your browser.</p>
+
+    <div style="display: flex; align-items: center;">
+      <a href="screenshots/before.png" target="_blank" style="border: none; cursor: zoom-in;">
+        <img src="screenshots/before.png" />
+      </a>
+      <span style="font-size: 5em; font-weight: bold;">→</span>
+      <a href="screenshots/after.png" target="_blank" style="border: none; cursor: zoom-in;">
+        <img src="screenshots/after.png" />
+      </a>
+    </div>
+
+    <h2>Install</h2>
+    <div>
+      Drag this link to bookmarks:
+      <div style="display: none;" class="mac-hint">(Press
+        <kbd>⌘ Command + ⇧ Shift + B</kbd> for bookmarks bar)</div>
+    </div>
+    <p>
+      <a onclick="alert('Drag this link to your bookmarks.'); return false;" id="bookmarklet" href="javascript:(function() { fetch('https://agentcooper.github.io/youtube-sort/browser.js', { cache: 'reload' }).then(res => res.text()).then(script => eval(script)).catch(e => { console.error(e); document.write(`Something went wrong, please refer to <a href='https://agentcooper.github.io/youtube-sort'>script homepage</a> for the latest updates.`); document.close(); }) })();">YouTube sort</a>
+    </p>
+
+    <p style="margin-top: 3em;">Or create bookmark manually with the following url:</p>
+
+    <div>
+      <textarea id="textarea" onclick="this.select();"></textarea>
+      <script>
+        document.querySelector("#textarea").innerHTML = document.querySelector("#bookmarklet").getAttribute("href");
+      </script>
+    </div>
+
+    <p>
+      <small>
+        <a href="https://mreidsma.github.io/bookmarklets/installing.html" target="_blank">How to install bookmarklets</a>
+      </small>
+    </p>
+
+    <h2>Compatibility</h2>
+    <p>Tested in Chrome 65, Safari 11, Firefox 57.</p>
+
+    <p>Internet Explorer 11 is not supported.</p>
+
+    <h2>Source</h2>
+
+    <a href="https://github.com/agentcooper/youtube-sort">https://github.com/agentcooper/youtube-sort</a>
+  </main>
+
+  <script>
+    const isMac = navigator.userAgent.indexOf('Mac OS X') != -1;
+
+    Array.from(document.querySelectorAll('.mac-hint')).forEach(element => {
+      if (!isMac) {
+        return;
+      }
+
+      element.style.display = '';
+    });
+  </script>
+</body>
+
+</html>

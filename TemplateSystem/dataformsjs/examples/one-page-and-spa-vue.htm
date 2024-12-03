@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>One Page and SPA Demo | Vue</title>
+        <style>
+            body { padding:20px 40px; }
+            nav { padding:1em; }
+            nav a { padding:10px; }
+            nav a.active { color:white; background-color:darkblue; }
+            .align-right { text-align:right; }
+            p { padding: 1em; }
+            table { border-collapse:collapse; margin-top:40px; }
+            thead { background-color:darkgreen; color:white; }
+            th, td { padding:0.5em 1em; border:1px solid darkgreen; }
+            tr:nth-child(even) { background-color: lightgreen; }
+            .error { padding:1em; color:white; background-color:red; }
+
+            section { width:100%; height: 600px; }
+            #test1 { background-color: red; }
+            #test2 { background-color: blue; }
+            #test3 { background-color: green; }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#/">Home</a>
+            <a href="#/page1">Page 1</a>
+            <a href="#/page2">Page 2</a>
+            <a href="#/json-data/US">Json Data</a>
+        </nav>
+
+        <div id="view"></div>
+
+        <script type="text/x-template" data-engine="vue" id="counter-page">
+            <p data-change-border><strong>Page Loaded Counter:</strong> {{ counter }}</p>
+            <p class="change-border"><strong>Page Last Refreshed:</strong> <span v-format-time="new Date()"></span> </p>
+            <p class="change-border"><strong>Page Name:</strong> {{ pageName }}</p>
+        </script>
+
+        <template data-route="/">
+            <ul>
+                <a href="#test1" data-one-page>Test 1</a>
+                <a href="#test2" data-one-page>Test 2</a>
+                <a href="#test3" data-one-page>Test 3</a>
+            </ul>
+
+            <section id="test1"></section>
+            <section id="test2"></section>
+            <section id="test3"></section>
+        </template>
+
+        <!-- templates/page-object.js -->
+        <!--
+            Model properties can be optionally defined from HTML as shown
+            with the custom attribute [data-page-name] which becomes [pageName].
+        -->
+        <script type="text/x-template" data-engine="vue" data-route="/page1" data-page="pageName" data-page-name="Page1">
+            <div data-template-id="counter-page"></div>
+        </script>
+        <script type="text/x-template" data-engine="vue" data-route="/page2" data-page="pageName" data-page-name="Page2">
+            <div data-template-id="counter-page"></div>
+        </script>
+
+        <!-- templates/page-from-jsonData.js -->
+        <!--
+            Adding the attribute [data-load-only-once]
+            will cause the data to only load the first time the view is loaded
+            (or when the parameters change).
+        -->
+        <script
+            type="text/x-template"
+            data-engine="vue"
+            data-route="/json-data/:country"
+            data-page="customPage"
+            data-url="https://www.dataformsjs.com/data/geonames/regions/:country">
+
+            <h3 v-if="isLoading">Loading...</h3>
+            <p v-if="hasError">Error - {{ errorMessage }}</p>
+            <table v-if="isLoaded">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Population</th>
+                        <th>Timezone</th>
+                        <th>Date Last Modified</th>                               
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="region in regions">
+                        <td>{{ region.admin1_code }}</td>
+                        <td>{{ region.name }}</td>
+                        <td class="align-right" v-format-number="region.population"></td>
+                        <td>{{ region.timezone }}</td>
+                        <td class="align-right" v-format-date="region.modification_date"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </script>
+
+        <!--
+            https://vuejs.org
+            DataFormsJS works with both Vue 2 and Vue 3
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vue@3.2.30/dist/vue.global.prod.js"></script>
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+        <!-- DataFormsJS Standard Files -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/DataFormsJS.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/onePageSite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/navLinks.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/pages/jsonData.min.js"></script>
+
+        <!-- DataFormsJS Vue Directives -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/vue-directives.min.js"></script>
+
+        <!-- DataFormsJS Template Files -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-object.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/page-from-jsonData.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/plugin-function.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/templates/plugin-object.min.js"></script>
+    </body>
+</html>

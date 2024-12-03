@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Web Component Data List Template Demo</title>
+        <style>
+            main, .flex { display: flex; }
+            .flex.column { display:flex; flex-direction: column; }
+            ul, div { padding: 20px; }
+            .custom-error { color:red; background:pink; border:2px solid darkred; padding:.5em; }
+        </style>
+    </head>
+    <body>
+        <json-data url="https://www.dataformsjs.com/data/geonames/countries">
+            <is-loading>
+                <span class="loading">Loading...</span>
+            </is-loading>
+            <has-error>
+                <span class="error" data-bind="errorMessage"></span>
+            </has-error>
+            <is-loaded>
+                <main>
+                    <!--
+                        By default a basic <ul> list will be created. [root-attr]
+                        is optional and if defined will be added to the <ul> element
+                        or element defined in [root-element] (optional).
+
+                        Because `countries` is an array of objects using a basic:
+                            <li>{this}<li>
+                        Does not result in content showing correctly and instead shows:
+                            [object Object] which would be the value of `item.toString()`
+                    -->
+                    <data-list
+                        data-bind="countries"
+                        root-attr="class=items">
+                    </data-list>
+
+                    <!--
+                        [template-selector] allows for custom templates using
+                        JavaScript Template literals (Template strings)
+                    -->
+                    <data-list
+                        data-bind="countries"
+                        template-selector="#item-template">
+                    </data-list>
+
+                    <!--
+                        This example uses [root-element] which is optional
+                        and used only when using [template-selector].
+
+                        It also uses [root-class] instead of [root-element].
+                    -->
+                    <data-list
+                        data-bind="countries"
+                        template-selector="#list-template"
+                        root-element="ul"
+                        root-class="items">
+                    </data-list>
+
+                    <!--
+                        Error Examples
+                    -->
+                    <div class="flex column">
+                        <data-list
+                            data-bind="countries"
+                            template-selector="#error-template">
+                        </data-list>
+
+                        <data-list
+                            data-bind="countries"
+                            template-selector="#error-template"
+                            error-class="custom-error">
+                        </data-list>
+
+                        <div class="flex">
+                            <data-list
+                                data-bind="countries"
+                                template-selector="#error-item-template">
+                            </data-list>
+
+                            <data-list
+                                data-bind="countries"
+                                template-selector="#error-item-template"
+                                error-class="custom-error"
+                                root-element="ul">
+                            </data-list>
+                        </div>
+                    </div>
+                </main>
+            </is-loaded>
+        </json-data>
+
+        <!--
+            Templates use standard JavaScript Template literals (Template strings)
+            so JavaScript expressions can be used. Examples:
+                Number(area_km).toLocaleString()
+                formatNumber(population)  // formatNumber() is custom and defined at the bottom of this file
+
+            A zero-based `index` is made available for each item. If the list item object
+            already contains and `index` property it will be used instead.
+        -->
+        <template id="item-template">
+            <div data-index="${index}">
+                <strong>Code</strong> ${iso}
+                <br><strong>Country</strong> ${country}
+                <br><strong>Size (KM)</strong> ${Number(area_km).toLocaleString()}
+                <br><strong>Population</strong> ${formatNumber(population)}
+                <br><strong>Continent</strong> ${continent}
+            </div>
+        </template>
+
+        <template id="list-template">
+            <li>
+                ${iso} - ${country}
+            </li>
+        </template>
+
+        <template id="error-template">
+            <div>${error</div>
+        </template>
+
+        <template id="error-item-template">
+            <div>${error}</div>
+        </template>
+
+        <script>
+            function formatNumber(num) {
+                return Number(num).toLocaleString();
+            };
+        </script>
+
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/json-data.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/data-list.min.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/web-components/polyfill.min.js"></script>
+    </body>
+</html>

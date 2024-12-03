@@ -1,0 +1,75 @@
+<json-data
+    url="https://www.dataformsjs.com/data/ai-ml/sample-data/resnet50"
+    load-only-once
+    onready="setupFileUploads()">
+    <is-loading template-selector="#loading-screen"></is-loading>
+    <has-error template-selector="#error-screen"></has-error>
+    <is-loaded>
+        <section>
+            <div class="content">
+                <h1 data-i18n="Image Prediction Demo"></h1>
+                <input type="file" accept="image/*" @change="selectImages" multiple>
+            </div>
+        </section>
+        <div>
+            <!--
+                This <data-list> Web Component (or Framework Control when using the Polyfill)
+                uses and advanced template that returns HTML so the attribute
+                [template-returns-html] must be included.
+            -->
+            <data-list
+                data-bind="images"
+                template-selector="#image"
+                template-returns-html
+                list-item-name="image"
+                root-element="ul"
+                root-attr="class=results">
+            </data-list>
+
+            <!--
+                This is the template for the image list items. It is an advanced template compared
+                to most demos because it uses JavaScript functions in a similar manner to JSX.
+
+                A difference between this template and JSX is syntax such as ${expression && '<div>'}
+                can return the text string `false` rather than an empty element. The reason is because
+                JSX uses Virtual DOM and builds elements while JavaScript templates here return
+                only text strings using a JavaScript Tagged Template Literal function or a Polyfill.
+
+                This template uses ES5 so it works with all Browsers and can be handled when using [polyfill.js].
+                For ES5 support nested `${js}` expressions are not supported.
+            -->
+            <template id="image">
+                <li>
+                    <img src="${escapeHtml(image.src)}" />
+                    ${image.isUploading === true ? '<div class="loading">' + i18nText('Uploading...') + '</div>' : ''}
+                    ${image.hasError === true ? '<div class="error">' + i18nText('Error') + '</div>' : ''}
+                    ${image.predictions.map(function(prediction) {
+                        return '<div class="' + resultClass(prediction.probability) + '">' + prediction.label + ' = <span>' + format.percent(prediction.probability, 5) + '</span></div>'
+                    }).join('')}
+                </li>
+            </template>
+
+            <!--
+                Here is an example of a template that results in the same HTML but only works
+                with modern browsers only when using Web Components and not the Polyfill.
+
+                When using <data-list> or <data-table> with modern browsers the functions
+                [escapeHtml()] and [render`string`] can be used to escape HTML when using
+                the attribute [template-returns-html]. For basic templates they are not needed
+                because all expressions in ${value} are automatically escaped.
+            -->
+            <template id="image-modern-js">
+                <li>
+                    <img src="${escapeHtml(image.src)}" />
+                    ${image.isUploading === true ? render`<div class="loading">${i18nText('Uploading...')}</div>` : ''}
+                    ${image.hasError === true ? render`<div class="error">${i18nText('Error')}</div>` : ''}
+                    ${image.predictions.map(prediction => {
+                        return render`<div class="${resultClass(prediction.probability)}">
+                            ${prediction.label} = <span>${format.percent(prediction.probability, 5)}</span>
+                        </div>`
+                    }).join('')}
+                </li>
+            </template>
+        </div>
+    </is-loaded>
+</json-data>

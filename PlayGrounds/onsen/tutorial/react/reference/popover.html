@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script type="text/babel">
+    class MyPage extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          isOpen: false
+        };
+        this.buttonRef = React.createRef();
+
+        this.show = this.show.bind(this);
+        this.hide = this.hide.bind(this);
+        this.getTarget = this.getTarget.bind(this);
+      }
+
+      renderToolbar() {
+        return (
+          <Ons.Toolbar>
+            <div className='center'>Popover</div>
+          </Ons.Toolbar>
+        );
+      }
+
+      getTarget() {
+        return this.buttonRef;
+      }
+
+      show() {
+        this.setState({isOpen: true});
+      }
+
+      hide() {
+        this.setState({isOpen: false});
+      }
+
+      render() {
+        return (
+          <Ons.Page renderToolbar={this.renderToolbar}>
+            <section style={{margin: '16px'}}>
+              <p style={{textAlign: 'center'}}>
+                <Ons.Button ref={this.buttonRef} onClick={this.show}>Tap here!</Ons.Button>
+              </p>
+            </section>
+
+            <Ons.Popover
+              isOpen={this.state.isOpen}
+              onOpen={this.show}
+              onHide={this.hide}
+              isCancelable={false}
+              getTarget={this.getTarget}
+            >
+              <section style={{margin: '16px'}}>
+                <p style={{opacity: 0.6}}>
+                  This is a popover. Show some information here.
+                </p>
+                <p>
+                  <Ons.Button onClick={this.hide}>
+                    Close
+                  </Ons.Button>
+                </p>
+              </section>
+            </Ons.Popover>
+          </Ons.Page>
+        );
+      }
+    }
+
+    ons.ready(function() {
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<MyPage />);
+    });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<!-- info
+
+## Popover
+
+The `Popover` component displays a box next to a target component or element. It can be used to show a tooltip, an info box or even for displaying a menu.
+
+The popover will automatically alter its style based on the platform. On Android it will be displayed as a Material Design component.
+
+To show or hide a popover the `isOpen` property is used. To determine which component it should visually point to, the `getTarget` property must be set to a function that returns a reference either to an React component or a DOM element.
+
+-->

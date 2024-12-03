@@ -1,0 +1,676 @@
+
+TODO List
+
+--------------------------------------------------------------------------
+|
+|   In General:
+|
+|   *) More Documentation and Getting Started Templates
+|   *) More Examples (for all or most scripts and features)
+|   *) Translations
+|      https://github.com/dataformsjs/dataformsjs/blob/master/docs/i18n-translations.md
+|   *) More Unit Testing
+|   *) Additional Scripts and Features
+|
+|   There is no priority to this list.
+|   All contributions are welcome.
+|
+|   Generally every item in this list is of low priority and more of a
+|   wish list item rather than an actual need. The highest priority items
+|   are at the top and start with `**)`. Development typically occurs
+|   based on the need of real world production sites and apps.
+|
+--------------------------------------------------------------------------
+
+**) Update the Getting Started CSS Template used here:
+        https://www.dataformsjs.com/en/getting-started
+    So that it looks similar to the places demo and can be used for apps as decent starting template
+    Source for template is:
+        website\public\html\getting-started\getting-started.css
+
+**) Update Playground Code to include examples of ES6 Framework classes
+    - Playground should have 2 files for the calc page
+        - One ES5 (current file) for IE
+        - Other class version of modern browsers
+    - Likely do this for the web component calc page as well (using a custom element)
+
+**) Playground Site
+    - Switch to Monaco Editor from CodeMirror for users that view the site from a laptop
+        or desktop computer. Mobile users (determined by UserAgent) will still receive
+        CodeMirror.
+    - Monaco Editor is the editor used by VS Code and provides built-in JSX validation
+        along with better formatting and performance compared to CodeMirror.
+        With CodeMirror it's hard to indent both JSX code and Templates (Vue, Handlebars)
+    - A React Demo of the playground that uses the Monaco editor can be used as a
+        starting point on the needed Monaco API's that would be required.
+    - https://github.com/dataformsjs/dataformsjs/blob/master/examples/code-playground-react.htm
+    - https://www.dataformsjs.com/examples/code-playground-react.htm
+
+**) Priority for additional Documentation and Examples
+    - Add Markdown and related docs to Quick Ref Section
+    - Add Web Component API examples to quick ref section of the main site
+        'app:contentReady', etc
+        - Currently the places demo and other demos provide good examples
+          when viewing source code of the demo.
+    - Create a markdown overview doc using Web Components
+        - Will cover overview and details - similar to the JSX Loader doc:
+            https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md
+        - Topics to cover:
+            - SPA Routing
+            - Using to download JSON Data and bind to other elements on screen
+            - How data binding works
+            - Web Component "Services" Concept
+                Add a template for this in quick ref section on main site
+            - How the polyfill works and reason it was created over other options
+            - How to test the polyfill with modern browsers:
+                Just use:
+                    <script src="../js/web-components/polyfill.js"></script>
+                Instead of:
+                    <script nomodule src="../js/web-components/polyfill.js"></script>
+        - Provide examples of how [polyfill.js].[getRootUrl()] works for documentation.
+            - Or add a markdown doc for it
+            - Here is an example of an defining a custom URL from the app:
+                <script>
+                    window.dataformsjsUrl = 'http://127.0.0.1:8080/js/';
+                    window.dataformsjsMinFiles = false; // Optional (defaults to `true`)
+                </script>
+                <script nomodule src="../js/web-components/polyfill.js"></script>
+            - By default the path will be determined from where [/web-components/polyfill.js] is defined:
+                <script src="../js/web-components/polyfill.min.js"></script>
+                    [*.min.js] Framework files will be downloaded
+                <script src="../js/web-components/polyfill.js"></script>
+                    Full [*.js] Framework files will be downloaded
+        - Once a Web Component and Framework doc are created then both those docs
+            along with jsxLoader and Readme could be added as a new "Documentation"
+            page on the main site using the new <markdown-content> component
+    - Create a Markdown Doc for the Main Framework
+    - Create a Markdown Doc for the React Components
+    - Instead of the current getting started templates consider having many rather than just a few
+        with the current language translations. For example the current versions can be built and then
+        new templates added as it makes sense. Have many more templates would make it much easier to
+        use DataFormsJS.
+        https://www.dataformsjs.com/en/getting-started
+    - Publish a nice looking version and more useful of markdown
+        demos in the examples section of the main site.
+        - Current Demos used for Development:
+            https://www.dataformsjs.com/examples/markdown-web.htm
+            https://www.dataformsjs.com/examples/markdown-react.htm#/
+            https://www.dataformsjs.com/examples/markdown-vue.htm
+            https://www.dataformsjs.com/examples/markdown-hbs.htm
+    - Hacker News Demos can be published on the main site once a standard Framework version is created.
+        - Currently React and Web Component Versions exist
+            https://www.dataformsjs.com/examples/hacker-news-web.htm
+            https://www.dataformsjs.com/examples/hacker-news-react.htm
+        - This would use a custom page object and JavaScript rather than nested JSON controls
+    - Update jsxLoader doc based on updates and findings from this issue:
+        https://github.com/dataformsjs/dataformsjs/issues/16
+        * How to use with node and webpack
+        * Also add new `data-type="module"` to doc.
+            * Added for release `5.4.0`
+    - Create a new repository showing how to use DataFormsJS
+            with webpack: https://webpack.js.org/
+        - The DataFormsJS React Components have been developed and tested
+            using create-react-app, webpack, etc; however the main framework,
+            web components, and the jsxLoader were not originally tested with webpack
+        - Basics:
+            - Import files directly, future docs can go into detail on why
+            # Framework
+            import 'dataformsjs/js/DataFormsJS'
+            import 'dataformsjs/js/plugins/navLinks'
+            # JSX Loader
+            import 'dataformsjs/js/react/jsxLoader'
+                # To prevent side effects from the jsxLoader on webpack set
+                # the following directly in the related script.
+                jsxLoader.isSupportedBrowser = true;
+                jsxLoader.needsPolyfill = false;
+                jsxLoader.setup = function() { };
+            # Web Components
+            import 'dataformsjs/js/web-components/json-data'
+            import 'dataformsjs/js/web-components/data-table'
+        - Also likely another repository [create-dataformsjs-app] using
+            [create-react-app] as a starter to show how to use DataFormsJS
+            with [create-react-app].
+    - Log Demos:
+        - https://www.dataformsjs.com/examples/log-table-vue.htm#/10
+            * And other similar files
+        - Log Demos should include a new [Info] tab with helpful text on what the demo shows.
+        - The new [log-table-web-services.htm] should also link to [log-table-web.htm] and vice-versa.
+
+*) Web Components Updates
+    - <data-list> and <data-table>
+        - Include <url-router>.currentUrlParams in template rendering as `urlParams`
+        - This would simply code below that uses `document.querySelector(...)` within the <template>
+            <url-route path=":name">
+                <template>
+                    <h1 url-param="name"></h1>
+                    <json-data
+                        url="/api/files/image-folder/:name" url-params>
+                        <is-loading>
+                            <span class="loading">Loading...</span>
+                        </is-loading>
+                        <has-error>
+                            <span class="error" data-bind="errorMessage"></span>
+                        </has-error>
+                        <is-loaded>
+                            <data-list
+                                data-bind="images"
+                                template-selector="#image"
+                                root-element="ul"
+                                list-item-name="image">
+                            </data-list>
+                        </is-loaded>
+                    </json-data>
+                </template>
+            </url-route>
+            <template id="image">
+                <li>
+                    <image-gallery image="/images/${document.querySelector('url-router').currentUrlParams.name}/${image}">
+                        <img src="/images/${document.querySelector('url-router').currentUrlParams.folder}/${image}" alt="${image}">
+                    <image-gallery>
+                </li>
+            </template>
+    - Create a [custom-elements.json]
+        - This format is not finalized so creating the file can wait till later
+        https://runem.github.io/web-component-analyzer/
+        https://github.com/runem/web-component-analyzer
+        https://github.com/webcomponents/custom-elements-manifest
+        https://github.com/WICG/webcomponents/issues/776
+    - <json-data>
+        - Add support for custom Request Headers.
+        - For how the standard Framework handles this see code related to [app.settings.requestHeaders].
+        - React <JsonData> uses props
+        - The Web Components version will likely use global variables to be defined from JS:
+            <script>
+                window.requestHeaders = {}
+                window.requestHeadersByHostName = {}
+            And then the Framework [app.getRequestHeaders] and related code can be used as a starting point
+            If using this option it will be easy to work with the the framework when using [polyfill.js]
+        - If adding `window.requestHeaders` and `window.requestHeadersByHostName` then any Web Component
+            that uses fetch such as <markdown-content> should also use the headers - just like the Framework
+            versions of the code.
+    - Add a <graphql-data> component based on <json-data>
+        - Or should it be added as a feature of <json-data>?
+        - First likely try as a feature because the main Framework and React Components
+            add it as a feature so it can allow the polyfill to use existing Framework code.
+    - Create a new <form is="entry-form"> Component
+        - A Framework JavaScript control could be created as the Polyfill. Ideally the new control
+            would use functions from the main entryForm page object so it doesn't have to be duplicated.
+        - Existing Framework Demo:
+            https://www.dataformsjs.com/examples/entry-form-demo-vue.htm
+        - This may or may not ever be created. It's not a priority until needed for an actual production site.
+            Web Components (as of release 5.0.0) contain a new easy to use JavaScript API that allows for
+            a site to be extended using only basic JavaScript functions so it's easy to build custom
+            entry form apps.
+        - If it doesn't make sense to create <form is="entry-form"> then the demo can
+            be re-created using custom JS
+    - Create a new Web Component for advanced drop-down/select lists?
+        - Would use behavior and features from:
+            https://react-select.com/home
+            https://harvesthq.github.io/chosen/
+            https://select2.org/
+            https://selectize.github.io/selectize.js/
+            https://joshuajohnson.co.uk/Choices/
+            https://github.com/downshift-js/downshift
+            https://vue-multiselect.js.org/
+        - If there is a good Web Component alternative then this does not need to be created
+        - Needed features:
+            - Show Images, this can be done with the templating feature similar to <data-list> / <data-table>
+            - Different Value/Label - for example Country Code [value] but Country Name for user list
+            - Type to filter
+            - Multiple select with tags
+            - [role="listbox"] - example in: website/public/html/getting-started.htm
+            - or use [aria-autocomplete="list" role="combobox"] / Need to research more at time of development
+        - Possible names:
+            <data-select>
+            <web-select>
+            <image-select>
+    - Add Unit Testing
+        - Currently only the main Framework and the React [jsxLoader.js] have Unit Testing
+
+*) Add TypeScript Declarations
+    https://docs.skypack.dev/package-authors/package-checks#types
+    https://humanwhocodes.com/snippets/2020/10/create-typescript-declarations-from-javascript-jsdoc/
+    https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html
+
+*) Considering adding support for LiquidJS as a Framework View Engine
+    - https://liquidjs.com/
+    - The latest build of liquid is smaller than both Handlebars and Nunjucks,
+        has been optimized recently (as of 2020), and now has wider usage.
+
+*) New plugin or features to handle content preloading?
+    - For example routes could have a [data-preload] attribute and then a new plugin would
+        download and cache all content in memory when the first page is opened.
+        Other options for preloading could be added as well if they make sense.
+    - This can could be developed and tested on the main site.
+    - Ideally all related code would go in a new plugin and not the main [DataFormsJS.js] file
+    - An alternative option to consider is to update `refreshAllHtmlControls()` so it processes
+        multiple downloads on the screen async. If doing this it will still need to include the
+        recursive logic to handle all nested elements.
+    - Also related on the main site some content is only downloaded and displayed when the user
+      clicks an example. This is not SEO friendly and can cause a delay for users with slow mobile
+      devices. Ideally [role="tab"] would be used with content preloading.
+      Currently all tabs on the main site point to the same tabpanel and content is replaced once the
+      the user clicks the button.
+        https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role
+        https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/ARIA:_tabpanel_role
+    - Code for the home page is here:
+        https://github.com/dataformsjs/website/blob/master/public/html/home-page.htm
+        https://github.com/dataformsjs/website/blob/master/public/js/page-home-page.js
+        - See code related to `code.setAttribute('data-template-url', page);`
+
+*) Additional Markdown Docs to Create
+    - Build Process
+    - How Unit Testing Works
+        See additional notes in this doc related to Unit Testing
+    - Both of the above topics are covered briefly in:
+        https://github.com/dataformsjs/dataformsjs/blob/master/docs/jsx-loader.md
+    - Should a new section on the main site be created that uses [jsx-loader.md]
+        and future new docs as the source? A proof of concept should be created
+        to see how this would work.
+
+*) Demos
+    - React examples of the following:
+        - https://www.dataformsjs.com/examples/entry-form-demo-hbs.htm
+        - https://www.dataformsjs.com/examples/binary-classification-vue.htm#/en/
+        - One option is to use https://react-hook-form.com/
+        - A new <EntryForm> and related components might be created in the future as well (not yet decided on though)
+    - One Page Site Demos are functional but very ugly:
+        [examples/one-page-site-hbs.htm]
+        [examples/one-page-and-spa-hbs.htm]
+        - These should be updated with some basic info such as how they work and made to look nice
+        - [one-page-and-spa-hbs.htm] was started based on the [template-files-hbs.htm] page
+            so some content on the SPA pages is not needed
+
+*) Add options for lazy load scripts from [app.loadScript], [app.loadScripts], and Web Component
+    `window.lazyLoad = {}` to include support for additional attributes. For example without
+    the [crossorigin] attribute on <script> elements detailed errors are not shown. However
+    [crossorigin] can't be included by default because it actually requires the server to
+    support CORS. To see an example use the playground and add this to the bottom of the
+    main page. Then run it with an without 'crossorigin'.
+        document.addEventListener('DOMContentLoaded', function() {
+            var url = 'https://dataformsjs.s3-us-west-1.amazonaws.com/tmp/calcPage.js';
+            var script = document.createElement('script');
+            script.setAttribute('crossorigin', 'anonymous');
+            script.src = url;
+            document.head.appendChild(script);
+        });
+    Mozilla Docs:
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+
+*) Version for deno of [dataformsjs/server/app.js]
+    Allow server to start with either deno or node
+
+*) Possibly link to Unit Tests from the footer on the main site
+    - Current URL (hidden - not linked from anywhere):
+        https://www.dataformsjs.com/unit-testing/
+    - Possible new URL:
+        https://www.dataformsjs.com/en/unit-tests
+    - The current URL would then redirect
+    - If adding documentation to the main site these could simply be linked from that page
+    - New page would need to look nice and provide a brief overview
+    - Currently many Vue unit tests fail if using IE so this might have to be fixed first
+        (either that or simply add notes to the page regarding IE and Vue)
+
+*) Template Files
+    - File [dataformsjs\examples\_template.htm] should be separated for different options and include a hello world or display of JSON data:
+        _template_{hbs, vue, react}.htm
+
+*) Additional Unit Testing for Vue
+    - Currently Vue has to skip many tests due to how Virtual DOM works differently than templating
+    - Possibly a new page, not yet decided on, low priority as everything works and it passes many tests
+    - Currently many tests fail in IE with the Vue, however all demos work correctly
+
+*) The Hacker News API Demo (link below) will likely be combined into a larger Public API's Demo
+    - https://www.dataformsjs.com/examples/hacker-news-react.htm
+    - Other API's to start:
+        https://api.github.com/emojis
+    - Once completed the page can be added to the examples section on the main site
+
+*) Many Docs need to be created along with API page(s)
+    - API needs a quick search/filter feature to look up any attribute/class/function/etc
+        and find where it is defined and how to use it.
+    - UI/UX still needs to be decided on for API docs
+    - Or Docs can simply be added to GitHub as Markdown Docs
+
+*) Create Server-side Starter Sites in all widely used Languages and Frameworks
+    - Include ability for content to be defined server-side and saved to a SQLite Db
+
+*) Docs and demos to Create
+    - Cleanup [DataFormsJS\examples\handlebars-helpers.htm] and add to to the main
+        examples page. Also create a similar [vue-directives.htm] file.
+        - For cleanup likely add a new plugin [refreshOnTimer] to refresh the page
+          on a defined interval from the HTML controller.
+        - Demo page with all Handlebars Helpers such as {{#ifJS}}
+    - Framework Event Order (note - Vue varies slightly)
+        ====================================================
+        Page Event Order when a URL Changes:
+        ------
+        plugins.onRouteUnload()
+        controller.onRouteUnload(model as this)
+        plugins.onRouteLoad(next)
+        controller.onRouteLoad(model as this)
+        ... Then code below:
+        --------------------------------------------------
+        Event Order for when app.updateView() is called.
+        This can happen multiple times per URL/Hash Change:
+        ------
+        controller.onBeforeRender(model as this)
+        plugins.onBeforeRender()
+        -- HTML Template Rendered --
+        -- HTML Controls Rendered --   Elements with [data-template-id] or [data-template-url]
+        -- JS Controller Loaded -- Custom JS Controls defined by [js/controls]
+        plugins.onRendered()
+        controller.onRendered(model as this)
+        app.onUpdateViewComplete()  # Global event - typically for Unit Testing only
+        ====================================================
+    - Getting Started Page
+        - See comments in: [Website\public\js\page-getting-started.js] under [viewTemplate.onclick]
+            Templates should possibly be rendered from PHP server-side. FastSitePHP has
+            and I18N API that is similar to DataFormsJS so it would be easy to convert.
+        - Likely add a regions page that is downloaded from CDN, this would also need to handle
+            translations so server-side code would help here
+    - If using Vue then document and show examples of which controller functions are called
+        by which Vue events - search [DataForms.js] for "new Vue".
+        - Example [Controller.onRouteLoad] is called by [Vue.mounted]
+    - Vue - [app.activeVueModel] can be used but not on the first [onRendered], apps should use [this]
+    - How to use custom events for <url-router> and <json-data>
+      See comments in JS code at bottom of:
+        DataFormsJS\examples\places-demo-web.htm
+    - How to use Authorization and various options, see example in [DataFormsJS\examples\entry-form-demo-hbs.htm]
+    - Document with an example of why most event listener functions should be defined
+      in separate named functions outside of [addEventListener]. For example if
+      an anonymous function is added and the plugin is called multiple times on
+      the same element then multiple functions would be called. Example [clickToHighlight]
+      uses [toggleHighlight()], if not used and [app.plugins.clickToHighlight.onRendered()]
+      were called several times then it performs the same action several times.
+    - How to use [app.loadScript()], example:
+            var url = 'https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js';
+            app.loadScript(window.Chart, url, callback);
+        or:
+            app.loadScript(window.Chart, url).then(function() {
+                // Code for Chart
+            });
+        To load script 1st Parameter needs to be [false] or [undefined]:
+            (window.Promise && window.fetch ? true : false)
+            window.fetch
+    - How [app.lazyLoad], [data-lazy-load] and [app.loadScripts] works, for starting point
+      see comments in:
+        DataFormsJS\examples\places-demo-hbs.htm
+    - How to setup a local development - create the following folders, download needed files to them,
+      then comment out CDN links and uncomment the vendor links.
+        DataFormsJS\vendor
+        DataFormsJS\test\vendor\qunit
+    - Examples in the [js/templates/*] such as [page-object.js] will likely be moved to documentation
+        pages and the template files more minimal with only [console.log()] on the events.
+        In the future there should be unit tests for the [js/templates/*] files.
+    - Custom Controls, for example usage see [DataFormsJS\examples\js-control-demos-hbs.htm]
+        That file can be a starting point to see code for how to build custom controls.
+        In the future there should also be one or more [DataFormsJS\js\templates\*.js] files
+        for custom controls.
+    - Demos for Handlebar Helpers, Vue Directives and React Format class
+    - All Parameters for I18N Files and Classes, example for React:
+        const defaultLocale = 'en';
+        const supportedLocales = ['en', 'ja'];
+        const fileName = 'countries';
+        const fileDir = 'http://localhost:3000/i18n';
+        const i18n = new I18n(defaultLocale, supportedLocales, fileName, fileDir);
+    - Build process for JS on the main site:
+        npm install uglify-js -g
+        uglifyjs page-home-page.js -o page-home-page{YYYYMMDD}.min.js -c -m
+        uglifyjs page-home-page.js -o page-home-page.20200205.min.js -c -m
+        uglifyjs prism.modified.js -o prism.modified.min.js -c -m
+    - Document different build options that can be used
+        Uglify-js https://www.npmjs.com/package/uglify-js
+        Google Closure Compiler https://developers.google.com/closure/compiler/
+        Estimated Gzip size  https://github.com/sindresorhus/gzip-size-cli
+        --
+        Example using Windows [*.bat] files:
+        Note - paths are currently invalid
+        ----
+        ECHO Building File [DataFormsJS.min.js] with Uglifyjs
+        uglifyjs ^
+                .\..\src\DataFormsJS.js ^
+                .\..\src\pages\jsonData.js ^
+                .\..\src\plugins\filter.js ^
+                .\..\src\plugins\sort.js ^
+                -o .\..\dist\DataFormsJS.min.js -c -m
+        ---
+        REN This script assumes Java is installed and [compiler.jar] is copied to this folder
+        ECHO Building File [DataFormsJS.min.js] with Google Closure
+        java -jar compiler.jar ^
+            --compilation_level SIMPLE_OPTIMIZATIONS ^
+            --js_output_file=DataFormsJS.min.js ^
+            --js DataFormsJS.js ^
+            --js jsonData.js ^
+            --js handlebars-helpers.js ^
+            --js filter.js
+        --
+        Using a windows [*.cmd] file to run the [*.bat] file and set a file date:
+        --
+        REM This File can be double-clicked on from Windows Explorer
+        REM If building multiple builds in the same day add letter to the end, example YYYYMMDD{a-z}
+        ECHO OFF
+        ECHO *******************************************************
+        REM CALL Build.bat
+        CALL Build.bat
+        REM REN DataFormsJS.min.js DataFormsJS.min.%date:~-4,4%%date:~-7,2%%date:~-10,2%.js
+        REN DataFormsJS.min.js DataFormsJS.min.%date:~-4,4%%date:~-7,2%%date:~-10,2%.js
+        PAUSE
+        --
+    - How to delay a loading screen for a specific time through CSS, see example in:
+        Website\public\html\getting-started\getting-started.css
+    - Show difference between jQuery, Object.assign() and app.deepClone() in a doc
+        jQuery adds to an array rather than replace it
+			var data = { a:[ {o1:1}, {o2:2}, {o3:3}, {o4:4} ] }
+			$.extend(true, data, { a:[ {o1:'a'}, {o2:'b'}, {o3:'c'} ] })
+		Then:
+			data = { a:[ {o1:'a'}, {o2:'b'}, {o3:'c'}, {o4:4}  ] }
+			- Issue with jQuery Deep Clone [o4] is still kept which results in
+              in unexpected results for the Json Data Services (page.jsonData, <JsonData>, etc)
+		Compare with:
+			Object.assign(true, data, { a:[ {o1:'a'}, {o2:'b'}, {o3:'c'} ] })
+			app.deepClone(data, { a:[ {o1:'a'}, {o2:'b'}, {o3:'c'} ] })
+		Show this as a more practical example (real records in an array)
+
+		# Object.assign() works but will set a ref to original nested array
+        var data = { a:[1,2,3] }
+        var data2 = Object.assign({}, data)
+			# compare with: [var data2 = app.deepClone({}, data)]
+        data2.a === data.a
+        data.a.push(4)
+        data2.a.indexOf(4)
+
+*) Playground Page
+    - Optimization - stop/start the timers based on if the tab is active or not?
+        https://webkit.org/blog/8970/how-web-content-can-affect-power-usage/
+        https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+    - Add CodeMirror support for GraphQL
+        At the time of writing GraphQL is not a built-in mode for CodeMirror:
+            https://codemirror.net/mode/index.html
+        Instead Facebook uses their own custom mode and it requires a custom build process and not CDN, see:
+            https://github.com/graphql/graphiql/tree/main/packages/codemirror-graphql
+
+*) DataFormsJS\js\Plugins\highlighter.js
+    - Allow users to define text results such as "{count} Records matched [{value}]"
+    - Add ability to handle multiple languages
+
+*) dataformsjs\js\plugins\codemirror.js
+    - Create a demo page (both Vue and Handlebars)
+    - This would likely include a web service that returns different example code in multiple languages from the server
+    - Possibly add an options to save changes automatically from the textarea. Example:
+        app.plugins.codemirror.saveEditsAutomatically = true;
+    - The option could be setup to be `true` by default. That would change the behavior of the plugin,
+        however in general this plugin would likely be used as a template plugin anyways.
+
+*) todomvc Example
+    - Possibly publish it as a separate Repository with notes on how to copy?
+    - Or keep core files with notes on how to install?
+    - Future - run unit tests against it:
+        https://github.com/tastejs/todomvc/tree/master/tests
+
+*) Add unit tests for momentjs with handlebars - or add to a separate page?
+    - Originally it was included but has been removed from the initial release:
+            <div id="moment-01">{{moment (now) "YYYY.MM.DD"}}</div>
+            <div id="moment-02">{{moment dateTime "YYYY.MM.DD, h:mm:ss A"}}</div>
+            { id: "moment-01", value: (new Date()).getFullYear(), type: "contains" },
+            { id: "moment-02", value: "2015.01.31, 1:23:45 PM" },
+
+*) GraphQL
+    - Add GraphQL support on [pages/entryForm.js]
+    - Add support for other GraphQL types such as Float.
+        Currently only Strings and Integers are supported, see:
+        https://graphql.org/graphql-js/basic-types/
+        - Related Code:
+            app.buildGraphQLVariables()
+    - Can the file [app\app.js] be easily updated to avoid using "SELECT *"
+        on SQL queries and get only the requested fields. Only do this if it
+        doesn't take too much code because the file is meant to be a simple
+        and readable demo. See the following link:
+        https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a
+    - Add GET support for GraphQL in:
+        DataFormsJS\js\controls\json-data.js
+      See how it can be done from:
+        DataFormsJS\js\pages\jsonData.js
+      When adding a demo page needs to be created to test
+
+*) Create Unit Tests for the following functions:
+    Controller.onRouteUnload
+
+*) Additional Unit Testing for the following functions, props, etc:
+    data-engine:
+        Validate error message in [app.setup()] at [(viewEngine === ViewEngines.Unknown)]
+        This will be similar to the unit test for "template-invalid-path"
+    app.deepClone() - Test with getter/setter props
+    app.loadScript()
+    [app.lazyLoad] and all related features including [app.loadScripts]
+        See additional comments in next item below
+    app.loadJsControl(), examples
+        - verify [app.activeJsControls[n].data] objects
+        - manually call and recall [app.loadJsControl()]
+    app.unloadAllJsControls()
+        - manually test before a route is unloaded or when page is called with updateView
+    [data-default-route] used to specify default route from script element (used on the main web site)
+    app.locals
+    controller.settings
+        - using Arrays, Objects, etc
+    Event Order for manual calls to [refreshHtmlControl()] and [refreshAllHtmlControls()]
+        and how they call [refreshPlugins()] and [loadAllJsControls()].
+        This can probably be checked in test "Route Change and Event Order"
+        - Params should be tested for these functions as well
+    addPlugin(name, function)
+        Currently only [addPlugin(name, object)] is validated
+    addPage() and addController()
+        When creating Unit Tests for Vue these two functions should exclude the function [onBeforeRender]
+        from validation in case a controller only defines that function. When using Vue [onBeforeRender()]
+        is not called - low priority updated needed in [DataForms.js] for this
+    app.settings.getRequestHeaders
+        - Example:
+            app.settings.requestHeaders = { "X-Test-Header": "Test123", "X-Test2": "ABC" };
+            app.settings.requestHeadersByHostName = { localhost: { "X-Test-Header": "123456789" }};
+            app.getRequestHeaders("http://localhost/test");
+            app.getRequestHeaders("https://www.example.com/");
+    Test parameters for all [apply(app.activeModel, app.activeParameters)] code
+    app.handleGlobalErrors()
+    <templates> = [display:none] for IE but not other browsers
+    plugin.onRouteLoad
+    Create a separate page for testing features if no controllers are included on a page
+        verify that plugins run, etc
+    data-set-text-content
+    app.getTemplateType()
+        Error under [(script.tagName !== 'TEMPLATE' && script.tagName !== 'SCRIPT')] is not tested
+    CSS Error Styles that were added after Unit Tests were initially created:
+        '.dataformsjs-error,.dataformsjs-fatal-error{',
+            'white-space:pre;',
+            'text-align:left;',
+
+*) Update for previous Unit Tests that changed when [app.lazyLoad] as added.
+    - Before [app.lazyLoad] the pages had to be defined when controllers were added
+      so this code was included under [DataFormsJS.js -> addController()]
+        if (controller.pageType !== null && controller.pageType !== undefined) {
+            ...
+            validateObjectExists(this.pages[controller.pageType], 'app.pages.' + controller.pageType, funcName);
+            validateTypeOf(this.pages[controller.pageType].model, 'object', 'app.pages.' + controller.pageType + '.model', funcName);
+    - And the following were tested in [unit-testing.js]:
+            try {
+                expectedMessage = "[app.pages.MissingPage] must first be defined before the function app.addController(path=Test) is called";
+                app.addController({ path: "Test", pageType: "MissingPage" });
+                assert.ok(false, "Test should have failed");
+            } catch (e) {
+                assert.ok(e instanceof TypeError, "Exception should be a TypeError");
+                assert.equal(e.message, expectedMessage, expectedMessage);
+            }
+
+            try {
+                //First add an invalid page manually without using app.addPage()
+                //This error would happen if the developer overwrites a page object
+                //as a invalid type or if they manually add an invalid page.
+                app.pages.InvalidPage = { model: function () { return ""; } };
+                tester.pagesCount++;
+
+                //Run the test
+                expectedMessage = "[app.pages.InvalidPage.model] was not defined as a object when the function app.addController(path=Test) was called";
+                app.addController({ path: "Test", pageType: "InvalidPage" });
+                assert.ok(false, "Test should have failed");
+            } catch (e) {
+                assert.ok(e instanceof TypeError, "Exception should be a TypeError");
+                assert.equal(e.message, expectedMessage, expectedMessage);
+            }
+    - That validation is now handled in [function setControllerFromPage(controller)] with the following code
+			if (app.pages[controller.pageType] === undefined) {
+				error = 'The page [' + controller.pageType + '] has not been loaded for Controller[path=' + controller.path + '].';
+			} else if (typeof app.pages[controller.pageType].model !== 'object') {
+				error = 'Error - The [model] property for page object [' + controller.pageType + '] must be a valid JavaScript Object.';
+			}
+    - The new validation needs to be tested and will have to use hash routing to check the view after hash change for the errors
+
+*) DataFormsJS Object
+    *) app.addPage("name", callback)
+        if function is passed then it will create page as
+            { model:{}, onRendered:callback }
+        similar to how [app.addPlugin()] works with a callback function
+    *) More HTML defaults for things such as [app.settings.defaultRoute]?
+        document.documentElement.getAttribute('data-show-errors')
+    *) app.routeMatches() should not match "/" to [data-route="/:count"]
+    *) Add a redirect function, currently using this in one of the demos:
+        app.addController({ path:"/", onBeforeRender:function() {
+            window.location.hash = "#/20";
+        }});
+        * Something will need to be fixed now since ":lang" will be used
+        on the main site
+    *) Add [app.settings.fetchOptionsByHostName] which will be similar
+        to [requestHeadersByHostName] and add a related [getFetchOptons()]
+        function that will be similar to [getRequestHeaders()].
+
+*) Page [entryForm]
+    *) Add support for radio input controls
+    *) Add support for additional [data-type] values
+    *) Keep [Save] button disabled if there are no changes
+        Try adding this first as a separate plugin
+    *) <input type="file"> likely to be handled with various plugin options and example server code
+        see the image classification demo for now
+    *) Add validation options to highlight invalid controls
+    *) Possibly here or in [plugins/listEditor.js] add a [saveFormat] option with values such as
+        "all-records" or "changes-only". Various Server Side code examples need to go with it
+
+*) Plugin [clickUrlAction]
+    *) Add options for showing loading or indicator, etc or a or callback for user to handle
+    *) If a new page is loaded before this service downloads then don't write back to active model
+        To start a simple currentUrl <> previousUrl can be used
+    *) Action "refresh-html-controls" should also support an optional [data-controls-selector]
+
+*) Extension validation
+    *) Many more validations needed including all HTML standard attributes such as <input pattern>
+
+*) Unit Test all Possible Errors
+    For example a specific plugin that throws an exception from [onRendered()]
+
+*) New Unit Test Page to Test Controls, Plugins, etc when not using Single-Page-App (Controllers)
+
+*) Support Built-In Timers for both Controller and Controls?
+    data-refresh-time-interval="1000"
+    Currently [refreshTimeInterval] is available on the [json-data] Control
+*) Handlebars Helpers
+    - Make sure all helpers are tested - examples of needed [nlbr, yesNo, yesNoNull]
+    - More testing of different languages, etc
+    - Test all options for ifCond
+    - 'join' function to work on array properties

@@ -1,0 +1,22 @@
+{
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["e2e/**/*.{ts,js,tsx,jsx}"],
+      "rules": {}
+    }
+  ],
+  "extends": [
+    "plugin:playwright/recommended",
+    "plugin:@nx/react",
+    "./.eslintrc.base.json"
+  ]
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html
+    lang="en"
+    data-show-errors
+    data-i18n-default="en"
+    data-i18n-locales="en,ja,es,pt-BR,ar,fr,zh-CN"
+    data-i18n-file="countries">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title data-i18n="Countries Demo | JavaScript"></title>
+        <link rel="stylesheet" href="css/countries.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-flag@2.4.0/flag.min.css">
+        <link rel="canonical" href="https://www.dataformsjs.com/examples/places-demo-hbs.htm">
+    </head>
+    <body>
+        <div id="view" dir="auto"></div>
+
+        <template id="loading-screen">
+            <h3 data-i18n="Loading..."></h3>
+        </template>
+
+        <template id="error-screen">
+            <div class="error"><span data-i18n="Error"></span> - <span data-bind="errorMessage"></span></div>
+        </template>
+
+        <template id="loading-spinner-screen">
+            <div class="loading">
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </template>
+
+        <template
+            data-default-route
+            data-route="/:lang/"
+            data-page="jsonData"
+            data-url="https://www.dataformsjs.com/data/geonames/countries"
+            data-load-only-once>
+
+            <div class="is-loading" data-template-id="loading-screen"></div>
+            <div class="has-error" data-template-id="error-screen"></div>
+            <div class="is-loaded flex-col">
+                <h1 data-i18n="Countries"></h1>
+
+                <nav>
+                    <a href="#/en/search" data-i18n="Search" data-i18n-href></a>
+                    <a href="#/en/info" data-i18n="Info" data-i18n-href></a>
+                    <download-links class="ml-20" data-file-name="Countries"></download-links>
+                </nav>
+
+                <input
+                    data-filter-selector="table"
+                    data-filter-results-text-selector="h1"
+                    data-filter-results-text-all="{totalCount} Countries"
+                    data-filter-results-text-filtered="Showing {displayCount} of {totalCount} Countries"
+                    placeholder="Enter filter, example 'North America'"
+                    data-i18n-attr="data-filter-results-text-all, data-filter-results-text-filtered, placeholder">
+
+                <!--
+                    Either <template> or <script type="text/x-template"> can be used.
+                        <template> will work with all modern browsers
+                        <script type="text/x-template"> is required if supporting IE
+                -->
+                <data-table
+                    data-bind="countries"
+                    data-labels="Code, Name, Size (KM), Population, Continent"
+                    data-i18n-attr="data-labels"
+                    data-table-attr="
+                        class=click-to-highlight,
+                        data-sort
+                        data-sort-class-odd=row-odd,
+                        data-sort-class-even=row-even">
+                    <script type="text/x-template">
+                        <tr>
+                            <td>
+                                <i class="${iso.toLowerCase()} flag"></i>
+                                <a href="#/${app.activeModel.i18n_Locale}/regions/${iso}">${iso}</a>
+                            </td>
+                            <td>${country}</td>
+                            <td class="align-right" data-value="${area_km}">${format.number(area_km)}</td>
+                            <td class="align-right" data-value="${population}">${format.number(population)}</td>
+                            <td>${continent}</td>
+                        </tr>
+                    </script>
+                </data-table>
+
+                <!--
+                    For a basic table a <template> is not required. This version still
+                    contains links by using the [data-col-link-template] attribute however
+                    it will not show the flag icons or format numbers or use the selected
+                    i18n Locale.
+                -->
+                <!--
+                <data-table
+                    data-bind="countries"
+                    data-col-link-template="#/en/regions/:iso"
+                    data-labels="Code, Name, Size (KM), Population, Continent"
+                    data-i18n-attr="data-labels"
+                    data-table-attr="
+                        class=countries click-to-highlight,
+                        data-sort
+                        data-sort-class-odd=row-odd,
+                        data-sort-class-even=row-even">
+                </data-table>
+                -->
+            </div>
+        </template>
+
+        <template
+            type="text/x-template"
+            data-route="/:lang/regions/:country"
+            data-page="jsonData"
+            data-url="https://www.dataformsjs.com/data/geonames/regions/:country"
+            data-load-only-once
+            data-src="html/regions-js.htm">
+        </template>
+
+        <template
+            data-route="/:lang/cities/:country/:region"
+            data-page="jsonData"
+            data-url="https://www.dataformsjs.com/data/geonames/cities/:country/:region"
+            data-load-only-once
+            data-src="html/cities-js.htm">
+        </template>
+
+        <template
+            data-route="/:lang/city/:id"
+            data-page="jsonData"
+            data-url="https://www.dataformsjs.com/data/geonames/place/:id"
+            data-load-only-once
+            data-lazy-load="leafletCss, leafletJs, leafletPlugin, data_list"
+            data-src="html/place-js.htm">
+        </template>
+
+        <template
+            data-route="/:lang/search"
+            data-page="jsonData"
+            data-url="https://www.dataformsjs.com/data/geonames/countries?order_by=country"
+            data-load-only-once
+            data-lazy-load="json_data, keydownAction, data_list"
+            data-src="html/search-places-js.htm">
+        </template>
+
+        <template
+            data-route="/:lang/info"
+            data-src="html/places-info-js.htm">
+        </template>
+
+        <!-- DataFormsJS -->
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/DataFormsJS.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/controls/data-table.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/format.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/extensions/jsTemplate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/pages/jsonData.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/i18n.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/filter.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/sort.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/dataBind.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/clickToHighlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/exportToCsv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/exportToExcel.min.js"></script>
+        <script>
+            // Lazy Load the following scripts only if needed based on attribute [data-lazy-load].
+            // When scripts need to be downloaded in a specific order then use an array otherwise
+            // one script per key is recommended. When a controller uses multiple lazy load items
+            // they are downloaded asynchronous however items in the array are download only after
+            // the previous item is loaded.
+            app.lazyLoad = {
+                keydownAction: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/keydownAction.min.js',
+                json_data: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/controls/json-data.min.js',
+                leafletCss: 'https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css',
+                leafletJs: 'https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js',
+                leafletPlugin: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/plugins/leaflet.min.js',
+                data_list: 'https://cdn.jsdelivr.net/npm/dataformsjs@5/js/controls/data-list.min.js',
+            };
+            app.settings.lazyTemplateSelector = '#loading-spinner-screen';
+        </script>
+
+        <script>
+            /**
+             * Display Elevation in both Meters and Feet
+             *
+             * This function ends up being used by <templates> under <data-table> elements
+             * and also in [data-bind] elements using formatting: [data-format="formatElevation"].
+             */
+            function formatElevation(text) {
+                var meters = parseInt(text, 10);
+                if (!isNaN(meters)) {
+                    var feet = parseInt(meters * 3.28084, 10)
+                    return Number(meters).toLocaleString() + ' m / ' + Number(feet).toLocaleString() + "'";
+                }
+                return text;
+            }
+        </script>
+
+        <script>
+            // Create a custom JavaScript "Control" to handle <download-links>.
+            // When the control is rendered `this.fileName` is passed from the
+            // [data-file-name] HTML attribute.
+            (function() {
+                app.addControl('download-links', {
+                    html: function () {
+                        var html = '<span class="download">' + window.i18nText('Download') + '</span>';
+                        html += '<img class="download"';
+                        html += '    src="img/Excel.svg"';
+                        html += '    height="16"';
+                        html += '    width="16"';
+                        html += '    alt="' + window.i18nText('Download to Excel') + '"';
+                        html += '    title="' + window.i18nText('Download to Excel') + '"';
+                        html += '    data-export-excel-selector="table"';
+                        html += '    data-export-file-name="' + window.i18nText(this.fileName) + '.xlsx">';
+                        html += '<img class="download"';
+                        html += '    src="img/CSV.svg"';
+                        html += '    height="16"';
+                        html += '    width="16"';
+                        html += '    alt="' + window.i18nText('Download to CSV') + '"';
+                        html += '    title="' + window.i18nText('Download to CSV') + '"';
+                        html += '    data-export-csv-selector="table"';
+                        html += '    data-export-file-name="' + window.i18nText(this.fileName) + '.csv">';
+                        return html;
+                    },
+                });
+            })();
+        </script>
+    </body>
+</html>

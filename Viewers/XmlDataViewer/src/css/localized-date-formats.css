@@ -1,0 +1,47 @@
+div.formatted-date {
+  width: 5.2em;
+}
+
+.date-part-separator-dot div.formatted-date > span:after {
+  content: ".";
+}
+
+.date-part-separator-slash div.formatted-date > span:after {
+  content: "/";
+}
+
+.date-part-separator-dash div.formatted-date > span:after {
+  content: "-";
+}
+
+/* Year */
+.date-part-order-DMY div.formatted-date > span.formatted-date-year,
+.date-part-order-MDY div.formatted-date > span.formatted-date-year {
+  float: right;
+}
+.date-part-order-DMY div.formatted-date > span.formatted-date-year:after,
+.date-part-order-MDY div.formatted-date > span.formatted-date-year:after {
+  content: "" !important;
+}
+
+.date-part-order-YMD div.formatted-date > span.formatted-date-year {
+  float: left;
+}
+
+/* Day */
+.date-part-order-YMD div.formatted-date > span.formatted-date-day {
+  float: right;
+}
+.date-part-order-YMD div.formatted-date > span.formatted-date-day:after {
+  content: "" !important;
+}
+
+.date-part-order-DMY div.formatted-date > span.formatted-date-day {
+  float: left;
+}
+
+/* Month */
+.date-part-order-MDY div.formatted-date > span.formatted-date-month {
+  float: left;
+}
+

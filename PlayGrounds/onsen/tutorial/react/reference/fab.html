@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script type="text/babel">
+    const MyPage = () => {
+      const renderToolbar = () => (
+        <Ons.Toolbar>
+          <div className='center'>Floating action button</div>
+        </Ons.Toolbar>
+      );
+
+      const renderFixed = () => (
+        <Ons.Fab
+          style={{backgroundColor: ons.platform.isIOS() ? '#4282cc' : null}}
+          onClick={handleClick}
+          position='bottom right'>
+          <Ons.Icon icon='md-face' />
+        </Ons.Fab>
+      );
+
+      const handleClick = () =>
+        ons.notification.alert('You clicked the button!');
+
+      return (
+        <Ons.Page
+          renderToolbar={renderToolbar}
+          renderFixed={renderFixed}
+        >
+          Some Content
+        </Ons.Page>
+      );
+    };
+
+    ons.ready(function() {
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<MyPage />);
+    });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<!-- info
+
+## Floating action button
+
+The *Floating action button* is a Material Design component that displays a circular button. It is normally displayed in the lower right corner and is used to represent the primary action of the app.
+
+It is displayed using the `Fab` component. To specify the position the `position` prop is used. To put an icon inside the button the `Icon` component can be used.
+
+```
+<Fab position='bottom right'>
+  <Icon icon="md-face" />
+</Fab>
+```
+
+In order for the `Fab` component to be fixed when scrolling the page, it needs to be put outside the page. This can be archived by rendering it in the renderFixed function of the `Page` component.
+
+```
+<Page renderFixed={() => <Fab />} />
+```
+
+-->
+
+

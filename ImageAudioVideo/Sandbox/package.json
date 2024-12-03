@@ -1,0 +1,33 @@
+{
+  "name": "tsne-sandbox",
+  "version": "1.0.1",
+  "description": "Interactive tSNE playground",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertaboukhalil/tsne-sandbox"
+  },
+  "author": "Robert Aboukhalil",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.78.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-svelte": "^6.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.49.0"
+  },
+  "dependencies": {
+    "@biowasm/aioli": "^3.0.0",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "rollup-plugin-css-only": "^2.1.0",
+    "sirv-cli": "^0.4.4"
+  }
+}

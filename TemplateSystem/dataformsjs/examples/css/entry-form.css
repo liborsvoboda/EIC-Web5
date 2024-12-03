@@ -1,0 +1,113 @@
+/* Custom page style and bootstrap overrides */
+
+:root {
+    --shadow: rgba(64,64,64,.05) 0 0 0 1px, rgba(64,64,64,.1) 0 1px 3px 0;
+}
+.navbar { 
+    box-shadow: var(--shadow);
+}
+.navbar-dark .navbar-nav .nav-link { color:white; }
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-dark .navbar-toggler {
+    border-color: white;
+}
+#view {
+    padding: 40px;
+    margin-top: 3em;
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+label { font-weight: bold; }
+
+[data-delete-button],
+[data-add-button] {
+    font-weight: bold;
+}
+
+input[type='checkbox'] { width: 2rem; }
+
+@media (min-width: 576px) {
+    .jumbotron { padding:2rem; }
+}
+.jumbotron a {
+    color: inherit;
+    text-decoration: underline;
+}
+.jumbotron a:hover { text-decoration: none; }
+.jumbotron h1 { margin-bottom: 1.5rem; }
+.jumbotron img { max-width: 100%; }
+.lead { font-size: 1.1rem; margin-top: 1.5rem; }
+
+.table.edit-all { min-width: 1000px;}
+
+.alert.error-list { padding-left:2.5rem; }
+
+code { white-space: pre; word-wrap: normal; }
+
+.card-deck .card { align-self: start; }
+
+.card-deck .card a[href^="https://github.com/dataformsjs/"] {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-deck .card a[href^="https://github.com/dataformsjs/"]::before {
+    content: '';
+    background-image: url('../img/GitHub-Mark-32px.png');
+    height: 32px;
+    width: 32px;
+}
+
+.table-striped tbody tr:nth-of-type(odd).highlight,
+.table-striped tbody tr:nth-of-type(even).highlight { background-color: yellow; }
+
+/*
+By default Boostrap expands the cards in a card-deck for small tablets.
+For this content keep 100% card width until the large device breakpoint.
+*/
+@media (min-width: 576px) {
+    .card-deck {
+        display: block;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .card-deck .card {
+        -ms-flex: initial;
+        flex: initial;
+        margin-right: 0;
+        margin-bottom: 15px;
+        margin-left: 0;
+    }
+    .card-deck .card a[href^="https://github.com/dataformsjs/"] {
+        flex-direction: row;
+    }
+    .card-deck .card a[href^="https://github.com/dataformsjs/"]::before {
+        margin-right: 1rem;
+    }
+}
+@media (min-width: 992px) {
+    .card-deck {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .card-deck .card {
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+    }
+}
+
+/* Reset pickadate.js styles from Bootstrap override */
+.table-striped .picker__table tr:nth-of-type(odd) { background-color: white; }
+.picker__table td,
+.picker__table thead th { border-top:none; border-bottom:none; padding:0; padding-bottom:.5em; }
+.picker__select--month, .picker__select--year { padding:0 .5em !important; }

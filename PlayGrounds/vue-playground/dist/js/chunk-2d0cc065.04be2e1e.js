@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cc065"],{"4bbc":function(n,t,e){"use strict";e.r(t),t["default"]="<template>\n  <div id=\"app\">\n    {{ text }}\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      text: 'Hello Word!'\n    }\n  }\n}\n<\/script>\n"}}]);
+//# sourceMappingURL=chunk-2d0cc065.04be2e1e.js.map

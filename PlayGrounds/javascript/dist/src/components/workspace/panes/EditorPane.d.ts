@@ -1,0 +1,31 @@
+import React from 'react';
+import { LogCommand } from '../../../types/Messages';
+import { EditorPaneOptions } from '../../../utils/Panes';
+import { Tab } from '../../../utils/Tab';
+import { Props as EditorProps } from '../Editor';
+import { PlaygroundOptions, PublicError, ExternalStyles } from '../Workspace';
+import type { WorkspaceDiff } from '../App';
+import { TypeScriptOptions, UserInterfaceStrings } from '../../../utils/options';
+interface Props {
+    options: EditorPaneOptions;
+    externalStyles: ExternalStyles;
+    ready: boolean;
+    files: Record<string, string>;
+    strings: UserInterfaceStrings;
+    logs: LogCommand[];
+    fullscreen: boolean;
+    activeStepIndex: number;
+    diff: Record<string, WorkspaceDiff>;
+    playgroundOptions: PlaygroundOptions;
+    typescriptOptions: TypeScriptOptions;
+    compilerError?: PublicError;
+    runtimeError?: PublicError;
+    activeFile: string;
+    activeFileTab?: Tab;
+    fileTabs: Tab[];
+    onChange: EditorProps['onChange'];
+    getTypeInfo: EditorProps['getTypeInfo'];
+    onClickTab: (tab: Tab) => void;
+}
+declare const _default: (props: Props) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)> | null;
+export default _default;

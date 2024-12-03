@@ -1,0 +1,153 @@
+/*
+Copyright 2012 Eiji Kitamura
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Author: Eiji Kitamura (agektmr@gmail.com)
+*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica;
+}
+input {
+  -webkit-app-region: no-drag;
+}
+.app-container {
+  height: 100%;
+  display: -webkit-flex;
+  -webkit-flex-flow: column nowrap;
+  -webkit-align-items: stretch;
+  -webkit-justify-content: flex-start;
+}
+.app-container .app-control {
+  height: 60px;
+  padding: 25px 20px 10px 20px;
+  -webkit-flex: 0 1 auto;
+  display: -webkit-flex;
+  -webkit-flex-flow: row nowrap;
+  background-color: #ccc;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  -webkit-app-region: drag;
+}
+.app-container .app-control div {
+  -webkit-flex: 1 1 auto;
+}
+.app-container .app-control div.left {
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+}
+.app-container .app-control div.left .btn {
+  margin: 0 3px;
+  border: 0px;
+  width: 32px;
+  height: 32px;
+  background: url(../img/buttons.png) no-repeat;
+}
+.app-container .app-control div.left .btn.backward {
+  background-position-x: -128px;
+}
+.app-container .app-control div.left .btn.play {
+  background-position-x: 0px;
+}
+.app-container .app-control div.left .btn.play.playing {
+  background-position-x: -64px;
+}
+.app-container .app-control div.left .btn.forward {
+  background-position-x: -192px;
+}
+.app-container .app-control div.left .btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.app-container .app-control div.center {
+  display: -webkit-flex;
+  -webkit-flex-flow: column nowrap;
+  -webkit-justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: #ebefdf;
+  box-shadow: -1px 1px 7px -1px inset;
+  font-size: 0.9em;
+}
+.app-container .app-control div.center div {
+  -webkit-flex: 1 1 auto;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-flex-flow: column nowrap;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.app-container .app-control div.center div.progress {
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+.app-container .app-control div.right {
+  display: -webkit-flex;
+  -webkit-justify-content: flex-end;
+  -webkit-align-items: center;
+}
+.app-container .app-main {
+  -webkit-flex: 1 1 auto;
+  display: -webkit-flex;
+  -webkit-flex-flow: row nowrap;
+  -webkit-align-items: stretch;
+  -webkit-justify-content: flex-start;
+  height: calc(100% - 95px);
+}
+.app-container .app-main .app-sidebar {
+  padding: 10px;
+  width: 150px;
+  -webkit-flex: 0 1 auto;
+  background-color: #eee;
+  font-size: 0.6em;
+  color: #aaa;
+}
+.app-container .app-main .app-sidebar meter {
+  width: 100%;
+}
+.app-container .app-main .app-sidebar div {
+  padding-top: 10px;
+}
+.app-container .app-main .app-sidebar .artwork img {
+  width: 100%;
+}
+.app-container .app-main .app-musiclist {
+  overflow-y: scroll;
+  -webkit-flex: 1 1 auto;
+  height: 100%;
+  -webkit-user-drag: element;
+}
+.app-container .app-main .app-musiclist table {
+  width: 100%;
+  font-size: 0.8em;
+}
+.app-container .app-main .app-musiclist table tr td,
+.app-container .app-main .app-musiclist table th {
+  border-bottom: 1px solid #eee;
+}
+.app-container .app-main .app-musiclist table tr:hover {
+  cursor: pointer;
+}
+.app-container .app-main .app-musiclist table td:nth-child(1) {
+  width: 18px;
+}
+.app-container .app-main .app-musiclist table .playing {
+  background: url(../img/playing.png) no-repeat;
+}
+.app-container .app-main .app-musiclist table .selected {
+  background-color: #ddd;
+}

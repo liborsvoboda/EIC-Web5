@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Static Vue Project Management</title>
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+	<!-- METRO FRAMEWORK STYLES -->
+	<link rel="stylesheet" href="./css/metro-colors.css" />
+	<link rel="stylesheet" href="./css/metro-all.min.css" />
+	<link rel="stylesheet" id="portal-color-scheme" href="./css/schemes/sky-net.css" />
+	<!-- CUSTOMIZATION -->
+	<link rel="stylesheet" href="./css/customize-style.css" />
+
+	<!-- GLOBAL LIBRARY -->
+	<script src="./js/jquery-3.6.0.min.js"></script>
+	<script src="./js/vue2.global.js"></script>
+	<!-- CZECH AUTO METRO EXTENSION -->
+	<script src="./js/metro.min.4.5.2.js"></script>
+	<script src="./js/metro-engine.js"></script>
+	<!-- CUSTOMIZATION -->
+	<script src="./js/functions.js"></script>
+
+	<!-- Google Translation -->
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+	<div id="app">
+
+
+		<!-- TOOL Panel -->
+		<div id="toolPanel" data-role="bottom-sheet" class="bottom-sheet pos-fixed list-list grid-style opened" style="top: 0px; left: 90%; z-index:10000;min-width: 430px;">
+			<div class="w-100 text-left"> <audio id="radio" class="light bg-transparent" data-role="audio-player" data-src="./media/hotel_california.mp3" data-volume=".5"></audio> </div>
+			<div class="w-100 text-left" style="z-index: 1000000;"><div id="google_translate_element"></div></div>
+			<div class="w-100 d-inline-flex">
+				<div class="w-75 text-left">
+					<input id="UserAutomaticTranslate" type="checkbox" data-role="checkbox" data-cls-caption="fg-cyan text-bold" data-caption="Auto Translate" onchange="UserChangeTranslateSetting">
+				</div>
+				<div class="w-25 mt-1 text-right" style="max-width:25% !important;"><button class="button secondary mini" style="max-width:100% !important;" onclick="CancelTranslation()">Cancel Translate</button></div>
+			</div>
+			<div class="d-flex w-100">
+				<button class="button shadowed w-25 mt-1" style="background-color: #585b5d; width:50px;opacity:0.5;" onclick="ChangeSchemeTo('darcula.css?white')" title="Theme"></button>
+				<button class="button shadowed w-25 mt-1" style="background-color: #AF0015; width:50px;opacity:0.5;" onclick="ChangeSchemeTo('red-alert.css?white')" title="Theme"></button>
+				<button class="button shadowed w-25 mt-1" style="background-color: #690012; width:50px;opacity:0.5;" onclick="ChangeSchemeTo('red-dark.css?white')" title="Theme"></button>
+				<button class="button shadowed w-25 mt-1" style="background-color: #0CA9F2; width:50px;opacity:0.5;" onclick="ChangeSchemeTo('sky-net.css?white')" title="Theme"></button>
+			</div>
+			<div class="d-flex w-100">
+				<button class="button shadowed w-25 mt-1" style="background-color: #585b5d; width:50px;" onclick="ChangeSchemeTo('darcula.css?#585b5d')" title="BackGround"></button>
+				<button class="button shadowed w-25 mt-1" style="background-color: #AF0015; width:50px;" onclick="ChangeSchemeTo('red-alert.css?#AF0015')" title="BackGround"></button>
+				<button class="button shadowed w-25 mt-1" style="background-color: #690012; width:50px;" onclick="ChangeSchemeTo('red-dark.css?#690012')" title="BackGround"></button>
+				<button class="button shadowed w-25 mt-1" style="background-color: #0CA9F2; width:50px;" onclick="ChangeSchemeTo('sky-net.css?#0CA9F2')" title="BackGround"></button>
+			</div>
+			<div class="c-pointer mif-cancel icon pos-absolute fg-red" style="top:5px;right:5px;" onclick="ShowToolPanel()"></div>
+		</div>
+
+
+		<!-- WEB PAGE -->
+		<div id="AppPanel" class="mt-2 mb-5 panel container drop-shadow">
+
+			<!-- VIEW BUTTONS SELECTIONS AREA -->
+			<div class="row mt-5 mb-5 text-center w-100">
+				<div class="w-50 d-flow text-left">
+					<button class="button success shadowed mr-2" @click=GetData("statuses",true);>Statusy</button>
+					<button class="button success shadowed mr-2" @click=GetData("positions",true);>Pozícia</button>
+					<button class="button success shadowed mr-2" @click=GetData("persons",true);>Osoby</button>
+					<button class="button success shadowed mr-2" @click=GetData("projects",true);>Projekty</button>
+					<button class="button success shadowed mr-2" @click=GetData("tasks",true);>Úlohy</button>
+				</div>
+
+				<div class="w-25 d-flow text-right text-bold mif-3x">{{selected}}</div>
+
+				<div class="w-25 d-flow text-right text-right">
+					<span class="mif-tools mif-3x fg-github mr-2 c-pointer" @click=ShowToolPanel(); title="Engine STools"></span>
+				</div>
+			</div>
+
+			<!-- TABLE AREA -->
+			<table id="DataTable"
+				   class="table drop-shadow" data-role="table" data-cls-component="mt-10" data-show-activity="true"
+				   data-rows="30" data-pagination="true" data-show-all-pages="false" data-check="true" data-check-style="1"
+				   data-check-type="radio" data-on-check-click="EditRecord()" data-use-current-slice="true">
+				<THEAD id="tableHeader">
+					<TR>
+						<TH data-sortable="true">Id</TH>
+						<TH data-sortable="true">Názov</TH>
+					</TR>
+				</THEAD>
+			</table>
+
+			<!-- FORM AREA WITH BUTTONS -->
+			<div id="dialForm" class="row text-center mb-10">
+				<span class="mif-cancel mif-3x fg-red mr-2 c-pointer" @click=ClearForm(); title="Clear Form"></span>
+
+				<input id="FormId" placeholder="Id" type="number" class="mr-2 w-100px" readonly />
+				<input id="FormName" placeholder="Name" type="text" class="mr-2 w-100px" v-if="selected =='statuses' || selected=='positions' || selected=='projects' || selected=='tasks' " />
+				<input id="FormFirstName" placeholder="FirstName" type="text" class="mr-2 w-100px" v-if="selected =='persons'" />
+				<input id="FormLastName" placeholder="LastName" type="text" class="mr-2 w-100px" v-if="selected =='persons'" />
+				<select id="FormPosition" class="mr-2 w-100px" v-if="selected =='persons'"></select>
+				<textarea id="FormDesc" placeholder="Popis" class="w-100 mb-2" rows="5" v-if="selected =='projects'"></textarea>
+				<input id="FormEndDate" type="date" class="mr-2 w-100px" v-if="selected =='tasks'">
+				<select id="FormStatus" class="mr-2 w-100px" v-if="selected =='tasks'"></select>
+				<select id="FormProject" class="mr-2 w-100px" v-if="selected =='tasks'"></select>
+				<input id="FormPriority" placeholder="Priority" type="number" class="mr-2 w-100px" v-if="selected =='tasks'" />
+
+				<div class="d-block">
+					<button class="button primary shadowed mr-2 w-100px" @click=SetData("POST");>Uložit Nový</button>
+					<button class="button primary shadowed mr-2 w-100px" @click=SetData("PUT");>Uložit</button>
+					<button class="button alert shadowed mr-2 w-100px" @click=SetData("DELETE");>Zmazať</button>
+				</div>
+			</div>
+
+
+			<!-- Form File Area -->
+			<div id="FormFileArea" class="d-inline-flex mb-2" v-if="selected =='tasks'">
+				<input id="FormFile" placeholder="File" data-role="file" type="file" class="w-300px mr-2 drop-shadow c-pointer" data-mode="drop" data-cls-hint="drop-shadow"
+					   drop-title="<strong>Vyberte Soubor</strong> pre task"
+					   data-prepend="Vložte Soubor" data-on-select="UploadFile" data-button-title="<span class='mif-folder'></span>" />
+
+				<button id="ButtonDownloadFile" class="button warning shadowed mt-2 mr-2 w-150px" onclick=DownloadFile();>Stiahnut Soubor</button>
+				<button id="ButtonRemoveFile" class="button alert shadowed mt-2 mr-2 w-150px" onclick=ClearFile();>Stornovať Soubor</button>
+
+			</div>
+
+			<!-- Form PersonTask Area -->
+			<div id="FormPersonTask" class="mt-2 panel d-inline-block" style="display:none !important;">
+				Priradiť Task Osobe:
+				<select id="FormPerson" class="mr-2 w-200px" v-if="selected =='tasks'"></select>
+				<button class="button primary shadowed mr-2 w-100px" @click=SetPersonTask();>Uložiť</button>
+			</div>
+
+			<div id="FormPersonsAccordion" class="mt-2 d-inline-block" style="display:none !important"></div>
+
+		</div>
+	</div>
+
+
+<script>
+
+//DECLARE GLOBAL STATIC VUE
+var app = new Vue({
+	el: '#app',
+	data() {
+		return {
+			//VUE Data Declarations
+			apiUrl: "http://127.0.0.1:3000",
+			selected: "",   //Selected View
+			tabledata: []   //Prepared TableData
+			
+		}
+	},
+	computed: {
+	},
+
+	mounted() {
+		
+		showPageLoading();
+		//LOAD STARTUP DIALS
+		this.GetData("projects", false);
+		this.GetData("statuses", false);
+		this.GetData("positions", false);
+		this.GetData("persontasks", null);
+
+		//DELAYED FOR LOADED DIALS
+		setTimeout(() => { this.GetData("persons", false); }, 200);
+	},
+
+	methods: {
+
+		// SET GLOBAL select OPTIONS from DIALS
+		PrepareSelectInputs() {
+			try {
+				let selectPosition = document.getElementById('FormPosition'); selectPosition.innerText = null;
+				positions.forEach(item => { selectPosition.add(new Option(item.Name, item.Id)); });
+			} catch { }
+			try {
+				let selectStatus = document.getElementById('FormStatus'); selectStatus.innerText = null;
+				statuses.forEach(item => { selectStatus.add(new Option(item.Name, item.Id)); });
+			} catch { }
+			try {
+				let selectProject = document.getElementById('FormProject'); selectProject.innerText = null;
+				projects.forEach(item => { selectProject.add(new Option(item.Name, item.Id)); });
+			} catch { }
+			try {
+				let selectPerson = document.getElementById('FormPerson'); selectPerson.innerText = null;
+				persons.forEach(item => { selectPerson.add(new Option(item.FirstName + " " + item.LastName, item.Id)); });
+			} catch { }
+		},
+
+		//GLOBAL CLEAR FORM
+		ClearForm() {
+			this.tabledata = [];
+			$("#FormId").val("");
+			try { $("#FormName").val(""); } catch { }
+			try { $("#FormFirstName").val(""); } catch { }
+			try { $("#FormLastName").val(""); } catch { }
+			try { $("#FormEndDate").val(""); } catch { }
+			try { $("#FormPriority").val(""); } catch { }
+			try { document.getElementById("FormDesc").value = ""; } catch { }
+			try { document.getElementById("FormFile").value = ""; } catch { }
+
+			try { document.getElementById("FormPersonTask").setAttribute('style', 'display:none !important'); } catch { }
+			try { document.getElementById("FormPersonsAccordion").setAttribute('style', 'display:none !important'); } catch { }
+			
+			ClearFile();
+		},
+
+		//GLOBAL SET TABLE Headers and SET PREPARED tableData to TABLE
+		SetDataToTable() {
+			try {
+				let table = Metro.getPlugin("#DataTable", "table");
+				switch (this.selected) {
+					case "statuses":
+					case "positions":
+						table.heads = tableHeaders[0];
+						break;
+					case "persons":
+						table.heads = tableHeaders[1];
+						break;
+					case "projects":
+						table.heads = tableHeaders[2];
+						break;
+					case "tasks":
+						table.heads = tableHeaders[3];
+						break;
+					default:
+					// code block
+				}
+				table.setItems(this.tabledata); table.reload();
+				this.PrepareSelectInputs(); ClearFile();
+			} catch { }
+			hidePageLoading();
+		},
+
+		//GLOBAL SET new VIEW , GET DATA FROM DB, Clear Form, Prepare SELECT INPUTS, FILL TABLE, SHOW FILEAREA
+		GetData(view, setData) { //persontasks is ignored Only Load data and Generate Accordions on "setData" == null
+			this.tabledata = [];
+			if (view != "persontasks") { this.selected = selection = view; }
+			this.ClearForm(); showPageLoading();
+
+			let that = this;
+			$.ajax({
+				url: that.apiUrl + "/" + view, dataType: 'json', type: "GET", headers: { 'Content-type': 'application/json' },
+			}).done(function (data) {
+
+				switch (view) {
+					case "statuses":
+						statuses = data;
+						data.forEach(item => { that.tabledata.push([item.Id, item.Name]); });
+						break;
+					case "positions":
+						positions = data;
+						data.forEach(item => { that.tabledata.push([item.Id, item.Name]); });
+						break;
+					case "persons":
+						persons = data;
+						data.forEach(item => { that.tabledata.push([item.Id, item.FirstName, item.LastName, positions.filter(obj => { return obj.Id == item.PositionId })[0].Name]); });
+						break;
+					case "projects":
+						projects = data;
+						data.forEach(item => { that.tabledata.push([item.Id, item.Name, item.Desc]); });
+						break;
+					case "tasks":
+						tasks = data;
+						data.forEach(item => {
+							that.tabledata.push([
+								item.Id, item.Name, item.EndDate,
+								statuses.filter(obj => { return obj.Id == item.StatusId })[0].Name,
+								projects.filter(obj => { return obj.Id == item.ProjectId })[0].Name,
+								item.Priority, item.FileName
+							]);
+						});
+						break;
+					case "persontasks":
+						persontasks = data;
+						if (setData == null) { GeneratePersonAccordion(); }
+						break;
+					default:
+					// code block
+				}
+
+				//ONLY FOR BUTTONS AND START 
+				if (setData != null && setData) { that.SetDataToTable(); }
+			});
+		},
+
+		//GLOBAL SAVE NEW/EDIT OR DELETE RECORD TO DB
+		SetData(dbAction) { 
+			let apiUrl = null; let apiData = null; showPageLoading();
+
+			//SET API REQUEST
+			switch (this.selected) {
+				case "statuses":
+					apiUrl = this.apiUrl + "/status";
+					apiData = { id: $("#FormId").val(), name: $("#FormName").val() }
+					break;
+				case "positions":
+					apiUrl = this.apiUrl + "/position";
+					apiData = { id: $("#FormId").val(), name: $("#FormName").val() }
+					break;
+				case "persons":
+					apiUrl = this.apiUrl + "/person";
+					apiData = {
+						id: $("#FormId").val(), firstname: $("#FormFirstName").val(), lastname: $("#FormLastName").val(),
+						positionid: positions.filter(obj => { return obj.Id == document.getElementById("FormPosition").value })[0].Id
+					}
+					break;
+				case "projects":
+					apiUrl = this.apiUrl + "/project";
+					apiData = { id: $("#FormId").val(), name: $("#FormName").val(), desc: document.getElementById("FormDesc").value }
+					break;
+				case "tasks":
+					apiUrl = this.apiUrl + "/task";
+					apiData = {
+						id: $("#FormId").val(),
+						name: $("#FormName").val(), enddate: $("#FormEndDate").val(),
+						statusid: statuses.filter(obj => { return obj.Id == document.getElementById("FormStatus").value })[0].Id,
+						projectid: projects.filter(obj => { return obj.Id == document.getElementById("FormProject").value })[0].Id,
+						priority: $("#FormPriority").val(), file: uploadedFileContent, filename: uploadedFileName
+					}
+					break;
+				default:
+				// code block
+			}
+
+			//RUN API REQUEST
+			var that = this;
+			$.ajax({
+				url: apiUrl, dataType: 'json',
+				type: dbAction, headers: { 'Content-type': 'application/json' },
+				data: JSON.stringify(apiData)
+			}).done(function (data) {
+				setTimeout(() => { that.GetData(that.selected, true); }, 500);
+			});
+		},
+
+		//SET NEW PERSON/DELETE for SELECTED TASK
+		SetPersonTask() {
+			showPageLoading();
+			var that = this;
+			$.ajax({
+				url: that.apiUrl + "/persontask", dataType: 'json',
+				type: "POST", headers: { 'Content-type': 'application/json' },
+				data: JSON.stringify({ personid: persons.filter(obj => { return obj.Id == document.getElementById("FormPerson").value })[0].Id, taskid: $("#FormId").val() })
+			}).done(function (data) {
+				setTimeout(() => { that.GetData("persontasks", null); }, 500);
+			});
+		}
+	},
+	
+	//STARTUP LOAD DIALS FOR SELECT OPTIONS
+	created() {
+		//STARUP TASKS
+		setTimeout(() => {
+			this.GetData("tasks", true);
+			hidePageLoading();
+		}, 500);
+
+		
+	}
+});
+
+//console.log("app", app);
+window.app = app;
+
+
+</script>
+</body>
+</html>

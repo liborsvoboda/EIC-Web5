@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script type="text/babel">
+    class MyPage extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          checked: false
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+      }
+
+      renderToolbar() {
+        return (
+          <Ons.Toolbar>
+            <div className='center'>Switch</div>
+          </Ons.Toolbar>
+        );
+      }
+
+      handleChange(e) {
+        this.setState({checked: e.target.checked});
+      }
+
+      render() {
+        return (
+          <Ons.Page renderToolbar={this.renderToolbar}>
+            <section style={{textAlign: 'center'}}>
+              <p>
+                {this.state.checked ? 'On' : 'Off'}
+              </p>
+              <p>
+                <Ons.Switch checked={this.state.checked} onChange={this.handleChange} />
+              </p>
+            </section>
+          </Ons.Page>
+        );
+      }
+    }
+
+    ons.ready(function() {
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<MyPage />);
+    });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<!-- info
+
+## Switches
+
+A switch is an UI element that can be used to toggle between two states.
+
+The state of a switch in Onsen UI can be changed both by dragging the knob and by tapping on the switch.
+
+To make the switch enabled by default you can use the `checked` prop just like with radio buttons and checkboxes.
+
+```
+<Switch checked={this.state.checked} onChange={this.handleChange} />
+```
+
+To disable the switch the `disabled` prop is used.
+
+-->

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <title>Capter 4 Assignments</title>
+
+    <style>
+      input {
+        margin-top: 1rem;
+      }
+
+      .max-vh-50 {
+        max-height: 50vh;
+      }
+    </style>
+  </head>
+  <body class="p-1">
+    <div class="container d-flex flex-column align-items-center">
+      <h1 class="">بسم الله الرحمن الرحيم</h1>
+      <canvas class="img-fluid max-vh-50" id="mainConvas"> </canvas>
+      <h6 class="text-center">
+        Pixel manipulation: Grayscaling and Color inversion
+      </h6>
+      <div class="d-flex w-50 justify-content-evenly">
+        <input
+          class="btn btn-primary mx-1 my-0"
+          id="grayscaleBtn"
+          type="button"
+          value="Grayscale"
+        />
+        <input
+          class="btn btn-primary mx-1 my-0"
+          id="invertBtn"
+          type="button"
+          value="Invert"
+        />
+        <input
+          class="btn btn-primary mx-1 my-0"
+          id="resetBtn"
+          type="button"
+          value="Reset"
+        />
+      </div>
+
+      <div class="border border-1 p-1 m-1">
+        <label for="inputPassword5" class="form-label"
+          >Lightening value to apply</label
+        >
+        <label for="lighteningSlider" class="form-label"></label>
+        <input
+          type="range"
+          class="form-range"
+          id="lighteningSlider"
+          min="-255"
+          max="255"
+        />
+
+        <div id="passwordHelpBlock" class="form-text">
+          Specify the value (negative or positive) of lightening that you want
+          to apply to the currently displayed image
+        </div>
+      </div>
+      <footer class="text-center">Written by Mahmoud Darwish with the help of Allah</footer>
+    </div>
+
+
+    <script>
+      var canvas = document.getElementById("mainConvas");
+      // Check for canvas support
+      if (canvas.getContext) {
+        // Initialization
+        function init(image) {
+          // Use the intrinsic size of image in CSS pixels
+          canvas.width = image.naturalWidth;
+          canvas.height = image.naturalHeight;
+          // Draw image onto the canvas
+          ctx.drawImage(image, 0, 0);
+        }
+        // Grayscaling
+        var grayscale = function () {
+          // ImageData object
+          var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          // One-dimensional array containing the data in the RGBA order
+          var data = imageData.data;
+          // data represents the Uint8ClampedArray containing the data
+          // in the RGBA order [r0, g0, b0, a0, r1, g1, b1, a1, ..., rn, gn, bn, an]
+          for (let i = 0; i < data.length; i += 4) {
+            // Averaging method: gray = (r + g + b) / 3
+            let gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+            // Red channel
+            data[i] = gray;
+            // Green channel
+            data[i + 1] = gray;
+            // Blue channel
+            data[i + 2] = gray;
+          }
+          // Paint pixel data into the context
+          ctx.putImageData(imageData, 0, 0);
+        };
+        // Color inversion
+        var invert = function () {
+          // ImageData object
+          var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          // One-dimensional array containing the data in the RGBA order
+          var data = imageData.data;
+          // data represents the Uint8ClampedArray containing the data
+          // in the RGBA order [r0, g0, b0, a0, r1, g1, b1, a1, ..., rn, gn, bn, an]
+          for (let i = 0; i < data.length; i += 4) {
+            // Red channel
+            data[i] = 255 - data[i];
+            // Green channel
+            data[i + 1] = 255 - data[i + 1];
+            // Blue channel
+            data[i + 2] = 255 - data[i + 2];
+          }
+          // Paint pixel data into the context
+          ctx.putImageData(imageData, 0, 0);
+        };
+        // Color inversion
+        var resetCanvas = function () {
+          // Erase any previously drawn content
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Draw image onto the canvas
+          ctx.drawImage(img, 0, 0);
+        };
+        // lightening
+        var lightening = function (degree) {
+          // ImageData object
+          var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          // One-dimensional array containing the data in the RGBA order
+          var data = imageData.data;
+          // data represents the Uint8ClampedArray containing the data
+          // in the RGBA order [r0, g0, b0, a0, r1, g1, b1, a1, ..., rn, gn, bn, an]
+          for (let i = 0; i < data.length; i += 4) {
+            if (degree > 0) {
+              // Red channel
+              data[i] = Math.min(255, data[i] + degree);
+              // Green channel
+              data[i + 1] = Math.min(255, data[i + 1] + degree);
+              // Blue channel
+              data[i + 2] = Math.min(255, data[i + 2] + degree);
+            } else {
+              // Red channel
+              data[i] = Math.max(0, data[i] + degree);
+              // Green channel
+              data[i + 1] = Math.max(0, data[i + 1] + degree);
+              // Blue channel
+              data[i + 2] = Math.max(0, data[i + 2] + degree);
+            }
+          }
+          // Paint pixel data into the context
+          ctx.putImageData(imageData, 0, 0);
+        };
+        // Access the rendering context
+        var ctx = canvas.getContext("2d");
+        // Create image
+        var img = new Image();
+        img.crossOrigin = "Anonymous";
+        img.src =
+          "https://images.unsplash.com/photo-1630128213520-56488838b4de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+        // The callback will be called when the image has finished loading
+        img.onload = function () {
+          // Initalize canvas
+          init(this);
+        };
+        // Click events
+        // click event for the grayscale effect
+        document
+          .getElementById("grayscaleBtn")
+          .addEventListener("click", grayscale);
+        // click event for the negative effect
+        document.getElementById("invertBtn").addEventListener("click", invert);
+        // click event for the lighting effect
+        document
+          .getElementById("lighteningSlider")
+          .addEventListener("input", (e) => {
+            resetCanvas();
+            let lightingValue = parseInt(
+              document.getElementById("lighteningSlider").value
+            );
+            console.log(lightingValue);
+            lightening(lightingValue);
+          });
+        // click event for the reset button
+        document.getElementById("resetBtn").addEventListener("click", () => {
+          resetCanvas();
+          // reseting the slider value
+          document.getElementById("lighteningSlider").value = 0;
+        });
+        console.log(canvas);
+      }
+    </script>
+  </body>
+</html>

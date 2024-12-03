@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how to create awesome looking hybrid mobile apps with Onsen UI and AngularJS, Angular 2+, React or Vanilla JS in this playground.">
+  <title>Onsen UI Playground</title>
+
+  <link rel="canonical" href="https://onsen.io/playground/" />
+  <link rel="stylesheet" href="css/split.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/dark-skin.css">
+  <link rel="stylesheet" href="vendor/highlight/chrome.css">
+  <link rel="stylesheet" href="vendor/highlight/monokai.css">
+
+  <script defer src="vendor/emmet/emmet.min.js"></script>
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.2.0/split.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-emmet.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+  <script defer src="https://unpkg.com/srcdoc-polyfill@1.0.0/srcdoc-polyfill.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/setup.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/listeners.js"></script>
+  <script src="js/modules.js"></script>
+
+  <!-- Hotjar -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:100912,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+</head>
+
+<body class="compact">
+
+<base target="_blank">
+
+<div id="container">
+
+  <div id="leftPane" class="split split-horizontal">
+    <div class="split content">
+      <div id="tutorial-content" class="frame"></div>
+      <div id="tutorial-pages">
+        <span id="pages-previous">◀</span>
+        <span id="pages-current">1</span>
+        /
+        <span id="pages-total">1</span>
+        <span id="pages-next">▶</span>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="centerPane" class="split split-horizontal">
+    <div class="split content">
+      <div id="output" class="frame">
+        <div class="preview-toolbar">
+          <div id="run" class="custom-button"><span><span>▶ </span><span class="button-text" i18n content="Run" content-ja="実行"></span></span></div>
+          <span id="styling">
+            <label class="custom-button">
+              <input type="radio" name="styling" checked>
+              <span platform="ios"><span class="styling-icon icon-ios"></span><span class="styling-label">iOS</span></span>
+            </label>
+            <label class="custom-button">
+              <input type="radio" name="styling">
+              <span platform="android"><span class="styling-icon icon-android"></span><span class="styling-label">Android</span></span>
+            </label>
+          </span>
+        </div>
+
+        <iframe frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="rightPane" class="split split-horizontal">
+    <div id="rightTopPane" class="split content">
+      <div class="editor-title">HTML</div>
+      <div id="html-input" class="frame input"></div>
+    </div>
+    <div id="rightBottomPane" class="split content">
+      <div class="editor-title">JS</div>
+      <div id="js-input" class="frame input"></div>
+    </div>
+  </div>
+</div>
+
+<div id="placeholder">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+   width="86.000000pt" height="81.000000pt" viewBox="0 0 86.000000 81.000000"
+   preserveAspectRatio="xMidYMid meet">
+  <metadata>
+  </metadata>
+  <g transform="translate(0.000000,81.000000) scale(0.100000,-0.100000)"
+  fill="#000000" stroke="none">
+  <path style="fill: #FC3429;" d="M651 777 c-19 -7 -43 -24 -54 -38 -18 -25 -18 -33 -7 -137 14 -129 5
+  -204 -34 -282 -22 -45 -23 -49 -7 -40 35 18 84 74 103 118 14 31 21 80 27 187
+  6 107 12 150 24 169 10 14 17 28 17 31 0 8 -33 5 -69 -8z"/>
+  <path style="fill: #FC3429;" d="M478 705 c-23 -15 -47 -46 -65 -82 -26 -54 -28 -66 -29 -188 0 -72
+  -2 -136 -2 -142 -3 -23 -40 -13 -66 17 -32 38 -40 81 -34 178 5 80 26 135 68
+  180 26 27 20 28 -29 2 -111 -56 -141 -111 -146 -259 -2 -74 -8 -117 -19 -138
+  -15 -30 -15 -31 7 -37 12 -4 60 -9 108 -13 72 -5 92 -3 131 15 77 34 82 50 88
+  252 5 140 9 181 23 208 21 38 14 40 -35 7z"/>
+  <path style="fill: #FC3429;" d="M738 487 c62 -66 50 -156 -35 -248 -127 -137 -372 -191 -526 -115
+  -71 34 -98 71 -106 145 l-6 56 -13 -34 c-16 -46 -15 -116 3 -150 90 -174 483
+  -156 681 31 65 61 94 118 94 182 0 56 -18 94 -60 130 -39 32 -61 34 -32 3z"/>
+  </g>
+  </svg>
+</div>
+
+</body>
+
+</html>

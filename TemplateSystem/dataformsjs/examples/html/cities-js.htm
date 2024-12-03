@@ -1,0 +1,36 @@
+<div class="is-loading" data-template-id="loading-screen"></div>
+<div class="has-error" data-template-id="error-screen"></div>
+<div class="is-loaded flex-col">
+    <h1><span data-i18n="Largest Cities in"></span> <span data-bind="country"></span>, <span data-bind="region"></span></h1>
+
+    <nav>
+        <a href="#/en/" data-i18n="Countries" data-i18n-href></a>
+        <a href="#/[window.i18n_Locale]/regions/[country]" data-i18n="Regions" data-bind-attr="href"></a>
+        <download-links class="ml-20" data-file-name="Cities"></download-links>
+    </nav>
+
+    <input data-filter-selector="table" placeholder="Enter filter" data-i18n-attr="placeholder">
+
+    <data-table
+        data-bind="cities"
+        data-labels="Name, Population, Elevation, Timezone, Date Last Modified"
+        data-i18n-attr="data-labels"
+        data-table-attr="
+            class=click-to-highlight,
+            data-sort
+            data-sort-class-odd=row-odd,
+            data-sort-class-even=row-even">
+        <script type="text/x-template">
+            <tr>
+                <td>
+                    <i class="${country_code.toLowerCase()} flag"></i>
+                    <a href="#/${app.activeModel.i18n_Locale}/city/${geonames_id}">${name}</a></a>
+                </td>
+                <td class="align-right" data-value="${population}">${format.number(population)}</td>
+                <td class="align-right" data-value="${elevation}">${formatElevation(elevation)}</td>
+                <td>${timezone}</td>
+                <td class="align-right">${format.date(modification_date)}</td>
+            </tr>
+        </script>
+    </data-table>
+</div>

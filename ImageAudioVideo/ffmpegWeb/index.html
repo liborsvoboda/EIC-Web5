@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.5/dist/ffmpeg.min.js"></script>
+</head>
+<body>
+<video id="player" controls>
+</video>
+<script>
+const { createFFmpeg, fetchFile } = FFmpeg;
+
+const ffmpeg = createFFmpeg({ 
+  log: true
+});
+
+(async () => {
+  await ffmpeg.load();
+
+  const dataInputVideo = await fetchFile('cla.mp4');
+  debugger;
+  ffmpeg.FS('writeFile', 'cla.mp4', dataInputVideo);
+  await ffmpeg.run('-i', 'cla.mp4', '-s', '1920x1080', 'output.mp4');
+  const data = ffmpeg.FS('readFile', 'output.mp4');
+  
+  const video = document.getElementById('player');
+  video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
+  // TODO. upload back
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+</head>
+
+<body>
+  <ons-page>
+    <p>
+      <ons-button
+        onclick="ons.notification.toast('Hi there!', { timeout: 1000, animation: 'fall' })"
+      >
+        Queue notification toast (top)
+      </ons-button>
+
+      <br><br>
+
+      <ons-button onclick="myToast.toggle()">Toggle element toast (bottom)</ons-button>
+    </p>
+
+    <ons-fab position="bottom right">+</ons-fab>
+  </ons-page>
+
+  <ons-toast id="myToast" animation="ascend">
+    FABs up!
+    <button onclick="myToast.hide()">ok</button>
+  </ons-toast>
+</body>
+
+</html>
+
+<!-- info
+
+## Toasts
+
+Toasts are defined using the `<ons-toast>` tag. In Material Design they are also called Snackbars.
+
+```
+<ons-toast id="dialog-1">
+  This is a toast!
+</ons-toast>
+```
+
+They can be located inside templates or separated files and be created with `ons.createElement` as any other dialog.
+
+Toasts are hidden by default and usually attached as direct children of the `<body>` tag.
+
+## Displaying a toast
+
+To display a toast you need to get a reference to the element and execute the `show(options)` method.
+
+```
+document
+  .querySelector('ons-toast')
+  .show();
+```
+
+It is hidden with the `hide(options)` method.
+
+Toasts can be toggled with the `toggle(options)` method.
+
+## Notification
+
+Another way to display toasts is with the `ons.notification`, which returns a `Promise`. Unlike the previous version, all the toasts created with this method will be part of a notification queue, being visible only one at a time. The `force` option disables this feature.
+
+```
+ons.notification.toast('Hello ' + name, { timeout: 2000 }); // Shows from 0s to 2s
+ons.notification.toast('Good-bye ' + name, { timeout: 1000 }); // Shows from 2s to 3s
+```
+
+-->

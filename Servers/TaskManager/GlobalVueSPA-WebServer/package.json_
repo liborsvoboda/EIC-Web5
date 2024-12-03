@@ -1,0 +1,16 @@
+{
+  "name": "Project Manager Web Server",
+  "version": "1.0.0",
+  "main": "./server.js",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "install": "npm run install",
+    "start": "http-server --cors=* -a 0.0.0.0 -c-1 -o -p 8080 -r true",
+	"redirect": "http-server --cors=* -a 0.0.0.0 -c-1  -r true -o --proxy http://localhost:8080? ",
+    "https": "http-server --cors=* -a 0.0.0.0 -c-1 -S -C ./install/localhost.cert.pem -K ./install/key.pem -o -p 8080 -r true"
+  },
+  "dependencies": {
+    "http-server": "14.1.1"
+  }
+}

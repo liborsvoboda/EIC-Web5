@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://threejs.org/files/main.css">
+		<style>
+			canvas {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+			#newWindow {
+				display: block;
+				position: absolute;
+				bottom: 0.3em;
+				left: 0.5em;
+				color: #fff;
+			}
+		</style>
+
+<!-- Or by plain js https://medium.com/@necsoft/three-js-101-hello-world-part-1-443207b1ebe1 -->
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+				"three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<script type="module">
+		import * as THREE from 'three';
+		import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js';
+		import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+		// or
+		//   import { OrbitControls } from 'https://unpkg.com/three@0.163.0/examples/jsm/controls/OrbitControls.js'
+		
+		// ------------------------------------------------
+		// BASIC SETUP
+		// ------------------------------------------------
+
+		// Create an empty scene
+		var scene = new THREE.Scene();
+		scene.background = new THREE.Color( 0x444444 );
+		
+		// Create a basic perspective camera
+		const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
+		camera.position.set( 5, 2, 8 );
+
+		// Create a renderer with Antialiasing
+		var renderer = new THREE.WebGLRenderer({ antialias: true });
+
+		renderer.setPixelRatio( window.devicePixelRatio );
+
+		// Configure renderer size
+		renderer.setSize(window.innerWidth, window.innerHeight);
+
+		// Append Renderer to DOM
+		document.body.appendChild(renderer.domElement);
+		
+		
+		
+		
+	
+
+		const orbit = new OrbitControls( camera, renderer.domElement );
+		orbit.enableZoom = true;
+
+		const lights = [];
+		lights[ 0 ] = new THREE.DirectionalLight( 0xffffff, 3 );
+		lights[ 1 ] = new THREE.DirectionalLight( 0xffffff, 3 );
+		lights[ 2 ] = new THREE.DirectionalLight( 0xffffff, 3 );
+
+		lights[ 0 ].position.set( 0, 200, 0 );
+		lights[ 1 ].position.set( 100, 200, 100 );
+		lights[ 2 ].position.set( - 100, - 200, - 100 );
+
+		scene.add( lights[ 0 ] );
+		scene.add( lights[ 1 ] );
+		scene.add( lights[ 2 ] );
+	
+		
+		const group = new THREE.Group();
+
+		const geometry = new THREE.BufferGeometry();
+		geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( [], 3 ) );
+
+		const lineMaterial = new THREE.LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
+		const meshMaterial = new THREE.MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: THREE.DoubleSide, flatShading: true } );
+
+		group.add( new THREE.LineSegments( geometry, lineMaterial ) );
+		group.add( new THREE.Mesh( geometry, meshMaterial ) );
+		
+	
+		
+		const data = {
+			width: 15,
+			height: 15,
+			depth: 15,
+			widthSegments: 1,
+			heightSegments: 1,
+			depthSegments: 1
+		};
+		
+		group.children[ 0 ].geometry.dispose();
+		group.children[ 1 ].geometry.dispose();
+		
+		const boxGeometry = new THREE.BoxGeometry(data.width, data.height, data.depth, data.widthSegments, data.heightSegments, data.depthSegments);
+		
+		group.children[ 0 ].geometry = new THREE.WireframeGeometry( boxGeometry );
+		group.children[ 1 ].geometry = boxGeometry;
+	
+		scene.add(group);
+
+		// // Add cube to Scene
+
+
+		// Render Loop
+		var render = function () {
+			requestAnimationFrame(render);
+			
+
+			group.rotation.x += 0.005;
+			group.rotation.y += 0.005;
+
+
+			// Render the scene
+			renderer.render(scene, camera);
+		};
+
+		render();
+		
+		
+		
+		
+		
+
+		window.addEventListener( 'resize', function () {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize( window.innerWidth, window.innerHeight );
+
+		}, false );
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+
+</html>

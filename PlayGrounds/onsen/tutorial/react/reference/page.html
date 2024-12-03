@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI App</title>
+
+  <script type="text/babel">
+    const MyPage = () => {
+      const handleClick = () =>
+        ons.notification.alert('Hello world!');
+
+      const renderToolbar = () => (
+        <Ons.Toolbar>
+          <div className='center'>My app</div>
+          <div className='right'>
+          <Ons.ToolbarButton>
+            <Ons.Icon icon='ion-ios-menu, material:md-menu'></Ons.Icon>
+          </Ons.ToolbarButton>
+          </div>
+        </Ons.Toolbar>
+      );
+
+      return (
+        <Ons.Page renderToolbar={renderToolbar}>
+          <p style={{textAlign: 'center'}}>
+            <Ons.Button onClick={handleClick}>
+              Click me!
+            </Ons.Button>
+          </p>
+        </Ons.Page>
+      );
+    };
+
+    ons.ready(function() {
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<MyPage />);
+    });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<!-- info
+
+## The `<Page>` component
+
+The `<Page>` component serves as the main view of a screen in an app. It covers the whole screen and is used as a container for the other components.
+
+```
+<Page>
+  Content goes here
+</Page>
+```
+
+-->
